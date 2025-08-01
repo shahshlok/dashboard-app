@@ -50,62 +50,68 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* TopBar */}
-      <div className="sticky top-0 z-40 bg-white border-b shadow-sm">
+      {/* Header */}
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Left: Filters */}
-            <div className="flex items-center space-x-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                <select
-                  value={statusFilter}
-                  onChange={(e) => setStatusFilter(e.target.value)}
-                  className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                >
-                  <option value="All">All</option>
-                  <option value="Active">Active</option>
-                  <option value="Planned">Planned</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">State</label>
-                <select
-                  value={stateFilter}
-                  onChange={(e) => setStateFilter(e.target.value)}
-                  className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                >
-                  <option value="All">All</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Virginia">Virginia</option>
-                </select>
+            {/* Left: Title & Filters */}
+            <div className="flex items-center space-x-6">
+              <h1 className="text-xl font-semibold text-gray-900">Analytics Dashboard</h1>
+              
+              <div className="flex items-center space-x-4">
+                <div>
+                  <select
+                    value={statusFilter}
+                    onChange={(e) => setStatusFilter(e.target.value)}
+                    className="border-0 bg-gray-50 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
+                  >
+                    <option value="All">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Planned">Planned</option>
+                  </select>
+                </div>
+                <div>
+                  <select
+                    value={stateFilter}
+                    onChange={(e) => setStateFilter(e.target.value)}
+                    className="border-0 bg-gray-50 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
+                  >
+                    <option value="All">All States</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Virginia">Virginia</option>
+                  </select>
+                </div>
               </div>
             </div>
 
             {/* Center: Search */}
-            <div className="flex-1 max-w-md mx-8">
+            <div className="flex-1 max-w-sm mx-8">
               <input
                 type="text"
                 placeholder="Search locations..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full border-0 bg-gray-50 rounded-lg px-4 py-2 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
               />
             </div>
 
-            {/* Right: KPI Chips */}
-            <div className="flex items-center space-x-3">
-              <div className="bg-emerald-100 text-emerald-800 px-3 py-2 rounded-full text-sm font-medium">
-                Open Sites: {kpis.openSites}
+            {/* Right: KPI Metrics */}
+            <div className="flex items-center space-x-6">
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-900">{kpis.openSites}</div>
+                <div className="text-xs text-gray-500">Open Sites</div>
               </div>
-              <div className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-medium">
-                Planned Sites: {kpis.plannedSites}
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-900">{kpis.plannedSites}</div>
+                <div className="text-xs text-gray-500">Planned</div>
               </div>
-              <div className="bg-purple-100 text-purple-800 px-3 py-2 rounded-full text-sm font-medium">
-                Total Children: {kpis.totalChildren}
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-900">{kpis.totalChildren}</div>
+                <div className="text-xs text-gray-500">Students</div>
               </div>
-              <div className="bg-orange-100 text-orange-800 px-3 py-2 rounded-full text-sm font-medium">
-                Total Area: {kpis.totalArea.toLocaleString()} sq ft
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-900">{Math.round(kpis.totalArea/1000)}K</div>
+                <div className="text-xs text-gray-500">sq ft</div>
               </div>
             </div>
           </div>

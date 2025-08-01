@@ -50,9 +50,15 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* TopBar */}
+      {/* Header */}
       <div className="sticky top-0 z-40 bg-white border-b shadow-sm">
-        <div className="px-6 py-4">
+        <div className="px-6 py-6">
+          {/* Dashboard Title */}
+          <div className="mb-6">
+            <h1 className="text-3xl font-bold text-gray-900">Analytics Dashboard</h1>
+            <p className="text-gray-600 mt-1">Monitor and analyze gym location performance</p>
+          </div>
+          
           <div className="flex items-center justify-between">
             {/* Left: Filters */}
             <div className="flex items-center space-x-4">
