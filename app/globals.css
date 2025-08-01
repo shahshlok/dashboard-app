@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Leaflet CSS */
-@import "leaflet/dist/leaflet.css";
 
 @layer utilities {
   .text-balance {
@@ -93,12 +91,13 @@
 }
 
 /* Custom styles for the dashboard */
-.leaflet-container {
+.google-map-container {
   height: 100%;
   width: 100%;
 }
 
-/* Ensure proper z-index for modals */
-.leaflet-control-container {
-  z-index: 1;
+/* Google Maps styling */
+gmp-map {
+  height: 100%;
+  width: 100%;
 }

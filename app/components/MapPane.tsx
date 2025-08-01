@@ -9,7 +9,7 @@ interface MapPaneProps {
 }
 
 // Dynamically import the map component to avoid SSR issues
-const DynamicMap = dynamic(() => import("./LeafletMap"), {
+const DynamicMap = dynamic(() => import("./GoogleMap"), {
   ssr: false,
   loading: () => (
     <div className="h-full flex items-center justify-center bg-gray-100">
