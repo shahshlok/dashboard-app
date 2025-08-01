@@ -3,6 +3,7 @@
 import { useState } from "react"
 import type { Location } from "../data/locations"
 import { goNoGoScore } from "../utils/goNoGoScore"
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts"
 
 interface TileCardProps {
   location: Location
@@ -52,6 +53,18 @@ export default function TileCard({ location, onClick }: TileCardProps) {
 
   const metrics = getKeyMetrics()
 
+  // Columbia enrollment data from columbia.json data_appendix
+  // students_data: "Sep 2024 (333) → Oct 2024 (415) → Nov (492) → Dec (535) → Jan 2025 (591) → Feb (616) → Mar (571) → Apr (554) → May (548)"
+  // Showing past 6 months: Dec 2024 - May 2025
+  const columbiaEnrollmentData = [
+    { month: 'Dec', students: 535, fullMonth: 'December 2024' },
+    { month: 'Jan', students: 591, fullMonth: 'January 2025' },
+    { month: 'Feb', students: 616, fullMonth: 'February 2025' },
+    { month: 'Mar', students: 571, fullMonth: 'March 2025' },
+    { month: 'Apr', students: 554, fullMonth: 'April 2025' },
+    { month: 'May', students: 548, fullMonth: 'May 2025' }
+  ]
+
   return (
     <div
       onClick={onClick}
@@ -78,10 +91,18 @@ export default function TileCard({ location, onClick }: TileCardProps) {
                     : "from-slate-400 to-slate-500"
       }`} />
 
-      <div className="p-5">
+      <div className="p-6">
         {/* Location name and status */}
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-gray-900 text-lg">{location.name}</h3>
+          <div className="flex items-center gap-3">
+            <h3 className="font-bold text-gray-900 text-lg">{location.name}</h3>
+            {/* Columbia status badge */}
+            {location.name === "Columbia MD" && (
+              <div className="px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800">
+                Building Phase
+              </div>
+            )}
+          </div>
           <div className="flex items-center gap-2">
             {isPlanned ? (
               <div 
@@ -299,63 +320,131 @@ export default function TileCard({ location, onClick }: TileCardProps) {
             )}
           </div>
         ) : (
-          /* Active Location Layout - Original Design */
+          /* Active Location Layout - Enhanced with Columbia data */
           <>
-            <div className="mb-5">
-              <div className="flex items-baseline gap-2 mb-1">
-                <div className="text-3xl font-bold text-gray-900">{displayNumber.toLocaleString()}</div>
-                {location.targetStudents && (
-                  <div className="text-sm text-gray-500">/ {location.targetStudents.toLocaleString()}</div>
-                )}
-              </div>
-              <div className="text-sm font-medium text-gray-600">{numberLabel}</div>
-              {/* Progress bar for active locations */}
-              {location.targetStudents && (
-                <div className="mt-2 w-full bg-gray-200 rounded-full h-1.5">
-                  <div 
-                    className="bg-emerald-500 h-1.5 rounded-full transition-all duration-500"
-                    style={{ width: `${Math.min((location.students / location.targetStudents) * 100, 100)}%` }}
-                  />
+            {location.name === "Columbia MD" ? (
+              /* Columbia-specific layout with Recharts */
+              <>
+                {/* Enrollment Chart - Takes up main space */}
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-sm font-medium text-gray-700">Monthly Enrollment Trend</div>
+                    <div className="text-right">
+                      <div className="text-lg font-bold text-gray-900">{displayNumber.toLocaleString()}</div>
+                      <div className="text-xs text-gray-500">Current Students</div>
+                    </div>
+                  </div>
+                  <div className="h-32 bg-gradient-to-t from-emerald-50 to-white rounded-lg border border-emerald-200 p-3">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={columbiaEnrollmentData}>
+                        <XAxis 
+                          dataKey="month" 
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fontSize: 11, fill: '#6b7280' }}
+                        />
+                        <YAxis 
+                          hide={true}
+                          domain={['dataMin - 20', 'dataMax + 20']}
+                        />
+                        <Tooltip 
+                          contentStyle={{
+                            backgroundColor: 'white',
+                            border: '1px solid #e5e7eb',
+                            borderRadius: '8px',
+                            fontSize: '12px'
+                          }}
+                          formatter={(value, name) => [`${value} students`, 'Enrollment']}
+                          labelFormatter={(label) => {
+                            const data = columbiaEnrollmentData.find(d => d.month === label);
+                            return data ? data.fullMonth : label;
+                          }}
+                        />
+                        <Line 
+                          type="monotone" 
+                          dataKey="students" 
+                          stroke="#10b981" 
+                          strokeWidth={3}
+                          dot={{ fill: '#10b981', strokeWidth: 2, r: 4 }}
+                          activeDot={{ r: 6, stroke: '#10b981', strokeWidth: 2 }}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
-              )}
-            </div>
 
-            {/* Enhanced sparkline with area fill */}
-            <div className="mb-5">
-              <div className="text-xs text-gray-500 mb-2">Growth Trend</div>
-              <svg width="100%" height="28" className="w-full">
-                <defs>
-                  <linearGradient id={`gradient-${location.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.05" />
-                  </linearGradient>
-                </defs>
-                <polygon
-                  points={`0,28 ${sparklinePoints} 80,28`}
-                  fill={`url(#gradient-${location.id})`}
-                />
-                <polyline
-                  points={sparklinePoints}
-                  fill="none"
-                  stroke="#10b981"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+                {/* Base KPIs - Columbia-specific values */}
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="text-gray-600 text-xs font-medium">CAC</div>
+                    <div className="font-bold text-gray-900">$95</div>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="text-gray-600 text-xs font-medium">LTV</div>
+                    <div className="font-bold text-gray-900">$600</div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              /* Original layout for other active locations */
+              <>
+                <div className="mb-5">
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <div className="text-3xl font-bold text-gray-900">{displayNumber.toLocaleString()}</div>
+                    {location.targetStudents && (
+                      <div className="text-sm text-gray-500">/ {location.targetStudents.toLocaleString()}</div>
+                    )}
+                  </div>
+                  <div className="text-sm font-medium text-gray-600">{numberLabel}</div>
+                  {/* Progress bar for active locations */}
+                  {location.targetStudents && (
+                    <div className="mt-2 w-full bg-gray-200 rounded-full h-1.5">
+                      <div 
+                        className="bg-emerald-500 h-1.5 rounded-full transition-all duration-500"
+                        style={{ width: `${Math.min((location.students / location.targetStudents) * 100, 100)}%` }}
+                      />
+                    </div>
+                  )}
+                </div>
 
-            {/* Base KPIs - always visible */}
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div className="bg-gray-50 rounded-lg p-3">
-                <div className="text-gray-600 text-xs font-medium">CAC</div>
-                <div className="font-bold text-gray-900">${location.cac}</div>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-3">
-                <div className="text-gray-600 text-xs font-medium">LTV</div>
-                <div className="font-bold text-gray-900">{metrics.ltv}</div>
-              </div>
-            </div>
+                {/* Original sparkline for other locations */}
+                <div className="mb-5">
+                  <div className="text-xs text-gray-500 mb-2">Growth Trend</div>
+                  <svg width="100%" height="28" className="w-full">
+                    <defs>
+                      <linearGradient id={`gradient-${location.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="#10b981" stopOpacity="0.05" />
+                      </linearGradient>
+                    </defs>
+                    <polygon
+                      points={`0,28 ${sparklinePoints} 80,28`}
+                      fill={`url(#gradient-${location.id})`}
+                    />
+                    <polyline
+                      points={sparklinePoints}
+                      fill="none"
+                      stroke="#10b981"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                {/* Base KPIs - always visible */}
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="text-gray-600 text-xs font-medium">CAC</div>
+                    <div className="font-bold text-gray-900">${location.cac}</div>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="text-gray-600 text-xs font-medium">LTV</div>
+                    <div className="font-bold text-gray-900">{metrics.ltv}</div>
+                  </div>
+                </div>
+              </>
+            )}
           </>
         )}
       </div>
@@ -364,7 +453,7 @@ export default function TileCard({ location, onClick }: TileCardProps) {
       <div className={`transition-all duration-300 overflow-hidden ${
         isHovered ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
       }`}>
-        <div className="border-t border-gray-100 p-5 bg-gray-50 space-y-4">
+        <div className="border-t border-gray-100 p-6 bg-gray-50 space-y-4">
           
           {isPlanned ? (
             /* Planned Location - Four Key Panels */
@@ -412,8 +501,56 @@ export default function TileCard({ location, onClick }: TileCardProps) {
 
               </div>
             </>
+          ) : location.name === "Columbia MD" ? (
+            /* Columbia Location - Operational Metrics (matching Ashburn design philosophy) */
+            <>
+              {/* Four Key Operational Panels */}
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                
+                {/* 1. Marketing Efficiency */}
+                <div>
+                  <div className="font-semibold text-gray-800 mb-1">Marketing Efficiency</div>
+                  <div className="text-gray-700 space-y-1">
+                    <div><span className="font-medium">7%</span> of revenue</div>
+                    <div className="text-xs text-gray-600">vs 3% system avg</div>
+                  </div>
+                </div>
+
+                {/* 2. Monthly Performance */}
+                <div>
+                  <div className="font-semibold text-gray-800 mb-1">Monthly Performance</div>
+                  <div className="text-gray-700 space-y-1">
+                    <div><span className="font-medium">$81K</span> revenue</div>
+                    <div className="text-xs text-gray-600">May 2025</div>
+                  </div>
+                </div>
+
+                {/* 3. Retention Trend */}
+                <div>
+                  <div className="font-semibold text-gray-800 mb-1">Retention Trend</div>
+                  <div className="text-gray-700 space-y-1">
+                    <div><span className="font-medium">90%</span> monthly</div>
+                    <div className="text-xs text-gray-600">up from 88% Apr</div>
+                  </div>
+                </div>
+
+                {/* 4. Facility & Risk */}
+                <div>
+                  <div className="font-semibold text-gray-800 mb-1">Facility & Risk</div>
+                  <div className="text-gray-700 space-y-1">
+                    <div className="text-xs">
+                      <span className="text-red-600">Cost:</span> $17.64/sqft lease
+                    </div>
+                    <div className="text-xs">
+                      <span className="text-green-600">Status:</span> Building momentum
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </>
           ) : (
-            /* Active Location - Original Market Insights */
+            /* Other Active Locations - Original Market Insights */
             <>
               <div className="text-xs font-semibold text-gray-700 mb-3 uppercase tracking-wide">Market Insights</div>
               

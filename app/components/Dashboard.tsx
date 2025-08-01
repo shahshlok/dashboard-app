@@ -120,9 +120,9 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="p-6">
-        <div className="grid grid-cols-4 gap-6" style={{ width: "fit-content" }}>
+        <div className="grid grid-cols-3 gap-8" style={{ width: "fit-content" }}>
           {filteredLocations.map((location) => (
-            <div key={location.id} style={{ width: "280px" }}>
+            <div key={location.id} style={{ width: "360px" }}>
               <TileCard location={location} onClick={() => handleCardClick(location)} />
             </div>
           ))}
