@@ -303,33 +303,100 @@ export const locations: Location[] = [
     status: "Active",
     state: "Maryland",
     coordinates: [39.2037, -76.861],
-    students: 245,
-    targetStudents: 300,
+    students: 548,
+    targetStudents: 700,
     capacity: 82,
-    ltv: 4500,
-    cac: 125,
-    leasePerSqFt: 28.5,
-    sparklineData: [180, 195, 210, 225, 235, 240, 245, 250, 245, 240, 245, 245],
+    ltv: 600,
+    cac: 95,
+    leasePerSqFt: 17.64,
+    sparklineData: [333, 415, 492, 535, 591, 616, 571, 554, 548],
+    
+    // Extended data from comprehensive strategy report
+    report_title: "Columbia Children's Gym Business Analysis Report",
+    prepared_by: "Internal McKinsey analysis",
+    date: "May 2025",
+    opening_date: "October 2024",
+    
+    executive_summary: {
+      market_opportunity: {
+        children_in_trade_area: 63367,
+        trade_area_radius: "7 miles",
+        age_range: "under age 18"
+      },
+      demographics: {
+        median_household_income: "$147,000",
+        income_comparison: "1.5× higher than Maryland state median",
+        child_poverty_rate: "~5%",
+        education_level: "~63% of adults have bachelor's or higher degree"
+      },
+      competition_gap: {
+        market_description: "competitive landscape with established providers",
+        unique_offering: "comprehensive program combining fitness, gymnastics, and martial arts"
+      },
+      pricing_strategy: {
+        membership_range: "$115 to $175 per month",
+        average_membership_duration: "~4 months",
+        lifetime_value: "~$600 lifetime value",
+        target_customer_acquisition_cost: "<$100 CAC",
+        payback_period: "within a few months"
+      }
+    },
+    
+    market_demographics: {
+      population_data: {
+        "7_mile_children_0_14": 63367,
+        population_percentage: "about 63% Bachelor's+",
+        citations: "ACS data"
+      },
+      income_spending: {
+        ashburn_median_income: "Median family income ~$174k (household $147k)",
+        poverty_rate: "Low poverty rates (~5%)"
+      }
+    },
+    
     swot: {
-      strengths: ["Prime location", "Strong community ties", "Experienced staff"],
-      weaknesses: ["Limited parking", "Aging equipment"],
-      opportunities: ["Corporate partnerships", "After-school programs"],
-      threats: ["New competitor opening", "Economic downturn"],
+      strengths: [
+        "Modern Facility & Programs - brand-new facility with updated equipment",
+        "High Customer Satisfaction Potential - 90% retention in May 2025", 
+        "Quick CAC Payback - strong unit economics with fast margin contribution",
+        "Market Size - 63k children within radius provides large customer pool"
+      ],
+      weaknesses: [
+        "Underperformance in Enrollment Ramp - slower growth than expected",
+        "Small Facility - 12,544 sq ft limits capacity vs Rockville's 21k sq ft",
+        "Customer Price Sensitivity - value proposition borderline for some",
+        "Short Member Lifecycles - 4-month average vs 7 months at other locations"
+      ],
+      opportunities: [
+        "Untapped Market Segments - preschoolers, homeschool families, tweens",
+        "Leverage Rockville's Overflow - 281 waitlisted families could drive to Columbia",
+        "Program Diversification - birthday parties, camps, premium offerings",
+        "Higher Income Demographics - affluent families respond to premium positioning"
+      ],
+      threats: [
+        "Intense Competition - My Gym, Little Gym, gymnastics clubs, martial arts",
+        "Macroeconomic Shock - families cut discretionary spending in recession",
+        "Seasonality - summer enrollment dips hurt momentum",
+        "Cannibalization - future Silver Spring location could pull customers"
+      ],
     },
     pricing: [
-      { program: "Monthly Unlimited", price: 89, duration: "1 month" },
-      { program: "Annual Membership", price: 799, duration: "12 months" },
-      { program: "Drop-in Class", price: 25, duration: "1 class" },
+      { program: "Basic (1x/week)", price: 115, duration: "1 month" },
+      { program: "Standard (2x/week)", price: 145, duration: "1 month" },
+      { program: "Premium (Unlimited)", price: 175, duration: "1 month" },
     ],
     competitors: [
-      { name: "FitZone Columbia", distance: 0.8, price: 79, coordinates: [39.21, -76.85] },
-      { name: "Elite Fitness", distance: 1.2, price: 95, coordinates: [39.195, -76.87] },
-      { name: "Community Gym", distance: 2.1, price: 65, coordinates: [39.18, -76.84] },
+      { name: "My Gym Columbia", distance: 2.1, price: 155, coordinates: [39.21, -76.85] },
+      { name: "Goldfish Swim School", distance: 0.1, price: 160, coordinates: [39.203, -76.861] },
+      { name: "Columbia Gymnastics", distance: 3.5, price: 170, coordinates: [39.18, -76.84] },
+      { name: "Nabaiee's Martial Arts", distance: 1.8, price: 145, coordinates: [39.195, -76.87] },
     ],
     actionPlan: [
-      { task: "Equipment upgrade", owner: "Operations", weeks: 4 },
-      { task: "Marketing campaign", owner: "Marketing", weeks: 2 },
-      { task: "Staff training", owner: "HR", weeks: 3 },
+      { task: "Summer Promo & Retention Push", owner: "GM & Marketing", weeks: 8 },
+      { task: "Fall Capacity Expansion", owner: "Operations", weeks: 6 },
+      { task: "Back-to-School Marketing Blitz", owner: "Marketing", weeks: 4 },
+      { task: "Program Innovation & Partnerships", owner: "Program Director", weeks: 6 },
+      { task: "Quality & Conversion Improvement", owner: "GM & Front Desk", weeks: 4 },
     ],
   },
   {
@@ -341,8 +408,8 @@ export const locations: Location[] = [
     students: 0,
     targetStudents: 1000,
     capacity: 0,
-    ltv: 1000,
-    cac: 120,
+    ltv: 980,
+    cac: 118,
     leasePerSqFt: 23.08,
     sparklineData: [0, 0, 0, 0, 0, 0, 50, 80, 120, 150, 180, 200],
     
