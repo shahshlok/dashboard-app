@@ -109,12 +109,13 @@ export default function GoogleMap({ location }: GoogleMapProps) {
             })
 
             // Add click listener to show info about competitor
+            // TODO: Add accurate details for each competitor
             competitorMarker.addListener("click", () => {
+                
               const infoWindow = new google.maps.InfoWindow({
                 content: `
                   <div style="padding: 8px; font-family: Arial, sans-serif;">
                     <h3 style="margin: 0 0 8px 0; font-size: 16px; font-weight: bold;">${competitor.name}</h3>
-                    <p style="margin: 0 0 4px 0; color: #666;">Distance: ${competitor.distance} miles</p>
                     <p style="margin: 0; color: #059669; font-weight: bold;">$${competitor.price}/month</p>
                   </div>
                 `
