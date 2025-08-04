@@ -72,29 +72,7 @@ export default function LocationModal({ location, isOpen, onClose }: LocationMod
 
                     {/* Scrollable Content */}
                     <div className="flex-1 overflow-y-auto p-6 space-y-6 text-xl">
-                      {/* Executive Snapshot */}
-                      <div className="bg-gray-50 rounded-lg p-4">
-                        <h3 className="font-semibold mb-3">Executive Snapshot</h3>
-                        <div className="grid grid-cols-4 gap-4">
-                          <div>
-                            <div className="text-sm text-gray-600">Students/Target</div>
-                            <div className="text-lg font-semibold">
-                              {location.students}/{location.targetStudents}
-                            </div>
-                          </div>
-                          <div>
-                            <div className="text-sm text-gray-600">Capacity %</div>
-                            <div className="text-lg font-semibold">{capacityPercentage}%</div>
-                          </div>
-                          <div>
-                            <div className="text-sm text-gray-600">LTV</div>
-                            <div className="text-lg font-semibold">${location.ltv}</div>
-                          </div>
-                          <div>
-                            <div className="text-sm text-gray-600">CAC</div>
-                            <div className="text-lg font-semibold">${location.cac}</div>
-                          </div>
-                        </div>
+                      <div>
                         {location.executive_summary && (
                           <div className="mt-4 pt-4 border-t border-gray-200">
                             <h4 className="font-medium mb-2">Market Overview</h4>

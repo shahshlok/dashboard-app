@@ -267,6 +267,7 @@
   "real_estate_evaluation": {
     "location_details": {
       "address": "20070 Ashbrook Commons Plaza, Suite 2155",
+      "coordinates": "39.06040954589844,-77.47048950195312",
       "square_footage": 19555,
       "center_size": "~171,000 sq ft",
       "previous_tenant": "Off Broadway Shoes"

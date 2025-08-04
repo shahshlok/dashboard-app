@@ -26,7 +26,7 @@ export default function MapPane({ location }: MapPaneProps) {
       <div className="p-4 border-b">
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium">Map View</span>
-          <label className="flex items-center space-x-2">
+          {/*<label className="flex items-center space-x-2">
             <input
               type="checkbox"
               checked={showHeatLayer}
@@ -34,7 +34,7 @@ export default function MapPane({ location }: MapPaneProps) {
               className="rounded"
             />
             <span className="text-xs">Show children-density heat layer</span>
-          </label>
+          </label>*/}
         </div>
       </div>
 

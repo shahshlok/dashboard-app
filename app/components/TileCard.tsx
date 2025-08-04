@@ -35,7 +35,7 @@ export default function TileCard({ location, onClick }: TileCardProps) {
   const getKeyMetrics = () => {
     if (location.executive_summary) {
       return {
-        childrenInArea: location.executive_summary.market_opportunity?.children_in_trade_area?.toLocaleString() || 'N/A',
+        childrenInArea: location.executive_summary.market_opportunity?.children_in_trade_area ? location.executive_summary.market_opportunity.children_in_trade_area.toLocaleString() : 'N/A',
         tradeRadius: location.executive_summary.market_opportunity?.trade_area_radius || 'N/A',
         medianIncome: location.executive_summary.demographics?.median_household_income || 'N/A',
         ltv: location.executive_summary.pricing_strategy?.lifetime_value || `$${location.ltv}`,

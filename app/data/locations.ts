@@ -302,19 +302,19 @@ export const locations: Location[] = [
     name: "Columbia MD",
     status: "Active",
     state: "Maryland",
-    coordinates: [39.2037, -76.861],
+    coordinates: [39.17512893676758,-76.83293914794922],
     students: 548,
     targetStudents: 700,
     capacity: 82,
     ltv: 600,
-    cac: 95,
+    cac: 70,
     leasePerSqFt: 17.64,
     sparklineData: [333, 415, 492, 535, 591, 616, 571, 554, 548],
     
     // Extended data from comprehensive strategy report
     report_title: "Columbia Children's Gym Business Analysis Report",
     prepared_by: "Internal McKinsey analysis",
-    date: "May 2025",
+    date: "2025-05-31",
     opening_date: "October 2024",
     
     executive_summary: {
@@ -353,6 +353,22 @@ export const locations: Location[] = [
         poverty_rate: "Low poverty rates (~5%)"
       }
     },
+
+    real_estate_evaluation: {
+      location_details: {
+        address: "9301 Snowden River Pkwy",
+        square_footage: 12544,
+        center_size: undefined,
+        previous_tenant: undefined
+      },
+      lease_terms: {
+        base_rent: "$17.64/sqft",
+        nnn_estimate: undefined,
+        total_occupancy_cost: undefined,
+        escalator: undefined,
+        citation: undefined
+      }
+    },
     
     swot: {
       strengths: [
@@ -378,7 +394,7 @@ export const locations: Location[] = [
         "Macroeconomic Shock - families cut discretionary spending in recession",
         "Seasonality - summer enrollment dips hurt momentum",
         "Cannibalization - future Silver Spring location could pull customers"
-      ],
+      ]
     },
     pricing: [
       { program: "Basic (1x/week)", price: 115, duration: "1 month" },
@@ -404,12 +420,12 @@ export const locations: Location[] = [
     name: "Ashburn VA",
     status: "Planned",
     state: "Virginia",
-    coordinates: [39.0438, -77.4874],
+    coordinates: [39.06040954589844, -77.47048950195312],
     students: 0,
     targetStudents: 1000,
     capacity: 0,
     ltv: 980,
-    cac: 118,
+    cac: 120,
     leasePerSqFt: 23.08,
     sparklineData: [0, 0, 0, 0, 0, 0, 50, 80, 120, 150, 180, 200],
     
@@ -445,8 +461,8 @@ export const locations: Location[] = [
         benchmark_comparison: "ninja gym memberships at ~$175/mo for 2 classes/week and karate dojos ~$150–$175/mo unlimited",
         average_membership_duration: "~7 months",
         lifetime_value: "about $1,000–$1,200",
-        target_customer_acquisition_cost: "<$120",
-        payback_period: "around 2–3 months",
+        target_customer_acquisition_cost: "<$150 per customer",
+        payback_period: "~<2 months",
         citations: "[7,8,9,10,11]"
       },
       location_advantages: {
@@ -644,6 +660,157 @@ export const locations: Location[] = [
         }
       ]
     },
+
+    swot_analysis: {
+      strengths: [
+        {
+          item: "High-Quality Location & Co-Tenancy",
+          description: "Situated in Ashbrook Commons, a dominant retail center with anchors like Harris Teeter, HomeGoods, and popular eateries, providing built-in foot traffic. Daily traffic on adjacent Route 7 is ~89,000 vehicles",
+          citation: "[12]"
+        },
+        {
+          item: "Affluent, Family-Oriented Customer Base",
+          description: "The local market's demographics are a perfect fit – median household incomes ~$150K+ in Ashburn ensure families have discretionary income for children's programs, and ~28% of the population is under 18",
+          citation: "[18,48]"
+        },
+        {
+          item: "Proven Business Model & Internal Benchmarks",
+          description: "Our concept is validated by performance at existing locations. For example, Rockville, MD exceeded 1,300 students within 12 months of opening and generated over $250k in monthly revenue at peak",
+          citation: "[45]"
+        },
+        {
+          item: "Lack of Direct Competition (First-Mover Advantage)",
+          description: "There is currently no full-service children's gym in Ashburn offering the breadth of classes we will. The closure of The Little Gym and Gymboree in Ashburn leaves a vacuum in the market"
+        }
+      ],
+      weaknesses: [
+        {
+          item: "New Brand in Virginia – Needs Awareness",
+          description: "Our company is new to Virginia (existing locations are in MD and GA), so we start with zero brand recognition in Ashburn"
+        },
+        {
+          item: "Niche Competition for After-School Time",
+          description: "Ashburn has at least 8–10 martial arts studios, 5+ dance studios, multiple swim schools, sports leagues, etc., all vying for kids' after-school hours"
+        },
+        {
+          item: "High Operating Costs",
+          description: "The Ashburn location has a relatively high lease rate ($23.08/sqft with NNN ~$6.90) – significantly higher base rent than some existing locations (e.g. Rockville $16.81)",
+          citation: "[49,50]"
+        },
+        {
+          item: "Capacity Constraints and Waitlist Management",
+          description: "Rockville's large waitlist (281 kids) illustrates this risk. In Ashburn, facility size (19,555 sq ft) is generous, but local interest might outpace how fast we can add instructors or class sections"
+        }
+      ],
+      opportunities: [
+        {
+          item: "Community Partnerships & School Outreach",
+          description: "Leverage Loudoun County's tight-knit family networks by partnering with elementary schools, PTAs, and local youth organizations. With ~50+ elementary and preschools in a 7-mile radius"
+        },
+        {
+          item: "Gap in Toddler Development Classes",
+          description: "Capitalize on the void left by Gymboree etc., by expanding our offerings for ages 1–4. We can introduce parent-child classes, music & movement sessions, and open gym for toddlers"
+        },
+        {
+          item: "Corporate and Government Partnerships",
+          description: "Ashburn is near many large employers (Verizon, government contractors, etc.). We can pursue corporate wellness partnerships"
+        },
+        {
+          item: "Emerging Fitness Trends",
+          description: "We can ride the wave of popularity in \"American Ninja Warrior\" style fitness and kids' functional training. Interest in youth obstacle training is high"
+        }
+      ],
+      threats: [
+        {
+          item: "Intense Competition & New Entrants",
+          description: "If our concept proves successful, it could attract new entrants to Ashburn. Large franchises (My Gym, The Little Gym) might attempt a comeback seeing the demand"
+        },
+        {
+          item: "Economic or Tech Industry Downturn",
+          description: "While Loudoun is affluent, it's not immune to macroeconomic threats. Many Ashburn parents work in tech/government contracting – sectors that saw layoffs in late 2023–2024"
+        },
+        {
+          item: "Seasonality and Churn",
+          description: "Our internal performance data shows a seasonal enrollment dip in summer months – Clarksburg's student count dropped ~25% from Jan to Jul 2023"
+        },
+        {
+          item: "Regulatory and Health Factors",
+          description: "Ongoing pandemic/health concerns or future mandates could impact kids' indoor activities. Northern Virginia is mindful of health guidelines"
+        }
+      ]
+    },
+
+    actionable_recommendations: [
+      {
+        priority: 1,
+        action: "Execute Pre-Launch Marketing Blitz",
+        description: "Launch an aggressive local marketing campaign 8–10 weeks before opening. Tactics: social media ads targeting Ashburn parents, on-site events (pop-up in Ashbrook Commons parking lot), direct mail of \"Founding Member\" offers",
+        owner: "Marketing Dept.",
+        timeline: "Start 10 weeks out; run 8 weeks pre-opening",
+        kpis: [
+          "Goal: 200+ memberships sold by opening day",
+          "Web traffic & lead volume (target 1,000+ website visits in first month of campaign)",
+          "CAC per lead <$50 during pre-sale"
+        ],
+        supporting_evidence: "Rockville had 300+ sign-ups pre-opening with similar blitz (waitlist evidence of pre-launch demand). Ashburn's affluent, young families are highly active on social media; local FB moms' groups exceed 5k members",
+        citation: "[69]"
+      },
+      {
+        priority: 2,
+        action: "School & Community Partnerships",
+        description: "Establish relationships with at least 5 local elementary schools, preschools, and youth organizations (e.g. sports leagues, homeschool co-ops) for mutual promotion",
+        owner: "Ops/Outreach",
+        timeline: "Begin outreach 8 weeks pre-opening; ongoing",
+        kpis: [
+          "Leads from partnerships: e.g. capture 100+ trial sign-ups from school events",
+          "Number of partnership deals (target 5 MOUs signed with schools)",
+          "Referral enrollments (track how many members cite school promo)"
+        ],
+        supporting_evidence: "Loudoun schools encourage physical activity partnerships; martial arts studios attribute ~30% of new enrollments to after-school program tie-ins. Engaging schools leverages the 54k children in radius effectively",
+        citation: "[51,1]"
+      },
+      {
+        priority: 3,
+        action: "Optimize Pricing & Membership Options for Ashburn",
+        description: "Finalize a pricing structure with tiers and family discounts tailored to local willingness-to-pay. Offer a low-commitment trial (e.g. first month $99 unlimited) to reduce barrier",
+        owner: "GM & Finance",
+        timeline: "Finalize pricing by 6 weeks pre-opening; monitor monthly",
+        kpis: [
+          "Enrollment vs. target: e.g. achieve 300 active members by 3 months post-open",
+          "ARPU (Average Rev per User): target ~$140/month by month 3",
+          "Referral rate: >10% of new members via referral"
+        ],
+        supporting_evidence: "Competitors charge $150–$175/mo for similar unlimited access, indicating our planned ~$160–$180 for 2x/week is reasonable. Internal KPI: Aim for payback <3 months with CAC ~$118",
+        citation: "[8,70,11]"
+      },
+      {
+        priority: 4,
+        action: "Staffing & Training for Service Excellence",
+        description: "Hire and train a high-caliber team (instructors, front desk) at least 4 weeks before opening. Target hires: experienced kids' coaches (gymnastics, PE background) and enthusiastic junior assistants",
+        owner: "HR & GM",
+        timeline: "Hiring by 8 weeks pre; training intensive final 2 weeks pre-open",
+        kpis: [
+          "Customer satisfaction scores: >90% positive in first month (survey or NPS)",
+          "Retention rate: target ≥85% month-to-month in first 6 months",
+          "Zero major safety incidents or negative reviews in opening quarter"
+        ],
+        supporting_evidence: "Current locations maintain ~90% monthly retention; achieving that in Ashburn will require top-notch service given high expectations. Ashburn's educated populace will quickly voice dissatisfaction online if service falters",
+        citation: "[18]"
+      },
+      {
+        priority: 5,
+        action: "Program Mix & Schedule Optimization",
+        description: "Based on initial sign-ups and waitlist data, adjust our class schedule and offerings to meet demand. For example, if toddler classes fill fastest, add more weekday morning parent-child sessions",
+        owner: "Program Director",
+        timeline: "Analyze enrollment trends starting week 1; adjust schedule by week 4",
+        kpis: [
+          "Class fill rates: aim >75% capacity for each class by 3 months",
+          "Waitlisted students: minimize waitlisted numbers to <10% of total enrolled (by adding capacity)",
+          "Event participation: 50+ attendees at first special event"
+        ],
+        supporting_evidence: "Rockville experienced lengthy waitlists (281 names) when class supply didn't keep up; we must proactively add classes to avoid lost opportunities. This is facilitated by our large facility – we have room to run simultaneous classes"
+      }
+    ],
     
     // Backwards compatibility - simplified format
     swot: {
@@ -679,7 +846,7 @@ export const locations: Location[] = [
     ],
     competitors: [
       { name: "Fitwize 4 Kids", distance: 5, price: 99, coordinates: [39.05, -77.48] },
-      { name: "Always In Motion", distance: 4, price: 175, coordinates: [39.035, -77.495] },
+      { name: "Always In Motion Ninja & Parkour", distance: 4, price: 135, coordinates: [39.035, -77.495] },
       { name: "Master Lee's Martial Arts", distance: 0.1, price: 155, coordinates: [39.0438, -77.4874] },
       { name: "Super Kicks Karate", distance: 2, price: 162, coordinates: [39.02, -77.50] },
     ],
