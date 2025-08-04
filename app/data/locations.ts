@@ -1,6 +1,6 @@
 export interface Location {
   id: string
-  name: string
+  locationName: string
   status: "Active" | "Planned"
   state: string
   coordinates: [number, number]
