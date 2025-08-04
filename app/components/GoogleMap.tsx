@@ -53,12 +53,76 @@ export default function GoogleMap({ location }: GoogleMapProps) {
           mapId: "DEMO_MAP_ID"
         })
 
-        // Create the marker
+        // Create the main location marker
         const marker = new AdvancedMarkerElement({
           map: map,
           position: { lat: location.coordinates[0], lng: location.coordinates[1] },
           title: location.name
         })
+
+        // Add click listener for main Ashburn location
+        if (location.name === "Ashburn VA") {
+          marker.addListener("click", () => {
+            const infoWindow = new google.maps.InfoWindow({
+              content: `
+                <div style="padding: 8px; font-family: Arial, sans-serif;">
+                  <h3 style="margin: 0 0 8px 0; font-size: 16px; font-weight: bold;">Ashburn Location</h3>
+                  <p style="margin: 0; color: #666;">Planned opening: October 2025</p>
+                </div>
+              `
+            })
+            infoWindow.open(map, marker)
+          })
+        }
+
+        // Add competitor markers for Ashburn location
+        if (location.name === "Ashburn VA" && location.competitors) {
+          location.competitors.forEach((competitor) => {
+            // Create custom red marker with white center
+            const markerElement = document.createElement('div')
+            markerElement.innerHTML = `
+              <div style="
+                width: 24px; 
+                height: 24px; 
+                background-color: #dc2626; 
+                border: 2px solid white; 
+                border-radius: 50%; 
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              ">
+                <div style="
+                  width: 8px;
+                  height: 8px;
+                  background-color: white;
+                  border-radius: 50%;
+                "></div>
+              </div>
+            `
+            
+            const competitorMarker = new AdvancedMarkerElement({
+              map: map,
+              position: { lat: competitor.coordinates[0], lng: competitor.coordinates[1] },
+              title: `${competitor.name} - $${competitor.price}/mo`,
+              content: markerElement
+            })
+
+            // Add click listener to show info about competitor
+            competitorMarker.addListener("click", () => {
+              const infoWindow = new google.maps.InfoWindow({
+                content: `
+                  <div style="padding: 8px; font-family: Arial, sans-serif;">
+                    <h3 style="margin: 0 0 8px 0; font-size: 16px; font-weight: bold;">${competitor.name}</h3>
+                    <p style="margin: 0 0 4px 0; color: #666;">Distance: ${competitor.distance} miles</p>
+                    <p style="margin: 0; color: #059669; font-weight: bold;">$${competitor.price}/month</p>
+                  </div>
+                `
+              })
+              infoWindow.open(map, competitorMarker)
+            })
+          })
+        }
 
         // Store references
         mapInstanceRef.current = map

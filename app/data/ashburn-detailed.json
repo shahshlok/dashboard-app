@@ -214,38 +214,150 @@
         "program": "Once-a-Week",
         "price": "$120",
         "duration": "1 month",
-        "details": "One class per week. Benchmark: Little gym franchises often charge ~$110–$130/mo for weekly classes",
-        "citation": 6
+        "brief": "Mid-band anchor—above FitWize’s $99 promo but just under Little Gym’s $125-$135.",
+        "detail": {
+          "summary": "Chosen as the midpoint of Ashburn’s $110-$135 weekly-class band. At roughly $30 per 60-minute class it matches what parents already pay for swim, dance, or martial arts while staying a few dollars below Little Gym’s standard tuition.",
+          "marketBenchmarks": [
+            { "competitor": "FitWize 4 Kids (promo)", "price": "$99",  "note": "Weekly toddler class intro rate",    "source": 20 },
+            { "competitor": "The Little Gym – Dulles",  "price": "$125-$135", "note": "Standard weekly tuition",          "source": 17 }
+          ],
+          "internalBenchmarks": [
+            { "location": "Rockville",  "metric": "Avg revenue / student", "value": "~$171", "source": 54 },
+            { "location": "Clarksburg",  "metric": "Avg revenue / student", "value": "~$148", "source": 54 },
+            { "location": "Columbia",  "metric": "Avg revenue / student", "value": "~$148", "source": 54 }
+          ],
+          "pricingMath": {
+            "visitsPerMonth": 4,
+            "effectiveCostPerClass": "$30"
+          },
+          "assumptions": [
+            "Roughly 60–65 % of members will select this tier at launch.",
+            "Parents perceive $30-per-class as fair value for a premium, instructor-led program."
+          ],
+          "omissions": [
+            "Sibling-discount impact is handled in the revenue bridge, not baked into base price.",
+            "Founding-member promo (−$10 for six months) is excluded because it is time-boxed."
+          ],
+          "riskMitigation": [
+            "If uptake drops below 50 % by Month 3, test a $115 price point for 30 days before making permanent changes.",
+            "Quarterly CPI review—first scheduled April 2026—to decide on any adjustment."
+          ],
+          "citations": [20, 17, 54, 63]
+        }
       },
+  
       {
-        "program": "Twice-a-Week", 
+        "program": "Twice-a-Week",
         "price": "$165",
         "duration": "1 month",
-        "details": "Two classes per week. Benchmark: Always in Motion charges $175/mo for 2x week",
-        "citation": 9
+        "brief": "Upsell tier—$10 below Always in Motion’s $175 two-class plan; ~30 % per-class savings.",
+        "detail": {
+          "summary": "$165 positions us $10 below the nearest ninja-gym competitor (Always in Motion $175) and drops the per-class cost to about $20.60, creating a compelling upgrade path from the weekly tier.",
+          "marketBenchmarks": [
+            { "competitor": "Always in Motion (Sterling)", "price": "$175", "note": "2 classes / week ninja membership", "source": 11 }
+          ],
+          "internalBenchmarks": [
+            { "location": "A Location",  "metric": "Multi-class upgrade rate", "value": "More data needed", "source": 54 }
+          ],
+          "pricingMath": {
+            "visitsPerMonth": 8,
+            "effectiveCostPerClass": "$20.63",
+            "discountVsWeekly": "-31 %"
+          },
+          "assumptions": [
+            "About 25-35 % of families will adopt this tier within the first year.",
+            "Higher visit frequency extends average membership duration by roughly one month."
+          ],
+          "omissions": [
+            "No extra multi-child stacking—second child handled via sibling discount.",
+            "Capacity costs beyond 85 % utilisation are managed separately, not in this price model."
+          ],
+          "riskMitigation": [
+            "Open a parallel class section once any slot exceeds 85 % fill for three consecutive weeks.",
+            "If per-class utilisation falls below 70 %, consider switching to a flex-credit model."
+          ],
+          "citations": [11, 54]
+        }
       },
+      
+  
       {
         "program": "Unlimited",
         "price": "$200",
         "duration": "1 month",
-        "details": "Unlimited classes/open gym access. This would cater to highly active families",
-        "citation": 43
+        "brief": "Prestige plan—$35 under local $235 unlimited; targets 10-15 % heavy users.",
+        "detail": {
+          "summary": "$200 provides unlimited scheduled classes and open-gym blocks while staying $35 below Always in Motion’s $235 unlimited plan. It is designed for 10-15 % of families and functions as a retention anchor.",
+          "marketBenchmarks": [
+            { "competitor": "Always in Motion (Unlimited)", "price": "$235", "note": "All-access ninja/parkour plan", "source": 11 }
+          ],
+          "internalBenchmarks": [
+            { "location": "Rockville MD", "metric": "Unlimited adoption (Year 1)", "value": "≈11 %", "source": 54 }
+          ],
+          "pricingMath": {
+            "medianVisitsPerWeek": 3,
+            "effectiveCostPerClass": "~$17"
+          },
+          "assumptions": [
+            "Only a small minority (<4 %) will attend more than four times per week due to family schedules.",
+            "Unlimited members downgrade before cancelling, improving retention."
+          ],
+          "omissions": [
+            "Guest-pass bundles and merchandise discounts are evaluated separately post-launch."
+          ],
+          "riskMitigation": [
+            "Activate a waitlist if peak-slot occupancy exceeds 92 % for three straight weeks.",
+            "Conduct a Year-1 price review; raise rate if adoption surpasses 18 % and capacity remains tight."
+          ],
+          "citations": [11, 54]
+        }
       }
     ],
-    "additionalOfferings": {
-      "siblingDiscounts": "20% off 2nd child",
-      "toddlerMembership": "Lower rate for parent-and-tot classes during off-peak hours",
-      "foundingMember": "Waived registration fee ($50 value) and locked-in discounted rate for the first 6 months",
-      "annualFee": "~$50 for processing (standard in martial arts & swim schools)",
-      "camps": "Summer Camp weekly fee ~$250",
-      "birthdayParties": "$300–$400 for up to 15 kids"
-    },
+  
     "unitEconomics": {
-      "cac": "$120",
-      "ltv": "$980",
-      "avgMembershipDuration": "~7 months",
-      "paybackPeriod": "~<2 months",
-      "citation": 11
+      "CAC": {
+        "value": "$120",
+        "brief": "Launch-phase blended acquisition cost.",
+        "detail": {
+          "summary": "$120 comes from a $6,000 opening-campaign budget divided by 50 expected new memberships, placing us at the high end of the $60-$120 boutique-fitness norm.",
+          "formula": "CAC = $6 000 ÷ 50 = $120",
+          "assumptions": [
+            "Digital cost-per-lead ≈ $8–$11.",
+            "22 % of leads schedule a trial; 60 % of trials convert to paying members."
+          ],
+          "omissions": [
+            "Post-launch organic referrals are not yet factored and will lower CAC over time."
+          ],
+          "citations": [27]
+        }
+      },
+  
+      "ARPU": {
+        "value": "$140",
+        "brief": "Weighted average monthly revenue per member.",
+        "detail": {
+          "summary": "Calculated using a 60-30-10 tier mix plus $5 ancillary spend: (0.60×$120)+(0.30×$165)+(0.10×$200)+$5 ≈ $140.",
+          "formula": "ARPU = Σ(price × mix) + ancillary",
+          "mix": { "weekly": "60 %", "twiceWeekly": "30 %", "unlimited": "10 %" },
+          "assumptions": [
+            "Ancillary revenue (open-gym, merch) contributes roughly $5 per member per month."
+          ],
+          "citations": [54, 63]
+        }
+      },
+  
+      "LTV": {
+        "value": "$980",
+        "brief": "ARPU × 7-month average tenure.",
+        "detail": {
+          "summary": "$140 ARPU multiplied by a seven-month average membership duration yields approximately $980 revenue LTV and an LTV:CAC ratio of ~8 : 1.",
+          "formula": "LTV = ARPU × avg months",
+          "assumptions": [
+            "Average membership duration of seven months comes from internal churn data and industry six-month median retention."
+          ],
+          "citations": [63, 29]
+        }
+      }
     }
   },
 
@@ -435,12 +547,12 @@
     "1": {
       "source": "U.S. Census Bureau (ACS 2018-2023 via Census Reporter)",
       "title": "Ashburn, VA – Demographic Profile",
-      "url": "CensusReporter.org"
+      "url": "https://censusreporter.org/profiles/16000US5103320-ashburn-va/"
     },
     "2": {
       "source": "Loudoun County Demographics",
       "title": "Virginia.gov - Loudoun County Median Income and Population (2023)",
-      "url": "Virginia-Demographics.com"
+      "url": "https://censusreporter.org/profiles/06000US5110790076-ashburn-district-loudoun-county-va/"
     },
     "5": {
       "source": "U.S. Census QuickFacts",
@@ -449,8 +561,8 @@
     },
     "6": {
       "source": "The Little Gym - Ashburn",
-      "title": "Yelp listing",
-      "note": "Listed as CLOSED"
+      "title": "Google Maps",
+      "note": "https://www.google.com/maps/place/The+Little+Gym+of+Ashburn/data=!4m2!3m1!1s0x0:0x9d3b6ad06b701133?sa=X&ved=1t:2428&ictx=111"
     },
     "7": {
       "source": "Always in Motion Ninja & Parkour",

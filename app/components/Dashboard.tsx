@@ -17,7 +17,7 @@ export default function Dashboard() {
     return locations.filter((location) => {
       const matchesStatus = statusFilter === "All" || location.status === statusFilter
       const matchesState = stateFilter === "All" || location.state === stateFilter
-      const matchesSearch = location.name.toLowerCase().includes(searchQuery.toLowerCase())
+      const matchesSearch = (location.name || location.locationName || '').toLowerCase().includes(searchQuery.toLowerCase())
 
       return matchesStatus && matchesState && matchesSearch
     })
