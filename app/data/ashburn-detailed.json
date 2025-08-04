@@ -1,0 +1,604 @@
+{
+  "locationId": "ashburn-va",
+  "locationName": "Ashburn VA",
+  "status": "Planned",
+  "openingDate": "2025-10-09",
+  "viabilityScore": 72,
+  "viabilityStatus": "Viable",
+  "viabilityDescription": "Acceptable opportunity with some concerns requiring monitoring",
+  
+  "executiveSummary": {
+    "overview": "Ashburn, Virginia presents a high-potential market for a new children's gym. The 7-mile trade area around the planned Ashbrook Commons Plaza site includes ~54,088 children under age 15, in a community with affluent, family-oriented demographics.",
+    "keyMetrics": {
+      "childrenInTradeArea": 54088,
+      "medianHouseholdIncome": "$150-$200K",
+      "populationGrowth": "29% population increase since 2010",
+      "childPoverty": "~3-4%",
+      "priceRange": "$120 to $180 per month"
+    },
+    "competitiveLandscape": "Competitor analysis shows a fragmented landscape of kids' activity providers – from gyms and indoor playgrounds to martial arts and dance studios – none offering the same comprehensive program under one roof. Notably, Ashburn's only franchise children's gym (The Little Gym) closed in recent years, leaving a service gap.",
+    "keyStrengths": [
+      "Attractive location co-anchored by a busy Harris Teeter grocery (driving heavy foot traffic of ~89,000 vehicles/day on Route 7 nearby)",
+      "Proven programming backed by positive performance at other centers",
+      "Evident market void for a full-service children's gym"
+    ],
+    "citations": {
+      "childrenPopulation": 1,
+      "medianIncome": 2,
+      "populationGrowth": 3,
+      "childPoverty": 4,
+      "trafficCount": 5,
+      "littleGymClosure": 6
+    }
+  },
+
+  "marketOverview": {
+    "childrenInTradeArea": {
+      "value": "54,088",
+      "description": "Children ages 0-14 within 7 miles",
+      "citation": 1
+    },
+    "medianIncome": {
+      "value": "approximately $150–$200K", 
+      "details": "Median household income in Ashburn is approximately $150–$200K, about 1.5× higher than state and U.S. averages",
+      "citation": 2
+    },
+    "pricingRange": {
+      "value": "roughly from $120 to $180 per month",
+      "details": "Membership tiers ranging roughly from $120 to $180 per month to align with local benchmarks",
+      "citation": 7
+    },
+    "dailyTraffic": {
+      "value": "~89,000 vehicles/day on Route 7 nearby",
+      "details": "Daily traffic on adjacent Route 7 is ~89,000 vehicles",
+      "citation": 12
+    }
+  },
+
+  "marketDemographics": {
+    "populationData": {
+      "fiveMileRadius": "166,000",
+      "childrenCount": "54,088",
+      "childPercentage": "roughly 26–28% of the local populace",
+      "populationGrowth": "29% growth 2010–2020",
+      "citation": 1
+    },
+    "householdComposition": {
+      "averageSize": "2.7–3.0 persons",
+      "percentUnder18": "Over 26% of Loudoun's population is under 18",
+      "familyFormation": "High family formation rates indicate a deep customer base for youth-oriented services",
+      "citation": 16
+    },
+    "incomeAndSpending": {
+      "medianHouseholdIncome": "~$152,000 (ACS 2023)",
+      "loudounCountyIncome": "~$179,000 – the highest in Virginia",
+      "perCapitaIncome": "around $67k",
+      "recreationSpending": "~43% above the national average on recreation categories",
+      "povertyRate": "only ~3.6% of Ashburn residents live below poverty (versus ~10% statewide)",
+      "childPoverty": "Loudoun under-18 poverty ~4%",
+      "citations": {
+        "income": 2,
+        "spending": 22,
+        "poverty": 5
+      }
+    },
+    "educationAndWorkforce": {
+      "bachelorOrHigher": "~66% of Ashburn residents hold a bachelor's or higher",
+      "avgCommute": "~29-minute commute",
+      "foreignBorn": "~26% are foreign-born",
+      "citation": 24
+    }
+  },
+
+  "realEstate": {
+    "locationDetails": {
+      "address": "20070 Ashbrook Commons Plaza, Suite 2155",
+      "size": "19,555 sq ft",
+      "previous": "Off Broadway Shoes",
+      "coTenants": [
+        "Harris Teeter (48,756 sq ft) - Anchor",
+        "HomeGoods (25,651 sq ft)",
+        "Master Lee's Martial Arts (2,926 sq ft) - same plaza",
+        "CycleBar (2,025 sq ft)",
+        "Pet Supplies Plus",
+        "Party Depot"
+      ],
+      "citation": 55
+    },
+    "leaseTerms": {
+      "baseRent": "$23.08/sqft",
+      "escalator": "None until Year 6",
+      "totalOccupancy": "roughly $30/sqft or ~$48k per month",
+      "citation": 61
+    },
+    "visibility": {
+      "route7Traffic": "89,214 vehicles per day (2022)",
+      "ashburnVillageBlvd": "19,712 vehicles per day",
+      "parking": ">800 surface spots",
+      "citation": 12
+    }
+  },
+
+  "swotAnalysis": {
+    "strengths": [
+      {
+        "title": "High-Quality Location & Co-Tenancy",
+        "description": "Situated in Ashbrook Commons, a dominant retail center with anchors like Harris Teeter, HomeGoods, and popular eateries, providing built-in foot traffic. Daily traffic on adjacent Route 7 is ~89,000 vehicles",
+        "citation": 12
+      },
+      {
+        "title": "Affluent, Family-Oriented Customer Base",
+        "description": "The local market's demographics are a perfect fit – median household incomes ~$150K+ in Ashburn ensure families have discretionary income for children's programs, and ~28% of the population is under 18 (vs ~22% nationally)",
+        "citation": 18
+      },
+      {
+        "title": "Proven Business Model & Internal Benchmarks",
+        "description": "Our concept is validated by performance at existing locations. For example, Rockville, MD exceeded 1,300 students within 12 months of opening and generated over $250k in monthly revenue at peak",
+        "citation": 45
+      },
+      {
+        "title": "Lack of Direct Competition (First-Mover Advantage)",
+        "description": "There is currently no full-service children's gym in Ashburn offering the breadth of classes we will (gyms in the area are either martial arts, dance, or free-play focused). The closure of The Little Gym and Gymboree in Ashburn leaves a vacuum in the market",
+        "citation": 6
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "New Brand in Virginia – Needs Awareness",
+        "description": "Our company is new to Virginia (existing locations are in MD and GA), so we start with zero brand recognition in Ashburn. Unlike a known franchise, we'll need to work harder to build trust and credibility from scratch"
+      },
+      {
+        "title": "Niche Competition for After-School Time",
+        "description": "While we don't face a direct concept clone, we do compete with a plethora of single-focus programs that are deeply entrenched. Ashburn has at least 8–10 martial arts studios, 5+ dance studios, multiple swim schools, sports leagues, etc."
+      },
+      {
+        "title": "High Operating Costs",
+        "description": "The Ashburn location has a relatively high lease rate ($23.08/sqft with NNN ~$6.90) – significantly higher base rent than some existing locations (e.g. Rockville $16.81)",
+        "citation": 49
+      },
+      {
+        "title": "Capacity Constraints and Waitlist Management",
+        "description": "Based on other centers, our Ashburn gym could fill up quickly – a good problem, but a weakness if not managed. Rockville's large waitlist (281 kids) illustrates this risk"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Community Partnerships & School Outreach",
+        "description": "Leverage Loudoun County's tight-knit family networks by partnering with elementary schools, PTAs, and local youth organizations. For instance, we can offer free trial classes during school PE days or support school fundraisers (many Loudoun schools welcome local business sponsors). With ~50+ elementary and preschools in a 7-mile radius",
+        "citation": 51
+      },
+      {
+        "title": "Gap in Toddler Development Classes",
+        "description": "Capitalize on the void left by Gymboree etc., by expanding our offerings for ages 1–4. We can introduce parent-child classes, music & movement sessions, and open gym for toddlers",
+        "citation": 44
+      },
+      {
+        "title": "Corporate and Government Partnerships",
+        "description": "Ashburn is near many large employers (Verizon, government contractors, etc.). We can pursue corporate wellness partnerships where companies sponsor or offer discounts for our memberships to employees' kids"
+      },
+      {
+        "title": "Emerging Fitness Trends",
+        "description": "We can ride the wave of popularity in 'American Ninja Warrior' style fitness and kids' functional training. Interest in youth obstacle training is high (Always in Motion's opening drew media attention and enthusiastic turnout)",
+        "citation": 52
+      },
+      {
+        "title": "Extended Services",
+        "description": "Launch value-added services such as Parents' Night Out events, seasonal camps, and birthday parties to maximize revenue per customer. The local competitor landscape shows robust demand for these",
+        "citation": 53
+      }
+    ],
+    "threats": [
+      {
+        "title": "Intense Competition & New Entrants",
+        "description": "If our concept proves successful, it could attract new entrants to Ashburn. Large franchises (My Gym, The Little Gym) might attempt a comeback seeing the demand"
+      },
+      {
+        "title": "Economic or Tech Industry Downturn",
+        "description": "While Loudoun is affluent, it's not immune to macroeconomic threats. Many Ashburn parents work in tech/government contracting – sectors that saw layoffs in late 2023–2024"
+      },
+      {
+        "title": "Seasonality and Churn",
+        "description": "Our internal performance data shows a seasonal enrollment dip in summer months – Clarksburg's student count dropped ~25% from Jan to Jul 2023",
+        "citation": 54
+      },
+      {
+        "title": "Regulatory and Health Factors",
+        "description": "Ongoing pandemic/health concerns or future mandates could impact kids' indoor activities. Northern Virginia is mindful of health guidelines"
+      }
+    ]
+  },
+
+  "pricing": {
+    "membershipTiers": [
+      {
+        "program": "Once-a-Week",
+        "price": "$120",
+        "duration": "1 month",
+        "details": "One class per week. Benchmark: Little gym franchises often charge ~$110–$130/mo for weekly classes",
+        "citation": 6
+      },
+      {
+        "program": "Twice-a-Week", 
+        "price": "$165",
+        "duration": "1 month",
+        "details": "Two classes per week. Benchmark: Always in Motion charges $175/mo for 2x week",
+        "citation": 9
+      },
+      {
+        "program": "Unlimited",
+        "price": "$200",
+        "duration": "1 month",
+        "details": "Unlimited classes/open gym access. This would cater to highly active families",
+        "citation": 43
+      }
+    ],
+    "additionalOfferings": {
+      "siblingDiscounts": "20% off 2nd child",
+      "toddlerMembership": "Lower rate for parent-and-tot classes during off-peak hours",
+      "foundingMember": "Waived registration fee ($50 value) and locked-in discounted rate for the first 6 months",
+      "annualFee": "~$50 for processing (standard in martial arts & swim schools)",
+      "camps": "Summer Camp weekly fee ~$250",
+      "birthdayParties": "$300–$400 for up to 15 kids"
+    },
+    "unitEconomics": {
+      "cac": "$120",
+      "ltv": "$980",
+      "avgMembershipDuration": "~7 months",
+      "paybackPeriod": "~<2 months",
+      "citation": 11
+    }
+  },
+
+  "competitorAnalysis": [
+    {
+      "name": "Fitwize 4 Kids",
+      "location": "Ashburn, VA • ~5 mi SE",
+      "pricing": "$99/mo for weekly toddler class (intro rate)",
+      "focus": "Kids' fitness center – tumbling, \"mini gym\" classes for ages 6 mo–12; after-school & camps",
+      "strengths": "Diverse programs (fitness + academic focus); after-school transport",
+      "citation": 30
+    },
+    {
+      "name": "Always In Motion Ninja & Parkour",
+      "location": "Sterling, VA • ~4 mi E",
+      "pricing": "Memberships: $96/mo (1 class/wk) to $175/mo (2 classes/wk)",
+      "focus": "Ninja warrior obstacle courses & parkour training; classes (ages 5–adult), open gyms, teams, parties",
+      "strengths": "Large new facility (opened 2025) with multi-level obstacles; frequent new course layouts keep engagement high",
+      "citation": 31
+    },
+    {
+      "name": "Hyper Kidz Indoor Playground",
+      "location": "Ashburn, VA • ~3 mi S",
+      "pricing": "Pay-per-visit: $11.99–$13.99 weekdays, $16.99–$18.99 weekends per child (unlimited play)",
+      "focus": "Indoor play space (16,000 sq ft) with multi-level play zones for ages 0–13; drop-in open play and parties (no formal classes)",
+      "strengths": "Huge \"anytime\" play attraction; very popular for younger kids' playdates and weekday use",
+      "citation": 33
+    },
+    {
+      "name": "ZavaZone Adventure Park",
+      "location": "Sterling, VA • ~6 mi E",
+      "pricing": "Pay-per-time: $33.50 for 90 min, $48 for 3 hrs; $55 for all-day pass",
+      "focus": "Indoor adventure park – trampolines, ropes course, climbing, zip lines, and ninja courses; primarily open session play, parties",
+      "strengths": "Broad age appeal (5–adult); variety of attractions in one venue for family outings",
+      "citation": 36
+    },
+    {
+      "name": "Master Lee's Martial Arts",
+      "location": "Ashburn, VA • <0.1 mi (same plaza)",
+      "pricing": "~$150–$160/mo for standard 2–3 classes per week (estimated)",
+      "focus": "Taekwondo martial arts school; classes for kids (4+), teens, adults; after-school program with pickup, summer camps",
+      "strengths": "Established local reputation; disciplined curriculum teaching respect & focus; convenient in-center location (co-tenant) for our customers",
+      "citation": 8
+    },
+    {
+      "name": "Super Kicks Karate",
+      "location": "Ashburn, VA • ~2 mi SW",
+      "pricing": "$150–$175/mo unlimited classes (month-to-month, no long contract)",
+      "focus": "Karate & kickboxing school; family-oriented classes (parents and kids train together options)",
+      "strengths": "Strong community presence (active in local events); flexible attendance model and free trial periods",
+      "citation": 10
+    },
+    {
+      "name": "Ashburn Academy of Dance",
+      "location": "~5 mi SE",
+      "pricing": "~$80–$140/mo for weekly classes (varies by class length and level)",
+      "focus": "Dance studio offering ballet, jazz, hip-hop, lyrical, tap from preschool up to teens; recitals and competitive teams",
+      "strengths": "Longstanding operation (20+ years) with loyal following; highly trained instructors; strong reputation in dance community",
+      "citation": 39
+    },
+    {
+      "name": "Hope Gymnastics Academy",
+      "location": "~3 mi NE",
+      "pricing": "~$115–$160/mo for weekly classes (depending on class level/hours)",
+      "focus": "Gymnastics training center; preschool gymnastics, recreational classes, and competitive team; also hosts birthday parties",
+      "strengths": "Large facility with Olympic-quality equipment; draws serious gymnastics families from across Loudoun",
+      "citation": 40
+    }
+  ],
+
+  "marketInsights": {
+    "competitiveLandscape": {
+      "summary": "The competitive landscape shows strong demand for children's physical activities, but offerings are siloed by niche. No single provider dominates the \"children's gym\" segment in Ashburn currently",
+      "priceRange": "$100–$180/month for memberships or classes, indicating families' willingness to pay for quality offerings",
+      "marketGap": "no current competitor provides a structured, milestone-tracked developmental fitness curriculum for young children (akin to what My Gym or Little Gym franchises do)",
+      "closures": "Two major kids' gym franchises (The Little Gym and My Gym) are absent in the immediate area – the former Ashburn Little Gym closed (its nearest branch is 8 miles away in Leesburg), and My Gym had a Sterling location that closed as well",
+      "citation": 6
+    },
+    "opportunityGaps": {
+      "toddlerPrograms": "The closure of Gymboree Play & Music in Ashburn and the lack of My Gym leaves an opening for serving the 0–5 years age segment with parent-child classes",
+      "ninjaGyms": "The \"ninja\" style gyms (Always in Motion, ZavaZone) are a newer trend tapping into kids' love of obstacle courses (inspired by TV shows)",
+      "comprehensiveProgram": "By offering a modern, clean facility with a blend of class types (gymnastics basics, ninja warrior elements, music/movement for toddlers, etc.), we can attract families who are currently driving to multiple venues"
+    }
+  },
+
+  "recommendations": [
+    {
+      "priority": 1,
+      "title": "Execute Pre-Launch Marketing Blitz",
+      "description": "Launch an aggressive local marketing campaign 8–10 weeks before opening. Tactics: social media ads targeting Ashburn parents, on-site events (pop-up in Ashbrook Commons parking lot), direct mail of \"Founding Member\" offers",
+      "owner": "Marketing Dept.",
+      "timeline": "Start 10 weeks out; run 8 weeks pre-opening",
+      "kpis": [
+        "Goal: 200+ memberships sold by opening day",
+        "Web traffic & lead volume (target 1,000+ website visits in first month of campaign)",
+        "CAC per lead <$50 during pre-sale"
+      ],
+      "evidence": "Rockville had 300+ sign-ups pre-opening with similar blitz. Ashburn's affluent, young families are highly active on social media; local FB moms' groups exceed 5k members",
+      "citation": 69
+    },
+    {
+      "priority": 2,
+      "title": "School & Community Partnerships",
+      "description": "Establish relationships with at least 5 local elementary schools, preschools, and youth organizations (e.g. sports leagues, homeschool co-ops) for mutual promotion",
+      "owner": "Ops/Outreach",
+      "timeline": "Begin outreach 8 weeks pre-opening; ongoing",
+      "kpis": [
+        "Leads from partnerships: e.g. capture 100+ trial sign-ups from school events",
+        "Number of partnership deals (target 5 MOUs signed with schools)",
+        "Referral enrollments (track how many members cite school promo)"
+      ],
+      "evidence": "Loudoun schools encourage physical activity partnerships; martial arts studios attribute ~30% of new enrollments to after-school program tie-ins",
+      "citation": 51
+    },
+    {
+      "priority": 3,
+      "title": "Optimize Pricing & Membership Options for Ashburn",
+      "description": "Finalize a pricing structure with tiers and family discounts tailored to local willingness-to-pay. Offer a low-commitment trial (e.g. first month $99 unlimited) to reduce barrier",
+      "owner": "GM & Finance",
+      "timeline": "Finalize pricing by 6 weeks pre-opening; monitor monthly",
+      "kpis": [
+        "Enrollment vs. target: e.g. achieve 300 active members by 3 months post-open",
+        "ARPU (Average Rev per User): target ~$140/month by month 3",
+        "Referral rate: >10% of new members via referral"
+      ],
+      "evidence": "Competitors charge $150–$175/mo for similar unlimited access, indicating our planned ~$160–$180 for 2x/week is reasonable",
+      "citation": 8
+    },
+    {
+      "priority": 4,
+      "title": "Staffing & Training for Service Excellence",
+      "description": "Hire and train a high-caliber team (instructors, front desk) at least 4 weeks before opening. Target hires: experienced kids' coaches (gymnastics, PE background) and enthusiastic junior assistants",
+      "owner": "HR & GM",
+      "timeline": "Hiring by 8 weeks pre; training intensive final 2 weeks pre-open",
+      "kpis": [
+        "Customer satisfaction scores: >90% positive in first month (survey or NPS)",
+        "Retention rate: target ≥85% month-to-month in first 6 months",
+        "Zero major safety incidents or negative reviews in opening quarter"
+      ],
+      "evidence": "Current locations maintain ~90% monthly retention; achieving that in Ashburn will require top-notch service given high expectations",
+      "citation": 54
+    },
+    {
+      "priority": 5,
+      "title": "Program Mix & Schedule Optimization",
+      "description": "Based on initial sign-ups and waitlist data, adjust our class schedule and offerings to meet demand. For example, if toddler classes fill fastest, add more weekday morning parent-child sessions",
+      "owner": "Program Director",
+      "timeline": "Analyze enrollment trends starting week 1; adjust schedule by week 4",
+      "kpis": [
+        "Class fill rates: aim >75% capacity for each class by 3 months",
+        "Waitlisted students: minimize waitlisted numbers to <10% of total enrolled (by adding capacity)",
+        "Event participation: 50+ attendees at first special event"
+      ],
+      "evidence": "Rockville experienced lengthy waitlists (281 names) when class supply didn't keep up; we must proactively add classes to avoid lost opportunities"
+    },
+    {
+      "priority": 6,
+      "title": "Local Influencer & Word-of-Mouth Campaign",
+      "description": "Identify and engage local \"mom bloggers\" or parenting influencers in Loudoun County to visit our gym and share reviews in the opening month",
+      "owner": "Marketing/Community Manager",
+      "timeline": "Start outreach 4 weeks pre-open; Grand Opening event in week 1",
+      "kpis": [
+        "Online reviews: Goal 20+ five-star reviews in first 2 months",
+        "Social media mentions: track local group chatter, aiming for 5+ positive posts in local parent groups",
+        "Influencer content: at least 2 blog or social posts reaching 10K+ local audience"
+      ],
+      "evidence": "92% of consumers trust peer reviews; Ashburn's parent community is very active on platforms like Nextdoor and Facebook",
+      "citation": 71
+    },
+    {
+      "priority": 7,
+      "title": "Seasonal Promotion to Counter Churn",
+      "description": "Launch a \"Winter Membership Drive\" in Dec–Jan and a \"Summer Camp Early Bird\" in Spring. Offer incentives (e.g. waive enrollment fee or free uniform) to encourage sign-ups during historically slower periods",
+      "owner": "GM/Marketing",
+      "timeline": "Plan by Jan 2026 for summer camp; execute winter promo in Dec 2025",
+      "kpis": [
+        "Winter enrollment dip: limit attrition to <15% over holidays (compare Nov to Jan active count)",
+        "Summer camp uptake: achieve 70%+ capacity of camp sessions by May booking",
+        "Overall annual retention >70% (year 1)"
+      ],
+      "evidence": "Clarksburg saw ~20% drop in students each summer. By introducing engaging camps (Fitwize Ashburn runs sold-out summer camps) and special promos, we aim to preserve membership",
+      "citation": 72
+    }
+  ],
+
+  "citationReferences": {
+    "1": {
+      "source": "U.S. Census Bureau (ACS 2018-2023 via Census Reporter)",
+      "title": "Ashburn, VA – Demographic Profile",
+      "url": "CensusReporter.org"
+    },
+    "2": {
+      "source": "Loudoun County Demographics",
+      "title": "Virginia.gov - Loudoun County Median Income and Population (2023)",
+      "url": "Virginia-Demographics.com"
+    },
+    "5": {
+      "source": "U.S. Census QuickFacts",
+      "title": "Loudoun County, VA",
+      "url": "Census.gov"
+    },
+    "6": {
+      "source": "The Little Gym - Ashburn",
+      "title": "Yelp listing",
+      "note": "Listed as CLOSED"
+    },
+    "7": {
+      "source": "Always in Motion Ninja & Parkour",
+      "title": "Official Website - Membership Plans",
+      "url": "AlwaysInMotion.ninja"
+    },
+    "8": {
+      "source": "Super Kicks Karate Ashburn",
+      "title": "Yelp Review",
+      "url": "Yelp.com"
+    },
+    "9": {
+      "source": "Always in Motion Ninja & Parkour",
+      "title": "Membership pricing",
+      "url": "AlwaysInMotion.ninja"
+    },
+    "10": {
+      "source": "Super Kicks Karate",
+      "title": "Yelp - pricing information",
+      "url": "Yelp.com"
+    },
+    "11": {
+      "source": "WellnessLiving Blog",
+      "title": "Your Ultimate Guide to Customer Acquisition Cost",
+      "note": "Average CAC for fitness centers in US is about $118"
+    },
+    "12": {
+      "source": "Ashbrook Commons Leasing Brochure",
+      "title": "KLNB/CoStar (2022) - Site Plan and Traffic Counts",
+      "note": "Route 7 – 89,214 AADT, Ashburn Vill Blvd – 19,712 AADT"
+    },
+    "16": {
+      "source": "U.S. Census QuickFacts",
+      "title": "Loudoun County, VA",
+      "note": "26.1% under age 18"
+    },
+    "18": {
+      "source": "Loudoun County Demographics",
+      "title": "Current Virginia Census Data",
+      "url": "Virginia-Demographics.com"
+    },
+    "22": {
+      "source": "Loudoun County Economic Reports",
+      "title": "ESRI estimates for local population growth and spending"
+    },
+    "24": {
+      "source": "U.S. Census Bureau",
+      "title": "ACS 2023 - Ashburn education and workforce data"
+    },
+    "30": {
+      "source": "Fitwize 4 Kids Ashburn",
+      "title": "Official Site - Programs and Intro Rates",
+      "url": "fitwize4kids.com"
+    },
+    "31": {
+      "source": "Always In Motion",
+      "title": "Official Website - memberships",
+      "url": "alwaysinmotion.ninja"
+    },
+    "33": {
+      "source": "Hyper Kidz Ashburn",
+      "title": "Official Site - Admission & Hours",
+      "url": "HyperKidzPlay.com/Ashburn"
+    },
+    "36": {
+      "source": "ZavaZone Sterling",
+      "title": "Official Site - Hours and Pricing",
+      "url": "ZavaZone.com"
+    },
+    "39": {
+      "source": "Ashburn Academy of Dance",
+      "title": "Official Site",
+      "url": "ashburnballet.com"
+    },
+    "40": {
+      "source": "Hope Gymnastics Academy",
+      "title": "Official Site",
+      "url": "hopegymnastics.com"
+    },
+    "42": {
+      "source": "The Burn (Local News)",
+      "title": "Sneak peek at Loudoun's new Always in Motion ninja center",
+      "date": "Feb 28, 2025"
+    },
+    "43": {
+      "source": "Always in Motion",
+      "title": "Membership model",
+      "note": "up to $235/mo for unlimited classes"
+    },
+    "44": {
+      "source": "Gymboree Play & Music Ashburn",
+      "title": "Yelp listing",
+      "note": "Listed as CLOSED"
+    },
+    "45": {
+      "source": "Gym Locations - Internal Data Export",
+      "title": "Multi-Location Performance Summary",
+      "note": "Rockville, MD exceeded 1,300 students within 12 months"
+    },
+    "49": {
+      "source": "Ashbrook Commons Lease Terms",
+      "title": "Internal data",
+      "note": "$23.08/sqft with NNN ~$6.90"
+    },
+    "51": {
+      "source": "InCourage Martial Arts",
+      "title": "Facebook - school partnership success",
+      "note": "~30% of new enrollments from after-school program tie-ins"
+    },
+    "52": {
+      "source": "The Burn",
+      "title": "Always in Motion opening coverage",
+      "date": "Feb 28, 2025"
+    },
+    "53": {
+      "source": "Hyper Kidz",
+      "title": "Birthday party statistics",
+      "note": "25,000+ parties hosted across locations"
+    },
+    "54": {
+      "source": "Internal Performance Data",
+      "title": "Clarksburg seasonal patterns",
+      "note": "~20% drop in students each summer"
+    },
+    "55": {
+      "source": "Ashbrook Commons Plaza",
+      "title": "Tenant roster and square footage",
+      "note": "Internal leasing data"
+    },
+    "61": {
+      "source": "Lease Agreement",
+      "title": "Ashburn location terms",
+      "note": "$23.08/sqft base rent, no escalator until Year 6"
+    },
+    "69": {
+      "source": "Facebook Demographics",
+      "title": "Ashburn mom groups",
+      "note": "Local groups exceed 5k members"
+    },
+    "71": {
+      "source": "Consumer Trust Statistics",
+      "title": "Peer review influence",
+      "note": "92% of consumers trust peer reviews"
+    },
+    "72": {
+      "source": "Fitwize Ashburn",
+      "title": "Summer camp success",
+      "note": "Runs sold-out summer camps"
+    }
+  }
+}
