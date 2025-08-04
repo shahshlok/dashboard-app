@@ -177,9 +177,9 @@ export default function TileCard({ location, onClick }: TileCardProps) {
                             .toString().replace(/approximately |~|\(ACS.*?\)/g, '').trim()}
                         </span></div>
                         <div><span className="text-gray-500">Lease Rate:</span> <span className="font-medium">
-                          ${location.real_estate_evaluation?.lease_terms?.base_rent || location.leasePerSqFt || 'TBD'}/sqft
-                          {location.real_estate_evaluation?.lease_terms?.nnn_estimate && 
-                            ` (NNN ${location.real_estate_evaluation.lease_terms.nnn_estimate})`}
+                          {location.real_estate_evaluation?.lease_terms?.base_rent || `$${location.leasePerSqFt}/sqft` || 'TBD'}
+                          {location.real_estate_evaluation?.lease_terms?.escalator && 
+                            ` (${location.real_estate_evaluation.lease_terms.escalator})`}
                         </span></div>
                       </div>
                     </div>

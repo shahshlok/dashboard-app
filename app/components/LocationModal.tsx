@@ -74,8 +74,8 @@ export default function LocationModal({ location, isOpen, onClose }: LocationMod
                     <div className="flex-1 overflow-y-auto p-6 space-y-6 text-xl">
                       <div>
                         {location.executive_summary && (
-                          <div className="mt-4 pt-4 border-t border-gray-200">
-                            <h4 className="font-medium mb-2">Market Overview</h4>
+                          <div> 
+                            <h4 className="font-semibold mb-3">Market Overview</h4>
                             <div className="grid grid-cols-2 gap-4 text-base">
                               {location.executive_summary.market_opportunity && (
                                 <div>
@@ -172,9 +172,12 @@ export default function LocationModal({ location, isOpen, onClose }: LocationMod
                               <div className="bg-gray-50 rounded-lg p-3">
                                 <h4 className="font-medium mb-2">Lease Terms</h4>
                                 <div className="text-sm space-y-1">
-                                  <div><span className="text-gray-600">Base Rent:</span> {location.real_estate_evaluation.lease_terms.base_rent}</div>
-                                  <div><span className="text-gray-600">NNN:</span> {location.real_estate_evaluation.lease_terms.nnn_estimate}</div>
-                                  <div><span className="text-gray-600">Total Cost:</span> {location.real_estate_evaluation.lease_terms.total_occupancy_cost}</div>
+                                  {location.real_estate_evaluation.lease_terms.base_rent && 
+                                    <div><span className="text-gray-600">Base Rent:</span> {location.real_estate_evaluation.lease_terms.base_rent}</div>
+                                  }
+                                  {location.real_estate_evaluation.lease_terms.escalator && 
+                                    <div><span className="text-gray-600">Escalator:</span> {location.real_estate_evaluation.lease_terms.escalator}</div>
+                                  }
                                 </div>
                               </div>
                             )}

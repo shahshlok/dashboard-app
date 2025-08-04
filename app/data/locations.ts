@@ -362,11 +362,7 @@ export const locations: Location[] = [
         previous_tenant: undefined
       },
       lease_terms: {
-        base_rent: "$17.64/sqft",
-        nnn_estimate: undefined,
-        total_occupancy_cost: undefined,
-        escalator: undefined,
-        citation: undefined
+        base_rent: "$17.64/sqft"
       }
     },
     
@@ -625,10 +621,7 @@ export const locations: Location[] = [
       },
       lease_terms: {
         base_rent: "$23.08/sqft",
-        nnn_estimate: "~$6.90/sqft",
-        total_occupancy_cost: "roughly $30/sqft or ~$48k per month",
-        escalator: "no escalator until Year 6",
-        citation: "[61]"
+        escalator: "None until Year 6"
       },
       traffic_data: {
         route_7: "over 89k vehicles per day passing near Ashbrook Commons",
