@@ -6,10 +6,9 @@ import type { Location } from "../data/locations"
 
 interface GoogleMapProps {
   location: Location
-  showHeatLayer: boolean
 }
 
-export default function GoogleMap({ location, showHeatLayer }: GoogleMapProps) {
+export default function GoogleMap({ location }: GoogleMapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<google.maps.Map | null>(null)
   const markerRef = useRef<google.maps.marker.AdvancedMarkerElement | null>(null)

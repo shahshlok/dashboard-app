@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import dynamic from "next/dynamic"
 import type { Location } from "../data/locations"
 
@@ -19,13 +18,11 @@ const DynamicMap = dynamic(() => import("./GoogleMap"), {
 })
 
 export default function MapPane({ location }: MapPaneProps) {
-  const [showHeatLayer, setShowHeatLayer] = useState(false)
-
   return (
     <div className="h-full flex flex-col">
-        <div className="flex-1">
-            <DynamicMap location={location} showHeatLayer={showHeatLayer} />
-        </div>
+      <div className="flex-1">
+        <DynamicMap location={location} />
+      </div>
     </div>
   )
 }
