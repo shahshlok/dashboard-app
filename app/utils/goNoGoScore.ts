@@ -1,6 +1,3 @@
-/* -----------------------------------------------------------
-   Location Risk Scorecard – TypeScript implementation
-   ----------------------------------------------------------- */
 
 export type RiskLevel = "Exceptional" | "Strong" | "Viable" | "High-Risk" | "Avoid";
 
@@ -36,7 +33,7 @@ export interface ScoreResult {
   explanation: string;
 }
 
-/* ---------- Public API -------------------------------------------------- */
+/* ---------- Go, No-Go Score -------------------------------------------------- */
 
 export function goNoGoScore(d: any): ScoreResult {
   // 1. Market Potential Score (35 points total)
