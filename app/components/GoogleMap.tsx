@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { Loader } from "@googlemaps/js-api-loader"
 import type { Location } from "../data/locations"
 
 interface GoogleMapProps {
@@ -10,77 +11,118 @@ interface GoogleMapProps {
 
 export default function GoogleMap({ location, showHeatLayer }: GoogleMapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
-  const mapInstanceRef = useRef<any>(null)
+  const mapInstanceRef = useRef<google.maps.Map | null>(null)
+  const markerRef = useRef<google.maps.marker.AdvancedMarkerElement | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const loadGoogleMaps = () => {
+    const initializeMap = async () => {
       const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
       
       if (!apiKey) {
-        console.error("Google Maps API key is not configured")
+        setError("Google Maps API key is not configured")
+        setIsLoading(false)
         return
       }
 
-      // Check if Google Maps API is already loaded
-      const existingScript = document.querySelector('script[src*="maps.googleapis.com"]')
-      
-      const initializeMap = () => {
-        if (!mapRef.current) return
-
-        // Clear the map container and create Google Map
-        mapRef.current.innerHTML = `
-          <gmp-map 
-            center="${location.coordinates[0]},${location.coordinates[1]}" 
-            zoom="14" 
-            map-id="DEMO_MAP_ID"
-            style="height: 100%; width: 100%;"
-          >
-            <gmp-advanced-marker 
-              position="${location.coordinates[0]},${location.coordinates[1]}" 
-              title="${location.name}"
-            ></gmp-advanced-marker>
-          </gmp-map>
-        `
+      if (!mapRef.current) {
+        setError("Map container not found")
+        setIsLoading(false)
+        return
       }
 
-      if (existingScript || (window as any).google?.maps) {
-        // API already loaded, just initialize the map
-        initializeMap()
-      } else {
-        // Load the API for the first time
-        const script = document.createElement('script')
-        script.async = true
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initGoogleMap&libraries=maps,marker&v=beta`
-        
-        // Use a unique callback name to avoid conflicts
-        ;(window as any).initGoogleMap = () => {
-          initializeMap()
-        }
+      try {
+        // Initialize the loader
+        const loader = new Loader({
+          apiKey: apiKey,
+          version: "weekly",
+          libraries: ["maps", "marker"]
+        })
 
-        document.head.appendChild(script)
+        // Load the Maps library
+        await loader.load()
+        
+        // Import the Maps library
+        const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary
+
+        // Create the map
+        const map = new Map(mapRef.current, {
+          center: { lat: location.coordinates[0], lng: location.coordinates[1] },
+          zoom: 14,
+          mapId: "DEMO_MAP_ID"
+        })
+
+        // Create the marker
+        const marker = new AdvancedMarkerElement({
+          map: map,
+          position: { lat: location.coordinates[0], lng: location.coordinates[1] },
+          title: location.name
+        })
+
+        // Store references
+        mapInstanceRef.current = map
+        markerRef.current = marker
+
+        setIsLoading(false)
+        setError(null)
+
+      } catch (err) {
+        console.error("Error loading Google Maps:", err)
+        setError("Failed to load Google Maps")
+        setIsLoading(false)
       }
     }
 
-    loadGoogleMaps()
+    initializeMap()
 
     // Cleanup function
     return () => {
-      // Clean up callback when component unmounts
-      if ((window as any).initGoogleMap) {
-        delete (window as any).initGoogleMap
+      if (markerRef.current) {
+        markerRef.current.map = null
+        markerRef.current = null
       }
+      mapInstanceRef.current = null
     }
   }, [location])
 
-  return (
-    <div 
-      ref={mapRef} 
-      style={{ height: "100%", width: "100%" }}
-      className="google-map-container"
-    >
-      <div className="h-full flex items-center justify-center bg-gray-100">
-        <div className="text-gray-500">Loading Google Map...</div>
+  // Update marker position when location changes
+  useEffect(() => {
+    if (mapInstanceRef.current && markerRef.current && !isLoading) {
+      const newCenter = { lat: location.coordinates[0], lng: location.coordinates[1] }
+      
+      // Update map center
+      mapInstanceRef.current.setCenter(newCenter)
+      
+      // Update marker position
+      markerRef.current.position = newCenter
+    }
+  }, [location, isLoading])
+
+  if (error) {
+    return (
+      <div className="h-full flex items-center justify-center bg-red-50">
+        <div className="text-red-500 text-center">
+          <div className="font-medium">Error loading map</div>
+          <div className="text-sm mt-1">{error}</div>
+        </div>
       </div>
+    )
+  }
+
+  return (
+    <div className="relative h-full w-full">
+      <div 
+        ref={mapRef} 
+        style={{ height: "100%", width: "100%" }}
+        className="google-map-container"
+      />
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="text-gray-500">Loading Google Map...</div>
+        </div>
+      )}
     </div>
   )
 }
