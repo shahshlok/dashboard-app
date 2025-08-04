@@ -53,7 +53,7 @@ export default function GoogleMap({ location }: GoogleMapProps) {
           mapId: "DEMO_MAP_ID"
         })
 
-        // Create the main location marker
+        // Create the main location marker (default red marker)
         const marker = new AdvancedMarkerElement({
           map: map,
           position: { lat: location.coordinates[0], lng: location.coordinates[1] },
@@ -78,34 +78,19 @@ export default function GoogleMap({ location }: GoogleMapProps) {
         // Add competitor markers for Ashburn location
         if (location.name === "Ashburn VA" && location.competitors) {
           location.competitors.forEach((competitor) => {
-            // Create custom red marker with white center
-            const markerElement = document.createElement('div')
-            markerElement.innerHTML = `
-              <div style="
-                width: 24px; 
-                height: 24px; 
-                background-color: #dc2626; 
-                border: 2px solid white; 
-                border-radius: 50%; 
-                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-                <div style="
-                  width: 8px;
-                  height: 8px;
-                  background-color: white;
-                  border-radius: 50%;
-                "></div>
-              </div>
-            `
+            // Create proper Google Maps pin marker with white center
+            const pin = new google.maps.marker.PinElement({
+              background: "#dc2626", // Red background
+              borderColor: "#dc2626", // Red border
+              glyphColor: "white", // White center/glyph
+              scale: 1.2
+            })
             
             const competitorMarker = new AdvancedMarkerElement({
               map: map,
               position: { lat: competitor.coordinates[0], lng: competitor.coordinates[1] },
               title: `${competitor.name} - $${competitor.price}/mo`,
-              content: markerElement
+              content: pin.element
             })
 
             // Add click listener to show info about competitor

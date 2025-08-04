@@ -416,7 +416,7 @@ export const locations: Location[] = [
     name: "Ashburn VA",
     status: "Planned",
     state: "Virginia",
-    coordinates: [39.06040954589844, -77.47048950195312],
+    coordinates: [39.0611, -77.47042],
     students: 0,
     targetStudents: 1000,
     capacity: 0,
