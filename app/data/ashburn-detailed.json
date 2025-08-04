@@ -222,8 +222,9 @@
             { "competitor": "The Little Gym – Dulles",  "price": "$125-$135", "note": "Standard weekly tuition",          "source": 17 }
           ],
           "internalBenchmarks": [
-            { "location": "Rockville MD",  "metric": "Avg revenue / student", "value": "~$150", "source": 54 },
-            { "location": "Clarksburg MD", "metric": "Avg membership duration", "value": "~7 mo", "source": 63 }
+            { "location": "Rockville",  "metric": "Avg revenue / student", "value": "~$171", "source": 54 },
+            { "location": "Clarksburg",  "metric": "Avg revenue / student", "value": "~$148", "source": 54 },
+            { "location": "Columbia",  "metric": "Avg revenue / student", "value": "~$148", "source": 54 }
           ],
           "pricingMath": {
             "visitsPerMonth": 4,
@@ -256,7 +257,7 @@
             { "competitor": "Always in Motion (Sterling)", "price": "$175", "note": "2 classes / week ninja membership", "source": 11 }
           ],
           "internalBenchmarks": [
-            { "location": "Rockville MD",  "metric": "Multi-class upgrade rate", "value": "≈28 %", "source": 54 }
+            { "location": "A Location",  "metric": "Multi-class upgrade rate", "value": "More data needed", "source": 54 }
           ],
           "pricingMath": {
             "visitsPerMonth": 8,
