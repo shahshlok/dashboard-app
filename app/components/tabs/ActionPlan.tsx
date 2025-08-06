@@ -23,7 +23,7 @@ export default function ActionPlan({ location }: ActionPlanProps) {
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className={`px-3 py-1 rounded text-sm font-medium ${
+                        <span className={`px-3 py-1 rounded text-base font-medium ${
                           rec.priority === 1 ? 'bg-red-100 text-red-800' :
                           rec.priority === 2 ? 'bg-orange-100 text-orange-800' :
                           rec.priority === 3 ? 'bg-yellow-100 text-yellow-800' :
@@ -31,13 +31,13 @@ export default function ActionPlan({ location }: ActionPlanProps) {
                         }`}>
                           Priority {rec.priority}
                         </span>
-                        <span className="font-medium">{rec.action}</span>
+                        <span className="font-medium text-lg">{rec.action}</span>
                       </div>
-                      <div className="text-sm text-gray-700 mb-2">{rec.description}</div>
-                      <div className="text-xs text-gray-600 mb-2">
+                      <div className="text-base text-gray-700 mb-2">{rec.description}</div>
+                      <div className="text-sm text-gray-600 mb-2">
                         <strong>Owner:</strong> {rec.owner} • <strong>Timeline:</strong> {rec.timeline}
                       </div>
-                      <div className="text-xs">
+                      <div className="text-sm">
                         <strong>KPIs:</strong>
                         <ul className="mt-1 space-y-1">
                           {rec.kpis.map((kpi: string, kpiIndex: number) => (
@@ -58,11 +58,11 @@ export default function ActionPlan({ location }: ActionPlanProps) {
             {enhancedLocation.actionPlan.map((action: any, index: number) => (
               <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
                 <div className="flex-1">
-                  <div className="font-medium">{action.task}</div>
-                  <div className="text-sm text-gray-600">Owner: {action.owner}</div>
+                  <div className="font-medium text-lg">{action.task}</div>
+                  <div className="text-base text-gray-600">Owner: {action.owner}</div>
                 </div>
                 <div className="text-right">
-                  <div className="font-medium">{action.weeks} weeks</div>
+                  <div className="font-medium text-base">{action.weeks} weeks</div>
                 </div>
               </div>
             ))}

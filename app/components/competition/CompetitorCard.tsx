@@ -94,29 +94,29 @@ export default function CompetitorCard({
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
-          <p className="text-sm text-gray-600 mt-1">{type}</p>
+          <h3 className="text-2xl font-semibold text-gray-900">{name}</h3>
+          <p className="text-base text-gray-600 mt-1">{type}</p>
           {distance && (
-            <p className="text-sm text-gray-500 mt-1">{location} • {distance}</p>
+            <p className="text-base text-gray-500 mt-1">{location} • {distance}</p>
           )}
         </div>
         <div className="text-right">
-          <div className="text-lg font-semibold text-green-600">{primaryPrice}</div>
-          <div className="text-xs text-gray-500 mt-1">{marketShare}</div>
+          <div className="text-xl font-semibold text-green-600">{primaryPrice}</div>
+          <div className="text-sm text-gray-500 mt-1">{marketShare}</div>
         </div>
       </div>
 
       {/* Programs */}
       <div className="mb-4">
-        <h4 className="text-sm font-medium text-gray-700 mb-2">Programs & Offerings</h4>
+        <h4 className="text-base font-medium text-gray-700 mb-2">Programs & Offerings</h4>
         <div className="flex flex-wrap gap-2">
           {programs.slice(0, 3).map((program, idx) => (
-            <span key={idx} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">
+            <span key={idx} className="text-sm bg-blue-50 text-blue-700 px-2 py-1 rounded">
               {program}
             </span>
           ))}
           {programs.length > 3 && (
-            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+            <span className="text-sm bg-gray-100 text-gray-600 px-2 py-1 rounded">
               +{programs.length - 3} more
             </span>
           )}
@@ -126,21 +126,21 @@ export default function CompetitorCard({
       {/* Facility Size */}
       {facilitySize && (
         <div className="mb-4">
-          <span className="text-sm text-gray-600">Facility: </span>
-          <span className="text-sm font-medium text-gray-900">{facilitySize}</span>
+          <span className="text-base text-gray-600">Facility: </span>
+          <span className="text-base font-medium text-gray-900">{facilitySize}</span>
         </div>
       )}
 
       {/* Differentiators */}
       <div className="mb-4">
-        <h4 className="text-sm font-medium text-gray-700 mb-2">Key Differentiators</h4>
-        <p className="text-sm text-gray-600 line-clamp-2">{differentiators}</p>
+        <h4 className="text-base font-medium text-gray-700 mb-2">Key Differentiators</h4>
+        <p className="text-base text-gray-600 line-clamp-2">{differentiators}</p>
       </div>
 
       {/* Expand/Collapse Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-800 font-medium py-2 border-t border-gray-100 mt-4"
+        className="w-full flex items-center justify-center gap-2 text-base text-gray-600 hover:text-gray-800 font-medium py-2 border-t border-gray-100 mt-4"
       >
         {isExpanded ? (
           <>
@@ -161,10 +161,10 @@ export default function CompetitorCard({
           {/* Detailed Pricing */}
           {pricingDetails.length > 0 && (
             <div className="mb-4">
-              <h4 className="text-sm font-medium text-gray-700 mb-3">Detailed Pricing</h4>
+              <h4 className="text-base font-medium text-gray-700 mb-3">Detailed Pricing</h4>
               <div className="space-y-2">
                 {pricingDetails.map((detail, idx) => (
-                  <div key={idx} className="flex justify-between items-center text-sm">
+                  <div key={idx} className="flex justify-between items-center text-base">
                     <span className="text-gray-600">{detail.label}</span>
                     <span className="font-medium text-gray-900">{detail.value}</span>
                   </div>
@@ -175,8 +175,8 @@ export default function CompetitorCard({
 
           {/* All Programs */}
           <div className="mb-4">
-            <h4 className="text-sm font-medium text-gray-700 mb-2">All Programs</h4>
-            <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+            <h4 className="text-base font-medium text-gray-700 mb-2">All Programs</h4>
+            <ul className="list-disc list-inside text-base text-gray-600 space-y-1">
               {programs.map((program, idx) => (
                 <li key={idx}>{program}</li>
               ))}
@@ -185,8 +185,8 @@ export default function CompetitorCard({
 
           {/* Full Differentiators */}
           <div>
-            <h4 className="text-sm font-medium text-gray-700 mb-2">Value Proposition</h4>
-            <p className="text-sm text-gray-600">{differentiators}</p>
+            <h4 className="text-base font-medium text-gray-700 mb-2">Value Proposition</h4>
+            <p className="text-base text-gray-600">{differentiators}</p>
           </div>
         </div>
       )}

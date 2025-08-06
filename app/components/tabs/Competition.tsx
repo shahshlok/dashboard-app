@@ -111,8 +111,8 @@ export default function Competition({ location }: CompetitionProps) {
       {/* Introduction */}
       {competitionSummary && (
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Competitor Landscape Analysis</h2>
-          <p className="text-sm text-gray-700 leading-relaxed">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Competitor Landscape Analysis</h2>
+          <p className="text-base text-gray-700 leading-relaxed">
             {competitionSummary.introduction}
           </p>
         </div>
@@ -120,10 +120,10 @@ export default function Competition({ location }: CompetitionProps) {
 
       {/* Filter Buttons */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-sm font-medium text-gray-700">Filter by type:</span>
+        <span className="text-base font-medium text-gray-700">Filter by type:</span>
         <button
           onClick={() => setFilterType("all")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-lg text-base font-medium transition-colors ${
             filterType === "all" 
               ? "bg-blue-600 text-white" 
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -134,8 +134,9 @@ export default function Competition({ location }: CompetitionProps) {
         {competitorTypes.map(type => (
           <button
             key={type}
-            onClick={() => setFilterType(type)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            onClic
+            ={() => setFilterType(type)}
+            className={`px-4 py-2 rounded-lg text-base font-medium transition-colors ${
               filterType === type 
                 ? "bg-blue-600 text-white" 
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -148,9 +149,9 @@ export default function Competition({ location }: CompetitionProps) {
 
       {/* Competitors Grid */}
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-4">
           Direct Competitors & Alternatives
-          <span className="ml-2 text-sm font-normal text-gray-600">
+          <span className="ml-2 text-base font-normal text-gray-600">
             ({filteredCompetitors.length} {filterType !== "all" ? `${filterType} ` : ""}competitors within 10 miles)
           </span>
         </h3>
@@ -173,8 +174,8 @@ export default function Competition({ location }: CompetitionProps) {
       {/* Sources Note */}
       {competitionSummary?.sourcesNote && (
         <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <h4 className="text-sm font-medium text-gray-700 mb-2">Data Sources</h4>
-          <p className="text-xs text-gray-600 leading-relaxed">
+          <h4 className="text-base font-medium text-gray-700 mb-2">Data Sources</h4>
+          <p className="text-sm text-gray-600 leading-relaxed">
             {competitionSummary.sourcesNote}
           </p>
         </div>

@@ -42,15 +42,15 @@ export default function MarketInsightsCard({ insights, summary, conclusion }: Ma
         <div className="flex items-start gap-3">
           <LightBulbIcon className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
           <div>
-            <h3 className="text-lg font-semibold text-blue-900 mb-2">Market Analysis Summary</h3>
-            <p className="text-sm text-blue-800 leading-relaxed">{summary}</p>
+            <h3 className="text-xl font-semibold text-blue-900 mb-2">Market Analysis Summary</h3>
+            <p className="text-base text-blue-800 leading-relaxed">{summary}</p>
           </div>
         </div>
       </div>
 
       {/* Key Insights */}
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Market Insights</h3>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-4">Key Market Insights</h3>
         <div className="space-y-4">
           {insights.map((insight, index) => {
             const style = getInsightStyle(insight.title)
@@ -70,7 +70,7 @@ export default function MarketInsightsCard({ insights, summary, conclusion }: Ma
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{style.icon}</span>
-                      <h4 className="text-lg font-medium text-gray-900 text-left">
+                      <h4 className="text-xl font-medium text-gray-900 text-left">
                         {insight.title}
                       </h4>
                     </div>
@@ -83,7 +83,7 @@ export default function MarketInsightsCard({ insights, summary, conclusion }: Ma
                   
                   {/* Preview text when collapsed */}
                   {!isExpanded && (
-                    <p className="mt-2 text-sm text-gray-600 text-left line-clamp-2">
+                    <p className="mt-2 text-base text-gray-600 text-left line-clamp-2">
                       {insight.analysis}
                     </p>
                   )}
@@ -94,16 +94,16 @@ export default function MarketInsightsCard({ insights, summary, conclusion }: Ma
                   <div className="px-6 pb-4 bg-gray-50 border-t border-gray-100">
                     <div className="pt-4 space-y-4">
                       <div>
-                        <h5 className="text-sm font-medium text-gray-700 mb-2">Analysis</h5>
-                        <p className="text-sm text-gray-600 leading-relaxed">
+                        <h5 className="text-base font-medium text-gray-700 mb-2">Analysis</h5>
+                        <p className="text-base text-gray-600 leading-relaxed">
                           {insight.analysis}
                         </p>
                       </div>
                       
                       {insight.conclusion && (
                         <div className="pt-3 border-t border-gray-200">
-                          <h5 className="text-sm font-medium text-gray-700 mb-2">Strategic Implication</h5>
-                          <p className="text-sm text-gray-800 leading-relaxed font-medium">
+                          <h5 className="text-base font-medium text-gray-700 mb-2">Strategic Implication</h5>
+                          <p className="text-base text-gray-800 leading-relaxed font-medium">
                             {insight.conclusion}
                           </p>
                         </div>
@@ -119,8 +119,8 @@ export default function MarketInsightsCard({ insights, summary, conclusion }: Ma
 
       {/* Conclusion */}
       <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-indigo-900 mb-3">Strategic Positioning</h3>
-        <p className="text-sm text-indigo-800 leading-relaxed">{conclusion}</p>
+        <h3 className="text-xl font-semibold text-indigo-900 mb-3">Strategic Positioning</h3>
+        <p className="text-base text-indigo-800 leading-relaxed">{conclusion}</p>
       </div>
     </div>
   )
