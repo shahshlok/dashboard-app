@@ -2,11 +2,14 @@
 
 import dynamic from "next/dynamic"
 import type { Location } from "../data/locations"
+import ScenarioAnalyzer from "./pricing/ScenarioAnalyzer"
 
 interface MapPaneProps {
   location: Location
   selectedSwotCategory?: 'strengths' | 'weaknesses' | 'opportunities' | 'threats' | null
   onSwotCategoryClose?: () => void
+  activeTab?: string
+  onScenarioChange?: (scenario: 'conservative' | 'base' | 'aggressive') => void
 }
 
 // Dynamically import the map component to avoid SSR issues
@@ -19,8 +22,13 @@ const DynamicMap = dynamic(() => import("./GoogleMap"), {
   ),
 })
 
-export default function MapPane({ location, selectedSwotCategory, onSwotCategoryClose }: MapPaneProps) {
+export default function MapPane({ location, selectedSwotCategory, onSwotCategoryClose, activeTab, onScenarioChange }: MapPaneProps) {
   const enhancedLocation = location as any
+
+  // Show ScenarioAnalyzer for Pricing tab on Ashburn location
+  if (activeTab === 'pricingEconomics' && (enhancedLocation?.name || enhancedLocation?.locationName) === "Ashburn VA") {
+    return <ScenarioAnalyzer onScenarioChange={onScenarioChange} />
+  }
 
   // Show SWOT details if a category is selected
   if (selectedSwotCategory && (enhancedLocation?.name || enhancedLocation?.locationName) === "Ashburn VA" && enhancedLocation?._detailedData) {

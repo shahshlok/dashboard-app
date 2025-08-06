@@ -23,6 +23,7 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
   const [enhancedLocation, setEnhancedLocation] = useState<Location | null>(location)
   const [isLoading, setIsLoading] = useState(false)
   const [selectedSwotCategory, setSelectedSwotCategory] = useState<'strengths' | 'weaknesses' | 'opportunities' | 'threats' | null>(null)
+  const [selectedScenario, setSelectedScenario] = useState<'conservative' | 'base' | 'aggressive'>('base')
 
   // Load detailed data for Ashburn location
   useEffect(() => {
@@ -104,7 +105,7 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
                   />
                 </TabsContent>
                 <TabsContent value="pricingEconomics" className="p-6">
-                  <PricingEconomics location={enhancedLocation} />
+                  <PricingEconomics location={enhancedLocation} selectedScenario={selectedScenario} />
                 </TabsContent>
                 <TabsContent value="competition" className="p-6">
                   <Competition location={enhancedLocation} />
@@ -122,6 +123,8 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
               location={enhancedLocation} 
               selectedSwotCategory={selectedSwotCategory}
               onSwotCategoryClose={() => setSelectedSwotCategory(null)}
+              activeTab={activeTab}
+              onScenarioChange={setSelectedScenario}
             />
           </div>
         </div>
