@@ -10,7 +10,8 @@
       "mcp__playwright__browser_snapshot",
       "mcp__playwright__browser_click",
       "WebFetch(domain:medium.com)",
-      "WebFetch(domain:cookbook.openai.com)"
+      "WebFetch(domain:cookbook.openai.com)",
+      "mcp__playwright__browser_navigate"
     ],
     "deny": []
   }

@@ -6,9 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import type { Location } from "../data/locations"
 import { loadAshburnDetailedData, mergeAshburnData } from "../utils/locationData"
 import MapPane from "./MapPane"
-import MarketOverview from "./tabs/MarketOverview"
-import RealEstate from "./tabs/RealEstate"
-import SwotAnalysis from "./tabs/SwotAnalysis"
+import Overview from "./tabs/Overview"
 import PricingEconomics from "./tabs/PricingEconomics"
 import Competition from "./tabs/Competition"
 import ActionPlan from "./tabs/ActionPlan"
@@ -21,7 +19,7 @@ interface FullScreenOverlayProps {
 }
 
 export default function FullScreenOverlay({ location, isOpen, onOpenChange }: FullScreenOverlayProps) {
-  const [activeTab, setActiveTab] = useState("marketOverview")
+  const [activeTab, setActiveTab] = useState("overview")
   const [enhancedLocation, setEnhancedLocation] = useState<Location | null>(location)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -85,11 +83,9 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             {/* Tab List */}
             <div className="flex-shrink-0 px-6 py-3 border-b bg-white">
               <Tabs value={activeTab} onValueChange={setActiveTab}>
-                <TabsList className="grid w-full grid-cols-6">
-                  <TabsTrigger value="marketOverview">Market Overview</TabsTrigger>
-                  <TabsTrigger value="realEstate">Real Estate</TabsTrigger>
-                  <TabsTrigger value="swotAnalysis">SWOT Analysis</TabsTrigger>
-                  <TabsTrigger value="pricingEconomics">Pricing & Economics</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-4">
+                  <TabsTrigger value="overview">Overview</TabsTrigger>
+                  <TabsTrigger value="pricingEconomics">Pricing</TabsTrigger>
                   <TabsTrigger value="competition">Competition</TabsTrigger>
                   <TabsTrigger value="actionPlan">Action Plan</TabsTrigger>
                 </TabsList>
@@ -99,14 +95,8 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             {/* Scrollable Content Area */}
             <div className="flex-1 overflow-y-auto">
               <Tabs value={activeTab} onValueChange={setActiveTab}>
-                <TabsContent value="marketOverview" className="p-6">
-                  <MarketOverview location={enhancedLocation} />
-                </TabsContent>
-                <TabsContent value="realEstate" className="p-6">
-                  <RealEstate location={enhancedLocation} />
-                </TabsContent>
-                <TabsContent value="swotAnalysis" className="p-6">
-                  <SwotAnalysis location={enhancedLocation} />
+                <TabsContent value="overview" className="p-6">
+                  <Overview location={enhancedLocation} />
                 </TabsContent>
                 <TabsContent value="pricingEconomics" className="p-6">
                   <PricingEconomics location={enhancedLocation} />
