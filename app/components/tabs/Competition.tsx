@@ -134,7 +134,7 @@ export default function Competition({ location }: CompetitionProps) {
         {competitorTypes.map(type => (
           <button
             key={type}
-            onClic
+            onClick
             ={() => setFilterType(type)}
             className={`px-4 py-2 rounded-lg text-base font-medium transition-colors ${
               filterType === type 
