@@ -1,0 +1,87 @@
+{
+  "competitor_landscape": {
+    "primary_competitors": {
+      "digital_realty": {
+        "market_share": "25-30%",
+        "facilities": "Multiple campuses in Ashburn",
+        "pricing_strategy": "Premium tier with enterprise focus",
+        "key_strengths": ["Global footprint", "Enterprise relationships", "Financial stability"],
+        "weaknesses": ["Higher pricing", "Less flexible terms"],
+        "competitive_response": "Price matching on large deals"
+      },
+      "equinix": {
+        "market_share": "20-25%",
+        "facilities": "Strategic locations near internet exchanges",
+        "pricing_strategy": "Premium connectivity-focused pricing",
+        "key_strengths": ["Interconnection ecosystem", "Global presence", "Network density"],
+        "weaknesses": ["Limited wholesale capacity", "Complex pricing"],
+        "competitive_response": "Ecosystem value proposition"
+      },
+      "cyrusone": {
+        "market_share": "15-20%",
+        "facilities": "Large-scale wholesale facilities",
+        "pricing_strategy": "Competitive wholesale pricing",
+        "key_strengths": ["Cost efficiency", "Scalable solutions", "Operational excellence"],
+        "weaknesses": ["Limited retail presence", "Geographic concentration"],
+        "competitive_response": "Aggressive pricing on large deployments"
+      },
+      "iron_mountain": {
+        "market_share": "10-15%",
+        "facilities": "Specialized secure facilities",
+        "pricing_strategy": "Premium security-focused pricing",
+        "key_strengths": ["Security expertise", "Compliance capabilities", "Data governance"],
+        "weaknesses": ["Limited scale", "Higher operational costs"],
+        "competitive_response": "Specialized service differentiation"
+      }
+    },
+    "emerging_competitors": {
+      "hyperscale_providers": {
+        "aws_direct_competition": "Co-location adjacent to AWS facilities",
+        "microsoft_azure": "Edge computing partnerships",
+        "google_cloud": "Hybrid cloud integration"
+      },
+      "regional_players": {
+        "coresite": "Network-dense facilities",
+        "switch": "Sustainable energy focus",
+        "sabey": "Wholesale capacity expansion"
+      }
+    },
+    "competitive_dynamics": {
+      "pricing_trends": {
+        "wholesale_rates": "$45-65 per kW per month",
+        "retail_colocation": "$150-250 per cabinet per month",
+        "cross_connects": "$150-300 per connection",
+        "bandwidth_pricing": "Declining 15-20% annually"
+      },
+      "service_differentiation": {
+        "sustainability": "Renewable energy sourcing",
+        "connectivity": "Direct cloud on-ramps",
+        "security": "Advanced compliance certifications",
+        "automation": "Self-service provisioning"
+      },
+      "market_consolidation": {
+        "trend": "Ongoing M&A activity",
+        "drivers": ["Scale economies", "Geographic expansion", "Technology integration"],
+        "impact": "Increased competitive pressure on mid-tier providers"
+      }
+    }
+  },
+  "competitive_positioning": {
+    "our_strategy": {
+      "target_segments": ["Mid-market enterprises", "Growing cloud providers", "Edge computing"],
+      "value_proposition": "Flexible, efficient, sustainable data center solutions",
+      "pricing_approach": "Competitive with premium service levels"
+    },
+    "competitive_advantages": {
+      "operational": ["Advanced cooling", "Automated management", "Rapid deployment"],
+      "commercial": ["Flexible contracts", "Transparent pricing", "Local support"],
+      "technical": ["Edge-ready infrastructure", "Hybrid cloud capabilities", "High-density support"]
+    }
+  },
+  "data_sources": {
+    "primary_source": "Ashburn Pricing and Competition Final Analysis",
+    "document_sections": ["Competitor Landscape", "Market Analysis"],
+    "research_methods": ["Market surveys", "Public filings", "Industry reports"],
+    "last_updated": "2024"
+  }
+}

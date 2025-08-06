@@ -1,0 +1,159 @@
+{
+  "sensitivity_analysis": {
+    "key_variables": {
+      "revenue_drivers": {
+        "pricing_assumptions": {
+          "base_case": "$55/kW wholesale, $200/cabinet retail",
+          "sensitivity_range": "±20% price variation",
+          "impact_on_irr": "±4.2% per 10% price change",
+          "market_risk": "High - competitive pressure"
+        },
+        "capacity_utilization": {
+          "base_case": "85% at stabilization (Year 3)",
+          "sensitivity_range": "70% to 95% utilization",
+          "impact_on_irr": "±3.8% per 10% utilization change",
+          "market_risk": "Medium - demand visibility"
+        },
+        "absorption_timeline": {
+          "base_case": "25%/60%/85% Years 1-3",
+          "sensitivity_range": "±6 months per phase",
+          "impact_on_irr": "±2.1% per 6-month delay",
+          "market_risk": "Medium - market timing"
+        }
+      },
+      "cost_drivers": {
+        "construction_costs": {
+          "base_case": "$33M total project cost",
+          "sensitivity_range": "±15% construction cost variance",
+          "impact_on_irr": "±2.8% per 10% cost change",
+          "market_risk": "Medium - material price volatility"
+        },
+        "power_costs": {
+          "base_case": "$0.085/kWh utility rate",
+          "sensitivity_range": "$0.075 to $0.105/kWh",
+          "impact_on_irr": "±1.9% per $0.01/kWh change",
+          "market_risk": "Low - regulated utility rates"
+        },
+        "operating_expenses": {
+          "base_case": "45% of revenue at stabilization",
+          "sensitivity_range": "40% to 55% opex ratio",
+          "impact_on_irr": "±3.2% per 5% opex change",
+          "market_risk": "Low-Medium - operational control"
+        }
+      }
+    },
+    "scenario_modeling": {
+      "tornado_analysis": {
+        "most_impactful_variables": [
+          {
+            "variable": "Wholesale pricing",
+            "irr_range": "14.2% to 22.8%",
+            "sensitivity_coefficient": 0.42
+          },
+          {
+            "variable": "Capacity utilization",
+            "irr_range": "15.1% to 21.9%",
+            "sensitivity_coefficient": 0.38
+          },
+          {
+            "variable": "Construction costs",
+            "irr_range": "16.2% to 20.8%",
+            "sensitivity_coefficient": 0.28
+          },
+          {
+            "variable": "Operating expenses",
+            "irr_range": "16.8% to 20.2%",
+            "sensitivity_coefficient": 0.32
+          }
+        ]
+      },
+      "monte_carlo_simulation": {
+        "trials": 10000,
+        "irr_distribution": {
+          "mean": "18.3%",
+          "standard_deviation": "3.2%",
+          "5th_percentile": "12.8%",
+          "95th_percentile": "24.1%"
+        },
+        "probability_of_success": {
+          "irr_above_15_percent": "87%",
+          "irr_above_hurdle_12_percent": "95%",
+          "positive_npv": "91%"
+        }
+      }
+    },
+    "stress_testing": {
+      "downside_scenarios": {
+        "recession_impact": {
+          "demand_reduction": "30% capacity utilization",
+          "pricing_pressure": "20% rate reduction",
+          "resulting_irr": "8.4%",
+          "recovery_timeline": "24-36 months"
+        },
+        "competitive_response": {
+          "pricing_war": "25% pricing reduction",
+          "market_share_loss": "15% utilization impact",
+          "resulting_irr": "11.2%",
+          "mitigation_strategy": "Service differentiation"
+        },
+        "construction_delays": {
+          "timeline_extension": "12-month delay",
+          "cost_overruns": "20% budget increase",
+          "resulting_irr": "13.1%",
+          "risk_mitigation": "Fixed-price contracts"
+        }
+      },
+      "upside_scenarios": {
+        "market_expansion": {
+          "demand_surge": "95% utilization achieved",
+          "pricing_premium": "10% above base case",
+          "resulting_irr": "26.3%",
+          "probability": "20% market conditions"
+        },
+        "operational_excellence": {
+          "cost_reduction": "15% opex savings",
+          "efficiency_gains": "PUE improvement to 1.25",
+          "resulting_irr": "22.8%",
+          "implementation_risk": "Low"
+        }
+      }
+    }
+  },
+  "risk_assessment": {
+    "high_impact_risks": {
+      "market_saturation": {
+        "probability": "Medium (40%)",
+        "financial_impact": "$5-8M NPV reduction",
+        "mitigation": "Differentiated service offerings"
+      },
+      "regulatory_changes": {
+        "probability": "Low (15%)",
+        "financial_impact": "$2-4M compliance costs",
+        "mitigation": "Proactive regulatory engagement"
+      },
+      "power_grid_constraints": {
+        "probability": "Medium (30%)",
+        "financial_impact": "$3-6M additional investment",
+        "mitigation": "Alternative power sourcing"
+      }
+    },
+    "sensitivity_priorities": {
+      "critical_monitoring": [
+        "Weekly pricing surveys",
+        "Monthly utilization tracking",
+        "Quarterly cost benchmarking"
+      ],
+      "trigger_points": [
+        "Pricing below $50/kW triggers strategy review",
+        "Utilization below 70% requires marketing acceleration",
+        "Construction costs above $38M triggers value engineering"
+      ]
+    }
+  },
+  "data_sources": {
+    "primary_source": "Ashburn Pricing and Competition Final Analysis",
+    "document_sections": ["Sensitivity Analysis", "Financial Model"],
+    "modeling_approach": "Monte Carlo simulation with 10,000 iterations",
+    "validation": "Third-party sensitivity analysis review"
+  }
+}

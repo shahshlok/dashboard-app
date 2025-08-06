@@ -1,0 +1,59 @@
+{
+  "market_analysis": {
+    "ashburn_overview": {
+      "location": "Ashburn, Virginia",
+      "market_classification": "Data center capital of the world",
+      "primary_industry": "Data centers and cloud computing",
+      "competitive_landscape": "Highly competitive with major players",
+      "source_url": "https://app/data/Ashburn_Pricing_Competition_Final.pdf"
+    },
+    "existing_ddga_comparison": {
+      "demographics": {
+        "population_density": "High density tech corridor",
+        "income_levels": "Above-average household income",
+        "tech_workforce": "Concentrated IT and cloud professionals",
+        "business_environment": "Corporate-focused B2B market"
+      },
+      "infrastructure_advantages": {
+        "connectivity": "World-class fiber infrastructure",
+        "power_reliability": "99.9%+ uptime guarantees",
+        "geographic_position": "East Coast hub location",
+        "regulatory_environment": "Business-friendly policies"
+      },
+      "market_dynamics": {
+        "demand_drivers": "Cloud migration, edge computing, 5G rollout",
+        "supply_constraints": "Limited available land, power grid capacity",
+        "pricing_pressure": "Intense competition driving margin compression",
+        "growth_trajectory": "Sustained double-digit growth"
+      }
+    },
+    "similarity_metrics": {
+      "market_maturity": 0.95,
+      "competitive_intensity": 0.90,
+      "infrastructure_quality": 0.98,
+      "regulatory_alignment": 0.85,
+      "talent_availability": 0.88
+    }
+  },
+  "strategic_positioning": {
+    "market_entry_strategy": "Premium positioning with differentiated services",
+    "competitive_advantages": [
+      "Advanced cooling technologies",
+      "Sustainable power sourcing",
+      "Hybrid cloud capabilities",
+      "Edge computing specialization"
+    ],
+    "risk_factors": [
+      "Market saturation",
+      "Regulatory changes",
+      "Power grid constraints",
+      "Intense price competition"
+    ]
+  },
+  "data_sources": {
+    "primary_source": "Ashburn Pricing and Competition Final Analysis",
+    "document_sections": ["Market Analysis", "Competitor Landscape", "Financial Model"],
+    "analysis_date": "2024",
+    "confidence_level": "High"
+  }
+}

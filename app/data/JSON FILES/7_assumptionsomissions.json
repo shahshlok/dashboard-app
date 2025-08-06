@@ -1,0 +1,183 @@
+{
+  "assumptions_and_omissions": {
+    "key_assumptions": {
+      "market_assumptions": {
+        "demand_growth": {
+          "assumption": "15-20% annual market growth in Ashburn",
+          "rationale": "Based on historical data center absorption rates",
+          "risk_level": "Medium",
+          "impact_if_wrong": "Revenue projections could vary ±25%",
+          "monitoring_approach": "Quarterly market surveys and absorption tracking"
+        },
+        "competitive_dynamics": {
+          "assumption": "Current competitive landscape remains stable",
+          "rationale": "No major new entrants announced for 24-36 months",
+          "risk_level": "Medium-High",
+          "impact_if_wrong": "Pricing pressure could reduce margins 10-15%",
+          "monitoring_approach": "Monthly competitor intelligence updates"
+        },
+        "customer_behavior": {
+          "assumption": "Enterprise demand for hybrid cloud continues",
+          "rationale": "Industry trend toward hybrid architectures",
+          "risk_level": "Low-Medium",
+          "impact_if_wrong": "Service mix and pricing could require adjustment",
+          "monitoring_approach": "Customer surveys and industry reports"
+        }
+      },
+      "financial_assumptions": {
+        "construction_costs": {
+          "assumption": "$2,750 per kW all-in construction cost",
+          "rationale": "Based on recent comparable projects in region",
+          "risk_level": "Medium",
+          "impact_if_wrong": "±20% could change IRR by ±3%",
+          "monitoring_approach": "Monthly contractor pricing updates"
+        },
+        "operating_costs": {
+          "assumption": "45% operating cost ratio at stabilization",
+          "rationale": "Industry benchmarks for similar facilities",
+          "risk_level": "Low",
+          "impact_if_wrong": "±5% opex ratio changes IRR by ±1.5%",
+          "monitoring_approach": "Quarterly operational benchmarking"
+        },
+        "financing_terms": {
+          "assumption": "70% debt at 6.5% interest rate",
+          "rationale": "Current market conditions and credit profile",
+          "risk_level": "Medium",
+          "impact_if_wrong": "Interest rate changes affect equity returns",
+          "monitoring_approach": "Weekly debt market monitoring"
+        }
+      },
+      "operational_assumptions": {
+        "utilization_ramp": {
+          "assumption": "25%/60%/85% absorption Years 1-3",
+          "rationale": "Conservative based on comparable facility leasing",
+          "risk_level": "Medium",
+          "impact_if_wrong": "±6 month delay reduces IRR by ±2%",
+          "monitoring_approach": "Monthly pre-leasing and pipeline tracking"
+        },
+        "power_efficiency": {
+          "assumption": "1.35 PUE (Power Usage Effectiveness)",
+          "rationale": "Modern cooling design with optimization",
+          "risk_level": "Low",
+          "impact_if_wrong": "±0.1 PUE affects operating costs ±8%",
+          "monitoring_approach": "Real-time energy monitoring systems"
+        },
+        "staffing_requirements": {
+          "assumption": "12 FTE operational staff required",
+          "rationale": "Benchmarked against similar sized facilities",
+          "risk_level": "Low",
+          "impact_if_wrong": "±2 FTE changes costs by ±$200K annually",
+          "monitoring_approach": "Operational efficiency tracking"
+        }
+      }
+    },
+    "material_omissions": {
+      "regulatory_risks": {
+        "description": "Potential changes in zoning or environmental regulations",
+        "materiality": "Medium - could require additional compliance investment",
+        "estimated_impact": "$1-3M additional costs possible",
+        "mitigation_strategy": "Proactive regulatory engagement and compliance buffer"
+      },
+      "technology_obsolescence": {
+        "description": "Risk of cooling or power technology becoming outdated",
+        "materiality": "Medium - could affect competitiveness over time",
+        "estimated_impact": "Earlier than planned capital refresh requirements",
+        "mitigation_strategy": "Modular design allowing for technology upgrades"
+      },
+      "cybersecurity_requirements": {
+        "description": "Evolving security standards and compliance requirements",
+        "materiality": "Medium - increasing importance for enterprise customers",
+        "estimated_impact": "$500K-1M annual security infrastructure costs",
+        "mitigation_strategy": "Design with security-first architecture"
+      },
+      "climate_change_impacts": {
+        "description": "Extreme weather events and sustainability requirements",
+        "materiality": "Low-Medium - long-term operational considerations",
+        "estimated_impact": "Potential insurance and resilience investments",
+        "mitigation_strategy": "Climate-resilient design and renewable energy"
+      }
+    },
+    "sensitivity_factors": {
+      "high_sensitivity": [
+        {
+          "factor": "Wholesale pricing levels",
+          "sensitivity": "±10% pricing affects IRR by ±4%",
+          "monitoring": "Weekly market pricing surveys"
+        },
+        {
+          "factor": "Construction cost inflation",
+          "sensitivity": "±10% costs affect IRR by ±2.8%",
+          "monitoring": "Monthly construction cost indices"
+        },
+        {
+          "factor": "Lease-up timeline",
+          "sensitivity": "±6 months affects IRR by ±2%",
+          "monitoring": "Monthly absorption tracking"
+        }
+      ],
+      "medium_sensitivity": [
+        {
+          "factor": "Power utility rates",
+          "sensitivity": "±10% power costs affect IRR by ±1.5%",
+          "monitoring": "Utility rate case proceedings"
+        },
+        {
+          "factor": "Interest rates",
+          "sensitivity": "±1% rate affects equity returns by ±8%",
+          "monitoring": "Daily debt market conditions"
+        },
+        {
+          "factor": "Operating cost inflation",
+          "sensitivity": "±5% opex affects IRR by ±1.2%",
+          "monitoring": "Quarterly cost benchmarking"
+        }
+      ]
+    },
+    "scenario_dependencies": {
+      "base_case_dependencies": [
+        "No major economic recession during lease-up period",
+        "Continued enterprise investment in IT infrastructure",
+        "Stable regulatory environment for data centers",
+        "Available skilled workforce for operations"
+      ],
+      "upside_case_enablers": [
+        "Accelerated cloud adoption post-COVID",
+        "Government incentives for digital infrastructure",
+        "Successful differentiation through sustainability",
+        "Strategic partnerships with cloud providers"
+      ],
+      "downside_case_triggers": [
+        "Economic recession reducing IT spending",
+        "Major competitor price war",
+        "Significant construction delays or cost overruns",
+        "Regulatory changes increasing compliance costs"
+      ]
+    }
+  },
+  "validation_framework": {
+    "assumption_review_process": {
+      "frequency": "Quarterly comprehensive review",
+      "participants": "Management team, advisors, lenders",
+      "update_triggers": "Material market or project changes",
+      "documentation": "Formal assumption log with change tracking"
+    },
+    "sensitivity_monitoring": {
+      "high_priority_metrics": "Weekly tracking of pricing and absorption",
+      "medium_priority_metrics": "Monthly cost and market condition updates",
+      "low_priority_metrics": "Quarterly comprehensive benchmarking",
+      "alert_thresholds": "±10% variance from base case assumptions"
+    },
+    "risk_mitigation": {
+      "contingency_planning": "Scenario-based response plans developed",
+      "financial_buffers": "15% contingency in construction budget",
+      "operational_flexibility": "Modular design allowing for pivots",
+      "insurance_coverage": "Comprehensive coverage for identified risks"
+    }
+  },
+  "data_sources": {
+    "primary_source": "Ashburn Pricing and Competition Final Analysis",
+    "document_sections": ["Assumptions & Omissions", "Risk Analysis", "Sensitivity Analysis"],
+    "validation_sources": ["Industry reports", "Third-party studies", "Comparable transactions"],
+    "expert_input": "Industry advisors and operational benchmarking studies"
+  }
+}

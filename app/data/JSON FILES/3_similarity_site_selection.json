@@ -1,0 +1,110 @@
+{
+  "site_selection_analysis": {
+    "geographic_assessment": {
+      "ashburn_location": {
+        "coordinates": "39.0458° N, 77.4874° W",
+        "proximity_to_dc": "25 miles west of Washington DC",
+        "transport_access": "Dulles International Airport adjacent",
+        "fiber_infrastructure": "MAE-East internet exchange point"
+      },
+      "comparative_markets": {
+        "northern_virginia": {
+          "similarity_score": 0.95,
+          "advantages": ["Established ecosystem", "Power availability", "Skilled workforce"],
+          "challenges": ["High real estate costs", "Regulatory complexity"]
+        },
+        "atlanta": {
+          "similarity_score": 0.75,
+          "advantages": ["Lower costs", "Business-friendly", "Growing market"],
+          "challenges": ["Less established", "Weather risks"]
+        },
+        "chicago": {
+          "similarity_score": 0.70,
+          "advantages": ["Central location", "Fiber convergence", "Cost efficiency"],
+          "challenges": ["Weather conditions", "Market maturity"]
+        }
+      }
+    },
+    "infrastructure_requirements": {
+      "power_specifications": {
+        "primary_feed": "Utility grid connection 25+ MW",
+        "backup_power": "N+1 diesel generator configuration",
+        "ups_capacity": "15-minute battery backup minimum",
+        "power_density": "15-25 kW per cabinet support"
+      },
+      "connectivity_requirements": {
+        "fiber_providers": "Minimum 4 diverse carriers",
+        "network_redundancy": "Dual path diverse routing",
+        "latency_targets": "<2ms to major internet exchanges",
+        "bandwidth_capacity": "Multiple 100G+ connections"
+      },
+      "physical_specifications": {
+        "raised_floor": "24-inch minimum clearance",
+        "ceiling_height": "12+ feet clear height",
+        "loading_capacity": "150+ lbs per sq ft",
+        "seismic_rating": "Zone appropriate construction"
+      }
+    },
+    "market_similarity_factors": {
+      "demand_characteristics": {
+        "enterprise_presence": "High concentration of Fortune 500",
+        "cloud_adoption": "Advanced enterprise cloud usage",
+        "compliance_requirements": "Government and financial sector",
+        "growth_trajectory": "Sustained 15-20% annual growth"
+      },
+      "supply_dynamics": {
+        "land_availability": "Limited developable parcels",
+        "zoning_restrictions": "Industrial/technology park zoning",
+        "utility_capacity": "Power grid capacity constraints",
+        "permitting_timeline": "12-18 months typical approval"
+      },
+      "competitive_environment": {
+        "market_saturation": "High density of existing providers",
+        "pricing_pressure": "Intense competition on standard services",
+        "differentiation_opportunities": "Sustainability, edge, hybrid cloud",
+        "customer_sophistication": "High technical requirements"
+      }
+    }
+  },
+  "site_selection_criteria": {
+    "critical_factors": {
+      "power_availability": {
+        "weight": 0.25,
+        "minimum_requirement": "20 MW available capacity",
+        "preferred": "50+ MW expandable capacity"
+      },
+      "connectivity": {
+        "weight": 0.25,
+        "minimum_requirement": "3+ fiber providers",
+        "preferred": "Direct access to internet exchanges"
+      },
+      "market_access": {
+        "weight": 0.20,
+        "minimum_requirement": "Metro area 1M+ population",
+        "preferred": "Major business center proximity"
+      },
+      "regulatory_environment": {
+        "weight": 0.15,
+        "minimum_requirement": "Data center friendly zoning",
+        "preferred": "Tax incentives available"
+      },
+      "cost_structure": {
+        "weight": 0.15,
+        "minimum_requirement": "Competitive utility rates",
+        "preferred": "Below national average total costs"
+      }
+    },
+    "evaluation_methodology": {
+      "scoring_system": "Weighted average of factor scores (1-10 scale)",
+      "minimum_threshold": "7.0 overall score required",
+      "site_comparison": "Head-to-head analysis of top 3 candidates",
+      "risk_assessment": "Detailed risk analysis for each location"
+    }
+  },
+  "data_sources": {
+    "primary_source": "Ashburn Pricing and Competition Final Analysis",
+    "document_sections": ["Market Analysis", "Site Selection Criteria"],
+    "analysis_framework": "Comparative market assessment methodology",
+    "confidence_level": "High"
+  }
+}

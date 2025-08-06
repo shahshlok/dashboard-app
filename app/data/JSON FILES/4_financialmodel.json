@@ -1,0 +1,144 @@
+{
+  "financial_model": {
+    "base_case_assumptions": {
+      "facility_specifications": {
+        "total_capacity": "15 MW",
+        "usable_capacity": "12 MW (80% efficiency)",
+        "cabinet_count": 800,
+        "square_footage": 50000,
+        "construction_timeline": "18 months"
+      },
+      "revenue_projections": {
+        "wholesale_colocation": {
+          "pricing": "$55 per kW per month",
+          "capacity_ramp": "25% Year 1, 60% Year 2, 85% Year 3",
+          "annual_escalation": "3% per year"
+        },
+        "retail_colocation": {
+          "pricing": "$200 per cabinet per month",
+          "capacity_ramp": "30% Year 1, 70% Year 2, 90% Year 3",
+          "annual_escalation": "3% per year"
+        },
+        "cross_connects": {
+          "pricing": "$200 per connection per month",
+          "connections_per_cabinet": 2.5,
+          "annual_growth": "15% per year"
+        },
+        "managed_services": {
+          "pricing": "25% markup on base services",
+          "penetration_rate": "40% of customers",
+          "annual_growth": "20% per year"
+        }
+      },
+      "operating_expenses": {
+        "power_costs": {
+          "utility_rate": "$0.085 per kWh",
+          "pue_efficiency": 1.35,
+          "annual_escalation": "4% per year"
+        },
+        "staffing": {
+          "operations_team": 12,
+          "average_salary": "$75,000",
+          "benefits_burden": "25%",
+          "annual_increases": "4% per year"
+        },
+        "facilities_maintenance": {
+          "preventive_maintenance": "$150,000 per year",
+          "equipment_replacement": "2% of capex annually",
+          "insurance": "$200,000 per year"
+        },
+        "sales_marketing": {
+          "percentage_of_revenue": "8%",
+          "customer_acquisition_cost": "$5,000 per customer"
+        }
+      },
+      "capital_expenditure": {
+        "land_acquisition": "$2,000,000",
+        "building_construction": "$15,000,000",
+        "power_infrastructure": "$8,000,000",
+        "cooling_systems": "$5,000,000",
+        "it_infrastructure": "$3,000,000",
+        "total_initial_capex": "$33,000,000",
+        "annual_maintenance_capex": "2% of initial investment"
+      }
+    },
+    "financial_projections": {
+      "year_1": {
+        "revenue": "$4,200,000",
+        "operating_expenses": "$2,800,000",
+        "ebitda": "$1,400,000",
+        "capex": "$33,000,000",
+        "free_cash_flow": "-$31,600,000"
+      },
+      "year_2": {
+        "revenue": "$9,800,000",
+        "operating_expenses": "$5,400,000",
+        "ebitda": "$4,400,000",
+        "capex": "$1,200,000",
+        "free_cash_flow": "$3,200,000"
+      },
+      "year_3": {
+        "revenue": "$13,500,000",
+        "operating_expenses": "$7,200,000",
+        "ebitda": "$6,300,000",
+        "capex": "$1,300,000",
+        "free_cash_flow": "$5,000,000"
+      },
+      "year_4": {
+        "revenue": "$14,800,000",
+        "operating_expenses": "$7,800,000",
+        "ebitda": "$7,000,000",
+        "capex": "$1,400,000",
+        "free_cash_flow": "$5,600,000"
+      },
+      "year_5": {
+        "revenue": "$16,200,000",
+        "operating_expenses": "$8,500,000",
+        "ebitda": "$7,700,000",
+        "capex": "$1,500,000",
+        "free_cash_flow": "$6,200,000"
+      }
+    },
+    "key_metrics": {
+      "project_irr": "18.5%",
+      "npv_at_12_percent": "$8,200,000",
+      "payback_period": "4.2 years",
+      "debt_service_coverage": "2.1x",
+      "return_on_equity": "22%"
+    },
+    "scenario_analysis": {
+      "optimistic_case": {
+        "revenue_uplift": "20%",
+        "cost_reduction": "10%",
+        "project_irr": "24%",
+        "npv": "$15,800,000"
+      },
+      "pessimistic_case": {
+        "revenue_reduction": "15%",
+        "cost_increase": "10%",
+        "project_irr": "12%",
+        "npv": "$2,400,000"
+      }
+    }
+  },
+  "validation_benchmarks": {
+    "industry_standards": {
+      "revenue_per_kw": "$660 per kW annually (target)",
+      "ebitda_margins": "45-55% at stabilization",
+      "capex_per_kw": "$2,750 per kW (including land)",
+      "pue_efficiency": "1.35 (industry average 1.50)"
+    },
+    "market_comparisons": {
+      "ashburn_market_rates": "Consistent with local pricing surveys",
+      "operating_cost_benchmarks": "Within 10% of comparable facilities",
+      "construction_costs": "Aligned with recent regional projects",
+      "timeline_assumptions": "Conservative based on permitting history"
+    }
+  },
+  "data_sources": {
+    "primary_source": "Ashburn Pricing and Competition Final Analysis",
+    "document_sections": ["Financial Model", "Assumptions & Omissions"],
+    "model_validation": "Third-party engineering and market studies",
+    "last_updated": "2024"
+  }
+}
