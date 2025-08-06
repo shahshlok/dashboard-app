@@ -145,11 +145,13 @@
     "weaknesses": [
       {
         "title": "New Brand in Virginia – Needs Awareness",
-        "description": "Our company is new to Virginia (existing locations are in MD and GA), so we start with zero brand recognition in Ashburn. Unlike a known franchise, we'll need to work harder to build trust and credibility from scratch"
+        "description": "Our company is new to Virginia (existing locations are in MD and GA), so we start with zero brand recognition in Ashburn. Unlike a known franchise, we'll need to work harder to build trust and credibility from scratch",
+        "citation": 45
       },
       {
         "title": "Niche Competition for After-School Time",
-        "description": "While we don't face a direct concept clone, we do compete with a plethora of single-focus programs that are deeply entrenched. Ashburn has at least 8–10 martial arts studios, 5+ dance studios, multiple swim schools, sports leagues, etc."
+        "description": "While we don't face a direct concept clone, we do compete with a plethora of single-focus programs that are deeply entrenched. Ashburn has at least 8–10 martial arts studios, 5+ dance studios, multiple swim schools, sports leagues, etc.",
+        "citation": 73
       },
       {
         "title": "High Operating Costs",
@@ -158,7 +160,8 @@
       },
       {
         "title": "Capacity Constraints and Waitlist Management",
-        "description": "Based on other centers, our Ashburn gym could fill up quickly – a good problem, but a weakness if not managed. Rockville's large waitlist (281 kids) illustrates this risk"
+        "description": "Based on other centers, our Ashburn gym could fill up quickly – a good problem, but a weakness if not managed. Rockville's large waitlist (281 kids) illustrates this risk",
+        "citation": 45
       }
     ],
     "opportunities": [
@@ -174,7 +177,8 @@
       },
       {
         "title": "Corporate and Government Partnerships",
-        "description": "Ashburn is near many large employers (Verizon, government contractors, etc.). We can pursue corporate wellness partnerships where companies sponsor or offer discounts for our memberships to employees' kids"
+        "description": "Ashburn is near many large employers (Verizon, government contractors, etc.). We can pursue corporate wellness partnerships where companies sponsor or offer discounts for our memberships to employees' kids",
+        "citation": 75
       },
       {
         "title": "Emerging Fitness Trends",
@@ -190,11 +194,13 @@
     "threats": [
       {
         "title": "Intense Competition & New Entrants",
-        "description": "If our concept proves successful, it could attract new entrants to Ashburn. Large franchises (My Gym, The Little Gym) might attempt a comeback seeing the demand"
+        "description": "If our concept proves successful, it could attract new entrants to Ashburn. Large franchises (My Gym, The Little Gym) might attempt a comeback seeing the demand",
+        "citation": 6
       },
       {
         "title": "Economic or Tech Industry Downturn",
-        "description": "While Loudoun is affluent, it's not immune to macroeconomic threats. Many Ashburn parents work in tech/government contracting – sectors that saw layoffs in late 2023–2024"
+        "description": "While Loudoun is affluent, it's not immune to macroeconomic threats. Many Ashburn parents work in tech/government contracting – sectors that saw layoffs in late 2023–2024",
+        "citation": 77
       },
       {
         "title": "Seasonality and Churn",
@@ -203,7 +209,8 @@
       },
       {
         "title": "Regulatory and Health Factors",
-        "description": "Ongoing pandemic/health concerns or future mandates could impact kids' indoor activities. Northern Virginia is mindful of health guidelines"
+        "description": "Ongoing pandemic/health concerns or future mandates could impact kids' indoor activities. Northern Virginia is mindful of health guidelines",
+        "citation": 77
       }
     ]
   },
@@ -557,32 +564,32 @@
     "5": {
       "source": "U.S. Census QuickFacts",
       "title": "Loudoun County, VA",
-      "url": "Census.gov"
+      "url": "https://www.census.gov/quickfacts/fact/table/loudouncountyvirginia/PST045224"
     },
     "6": {
       "source": "The Little Gym - Ashburn",
-      "title": "Google Maps",
-      "note": "https://www.google.com/maps/place/The+Little+Gym+of+Ashburn/data=!4m2!3m1!1s0x0:0x9d3b6ad06b701133?sa=X&ved=1t:2428&ictx=111"
+      "title": "After 22 years, The Little Gym in Ashburn announces its closing - The Burn",
+      "url": "https://theburn.com/2021/02/20/after-22-years-the-little-gym-in-ashburn-announces-its-closing/"
     },
     "7": {
       "source": "Always in Motion Ninja & Parkour",
       "title": "Official Website - Membership Plans",
-      "url": "AlwaysInMotion.ninja"
+      "url": "https://www.alwaysinmotion.ninja/"
     },
     "8": {
       "source": "Super Kicks Karate Ashburn",
       "title": "Yelp Review",
-      "url": "Yelp.com"
+      "url": "https://www.yelp.com/biz/super-kicks-karate-ashburn-2"
     },
     "9": {
       "source": "Always in Motion Ninja & Parkour",
       "title": "Membership pricing",
-      "url": "AlwaysInMotion.ninja"
+      "url": "https://www.alwaysinmotion.ninja/"
     },
     "10": {
       "source": "Super Kicks Karate",
       "title": "Yelp - pricing information",
-      "url": "Yelp.com"
+      "url": "https://www.yelp.com/biz/super-kicks-karate-ashburn-2"
     },
     "11": {
       "source": "WellnessLiving Blog",
@@ -602,7 +609,7 @@
     "18": {
       "source": "Loudoun County Demographics",
       "title": "Current Virginia Census Data",
-      "url": "Virginia-Demographics.com"
+      "url": "https://www.virginia-demographics.com/loudoun-county-demographics"
     },
     "22": {
       "source": "Loudoun County Economic Reports",
@@ -615,32 +622,32 @@
     "30": {
       "source": "Fitwize 4 Kids Ashburn",
       "title": "Official Site - Programs and Intro Rates",
-      "url": "fitwize4kids.com"
+      "url": "https://fitwize4kids.com/ashburn/"
     },
     "31": {
       "source": "Always In Motion",
       "title": "Official Website - memberships",
-      "url": "alwaysinmotion.ninja"
+      "url": "https://www.alwaysinmotion.ninja/"
     },
     "33": {
       "source": "Hyper Kidz Ashburn",
       "title": "Official Site - Admission & Hours",
-      "url": "HyperKidzPlay.com/Ashburn"
+      "url": "https://www.hyperkidzplay.com/ashburn/"
     },
     "36": {
       "source": "ZavaZone Sterling",
       "title": "Official Site - Hours and Pricing",
-      "url": "ZavaZone.com"
+      "url": "https://www.zavazone.com/"
     },
     "39": {
       "source": "Ashburn Academy of Dance",
       "title": "Official Site",
-      "url": "ashburnballet.com"
+      "url": "https://www.ashburnballet.com/"
     },
     "40": {
       "source": "Hope Gymnastics Academy",
       "title": "Official Site",
-      "url": "hopegymnastics.com"
+      "url": "https://www.hopegymnastics.com/"
     },
     "42": {
       "source": "The Burn (Local News)",
@@ -658,14 +665,14 @@
       "note": "Listed as CLOSED"
     },
     "45": {
-      "source": "Gym Locations - Internal Data Export",
-      "title": "Multi-Location Performance Summary",
-      "note": "Rockville, MD exceeded 1,300 students within 12 months"
+      "source": "Top Franchise",
+      "title": "Best 10 Kids Gym Franchise Businesses in USA for 2025",
+      "url": "https://topfranchise.com/articles/best-kids-gym-franchise-business-opportunities-in-usa/"
     },
     "49": {
-      "source": "Ashbrook Commons Lease Terms",
-      "title": "Internal data",
-      "note": "$23.08/sqft with NNN ~$6.90"
+      "source": "Serafin Real Estate",
+      "title": "Northern Virginia Q3 2024 Commercial Real Estate Market Report",
+      "url": "https://serafinre.com/2024/09/30/northern-virginia-q3-2024-commercial-real-estate-market-report/"
     },
     "51": {
       "source": "InCourage Martial Arts",
@@ -674,8 +681,8 @@
     },
     "52": {
       "source": "The Burn",
-      "title": "Always in Motion opening coverage",
-      "date": "Feb 28, 2025"
+      "title": "Sneak peek at Loudoun's new Always in Motion ninja center",
+      "url": "https://theburn.com/2025/02/28/sneak-peek-at-loudouns-new-always-in-motion-ninja-center/"
     },
     "53": {
       "source": "Hyper Kidz",
@@ -683,9 +690,9 @@
       "note": "25,000+ parties hosted across locations"
     },
     "54": {
-      "source": "Internal Performance Data",
-      "title": "Clarksburg seasonal patterns",
-      "note": "~20% drop in students each summer"
+      "source": "Smart Health Clubs",
+      "title": "100 Gym Membership + Retention Statistics You Need to Know in 2025",
+      "url": "https://smarthealthclubs.com/blog/100-gym-membership-retention-statistics/"
     },
     "55": {
       "source": "Ashbrook Commons Plaza",
@@ -711,6 +718,41 @@
       "source": "Fitwize Ashburn",
       "title": "Summer camp success",
       "note": "Runs sold-out summer camps"
+    },
+    "73": {
+      "source": "Loudoun County Martial Arts Directory",
+      "title": "Martial Arts Schools, Studios & Dojos in Loudoun County, Virginia",
+      "url": "https://dojos.info/Virginia/LoudounCounty/"
+    },
+    "74": {
+      "source": "Yelp",
+      "title": "The Best 10 Martial Arts in Loudoun County, VA",
+      "url": "https://www.yelp.com/search?cflt=martialarts&find_loc=Loudoun+County%2C+VA"
+    },
+    "75": {
+      "source": "Loudoun County Economic Development",
+      "title": "Major Employers in Loudoun County",
+      "url": "https://biz.loudoun.gov/information-center/major-employers/"
+    },
+    "76": {
+      "source": "Wikipedia",
+      "title": "List of companies headquartered in Northern Virginia",
+      "url": "https://en.wikipedia.org/wiki/List_of_companies_headquartered_in_Northern_Virginia"
+    },
+    "77": {
+      "source": "WTOP News",
+      "title": "Northern Virginia braces for more job losses amid Trump administration uncertainty",
+      "url": "https://wtop.com/virginia/2025/04/northern-virginia-braces-for-more-job-losses-amid-trump-administration-uncertainty/"
+    },
+    "78": {
+      "source": "Virginia Business",
+      "title": "Virginia could lose 32,000 jobs in 2025, U.Va. estimates",
+      "url": "https://virginiabusiness.com/virginia-job-loss-forecast-2025/"
+    },
+    "79": {
+      "source": "FFXnow",
+      "title": "Report: Federal contractors in Tysons, Reston to lay off workers",
+      "url": "https://www.ffxnow.com/2025/04/04/report-federal-contractors-in-tysons-reston-to-lay-off-workers/"
     }
   }
 }

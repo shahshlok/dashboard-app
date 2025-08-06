@@ -18,6 +18,41 @@ export default function LocationModal({ location, isOpen, onClose }: LocationMod
   const [selectedSwotCategory, setSelectedSwotCategory] = useState<'strengths' | 'weaknesses' | 'opportunities' | 'threats' | null>(null)
   const [selectedPricingItem, setSelectedPricingItem] = useState<{type: 'membershipTier' | 'unitEconomic', index?: number, key?: string} | null>(null)
 
+  // Utility function to render citations
+  const renderCitation = (citationNumber: number | undefined, className: string = "text-xs text-gray-500 mt-1") => {
+    if (!citationNumber || !enhancedLocation) return null;
+    
+    const detailedData = (enhancedLocation as any)._detailedData;
+    const citationRef = detailedData?.citationReferences?.[citationNumber.toString()];
+    
+    if (!citationRef) return null;
+    
+    return (
+      <div className={className}>
+        <div className="flex items-start gap-1">
+          <span className="text-gray-400">📖</span>
+          <div className="flex-1">
+            <div className="text-gray-600">{citationRef.source}</div>
+            {citationRef.url ? (
+              <a 
+                href={citationRef.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline text-xs break-all"
+              >
+                {citationRef.title}
+              </a>
+            ) : citationRef.note ? (
+              <span className="italic text-xs">{citationRef.note}</span>
+            ) : (
+              <span className="text-xs">{citationRef.title}</span>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
 
   // Load detailed data for Ashburn location
   useEffect(() => {
@@ -704,13 +739,47 @@ export default function LocationModal({ location, isOpen, onClose }: LocationMod
                                   <p className="text-sm text-gray-700 leading-relaxed mb-3">
                                     {item.description}
                                   </p>
-                                  {item.citation && (
-                                    <div className="mt-4 pt-3 border-t border-gray-100">
-                                      <div className="text-xs text-gray-500 italic">
-                                        <strong>Source:</strong> {item.citation}
+                                  {item.citation && (() => {
+                                    const detailedData = (enhancedLocation as any)._detailedData;
+                                    const citationRef = detailedData?.citationReferences?.[item.citation.toString()];
+                                    
+                                    if (citationRef) {
+                                      return (
+                                        <div className="mt-4 pt-3 border-t border-gray-100">
+                                          <div className="text-xs text-gray-500">
+                                            <div className="flex items-start gap-2">
+                                              <span className="font-medium">Source:</span>
+                                              <div className="flex-1">
+                                                <div className="mb-1">{citationRef.source}</div>
+                                                {citationRef.url ? (
+                                                  <a 
+                                                    href={citationRef.url} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="text-blue-600 hover:text-blue-800 underline break-all"
+                                                  >
+                                                    {citationRef.title}
+                                                  </a>
+                                                ) : citationRef.note ? (
+                                                  <span className="italic">{citationRef.note}</span>
+                                                ) : (
+                                                  <span>{citationRef.title}</span>
+                                                )}
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      );
+                                    }
+                                    
+                                    return (
+                                      <div className="mt-4 pt-3 border-t border-gray-100">
+                                        <div className="text-xs text-gray-500 italic">
+                                          <strong>Source:</strong> Citation {item.citation}
+                                        </div>
                                       </div>
-                                    </div>
-                                  )}
+                                    );
+                                  })()}
                                 </div>
                               ));
                             }

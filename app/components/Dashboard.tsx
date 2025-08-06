@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react"
 import { locations, type Location } from "../data/locations"
 import TileCard from "./TileCard"
-import LocationModal from "./LocationModal"
+import FullScreenOverlay from "./FullScreenOverlay"
 
 export default function Dashboard() {
   const [statusFilter, setStatusFilter] = useState<string>("All")
@@ -43,9 +43,11 @@ export default function Dashboard() {
     setIsModalOpen(true)
   }
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedLocation(null)
+  const handleCloseOverlay = (open: boolean) => {
+    setIsModalOpen(open)
+    if (!open) {
+      setSelectedLocation(null)
+    }
   }
 
   return (
@@ -135,8 +137,8 @@ export default function Dashboard() {
         )}
       </div>
 
-      {/* Modal */}
-      <LocationModal location={selectedLocation} isOpen={isModalOpen} onClose={handleCloseModal} />
+      {/* Full Screen Overlay */}
+      <FullScreenOverlay location={selectedLocation} isOpen={isModalOpen} onOpenChange={handleCloseOverlay} />
     </div>
   )
 }
