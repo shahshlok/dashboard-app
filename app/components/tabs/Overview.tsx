@@ -12,12 +12,12 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
   const enhancedLocation = location as any
 
   return (
-    <div className="space-y-6 text-xl pb-8">
+    <div className="space-y-8 text-2xl pb-8">
       {/* Market Overview Executive Summary */}
       {enhancedLocation.executive_summary && (
         <div> 
-          <h4 className="font-semibold mb-3">Market Overview</h4>
-          <div className="grid grid-cols-2 gap-4 text-base">
+          <h4 className="font-semibold mb-4 text-2xl">Market Overview</h4>
+          <div className="grid grid-cols-2 gap-6 text-lg">
             {enhancedLocation.executive_summary.market_opportunity && (
               <div>
                 <span className="text-gray-600">Children in Trade Area:</span>
@@ -49,12 +49,12 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
       {/* Market Demographics */}
       {enhancedLocation.market_demographics && (
         <div>
-          <h3 className="font-semibold mb-3">Market Demographics</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <h3 className="font-semibold mb-4 text-2xl">Market Demographics</h3>
+          <div className="grid grid-cols-2 gap-6">
             {enhancedLocation.market_demographics.population_data && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                <h4 className="font-medium text-blue-800 mb-2">Population Data</h4>
-                <div className="text-sm text-blue-700 space-y-1">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h4 className="font-medium text-blue-800 mb-3 text-lg">Population Data</h4>
+                <div className="text-base text-blue-700 space-y-2">
                   {enhancedLocation.market_demographics.population_data["5_mile_radius"] && (
                     <div>5-mile radius: {enhancedLocation.market_demographics.population_data["5_mile_radius"].toLocaleString()}</div>
                   )}
@@ -68,9 +68,9 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
               </div>
             )}
             {enhancedLocation.market_demographics.income_spending && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                <h4 className="font-medium text-green-800 mb-2">Income & Spending</h4>
-                <div className="text-sm text-green-700 space-y-1">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <h4 className="font-medium text-green-800 mb-3 text-lg">Income & Spending</h4>
+                <div className="text-base text-green-700 space-y-2">
                   {enhancedLocation.market_demographics.income_spending.ashburn_median_income && (
                     <div>Median Income: {enhancedLocation.market_demographics.income_spending.ashburn_median_income}</div>
                   )}
@@ -90,12 +90,12 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
       {/* Real Estate Section */}
       {enhancedLocation.real_estate_evaluation && (
         <div>
-          <h3 className="font-semibold mb-3">Real Estate</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <h3 className="font-semibold mb-4 text-2xl">Real Estate</h3>
+          <div className="grid grid-cols-2 gap-6">
             {enhancedLocation.real_estate_evaluation.location_details && (
-              <div className="bg-gray-50 rounded-lg p-3">
-                <h4 className="font-medium mb-2">Location Details</h4>
-                <div className="text-sm space-y-1">
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h4 className="font-medium mb-3 text-lg">Location Details</h4>
+                <div className="text-base space-y-2">
                   {enhancedLocation.real_estate_evaluation.location_details.address && (
                     <div><span className="text-gray-600">Address:</span> {enhancedLocation.real_estate_evaluation.location_details.address}</div>
                   )}
@@ -109,9 +109,9 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
               </div>
             )}
             {enhancedLocation.real_estate_evaluation.lease_terms && (
-              <div className="bg-gray-50 rounded-lg p-3">
-                <h4 className="font-medium mb-2">Lease Terms</h4>
-                <div className="text-sm space-y-1">
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h4 className="font-medium mb-3 text-lg">Lease Terms</h4>
+                <div className="text-base space-y-2">
                   {enhancedLocation.real_estate_evaluation.lease_terms.base_rent && 
                     <div><span className="text-gray-600">Base Rent:</span> {enhancedLocation.real_estate_evaluation.lease_terms.base_rent}</div>
                   }
@@ -127,16 +127,16 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
 
       {/* SWOT Analysis Section */}
       <div>
-        <h3 className="font-semibold mb-3">SWOT Analysis</h3>
-        <div className="grid grid-cols-2 gap-4">
+        <h3 className="font-semibold mb-4 text-2xl">SWOT Analysis</h3>
+        <div className="grid grid-cols-2 gap-6">
           <div 
-            className="bg-green-50 border border-green-200 rounded-lg p-3 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-green-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-green-100 hover:border-green-300"
+            className="bg-green-50 border border-green-200 rounded-lg p-4 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-green-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-green-100 hover:border-green-300"
             onClick={() => onSwotCategorySelect(selectedSwotCategory === 'strengths' ? null : 'strengths')}
           >
-            <h4 className="font-medium text-green-800 mb-2">
+            <h4 className="font-medium text-green-800 mb-3 text-lg">
               Strengths
             </h4>
-            <ul className="text-sm text-green-700 space-y-1">
+            <ul className="text-base text-green-700 space-y-2">
               {enhancedLocation.swot.strengths.map((item: string, index: number) => (
                 <li key={index}>
                   • {item}
@@ -145,13 +145,13 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
             </ul>
           </div>
           <div 
-            className="bg-red-50 border border-red-200 rounded-lg p-3 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-red-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-red-100 hover:border-red-300"
+            className="bg-red-50 border border-red-200 rounded-lg p-4 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-red-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-red-100 hover:border-red-300"
             onClick={() => onSwotCategorySelect(selectedSwotCategory === 'weaknesses' ? null : 'weaknesses')}
           >
-            <h4 className="font-medium text-red-800 mb-2">
+            <h4 className="font-medium text-red-800 mb-3 text-lg">
               Weaknesses
             </h4>
-            <ul className="text-sm text-red-700 space-y-1">
+            <ul className="text-base text-red-700 space-y-2">
               {enhancedLocation.swot.weaknesses.map((item: string, index: number) => (
                 <li key={index}>
                   • {item}
@@ -160,13 +160,13 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
             </ul>
           </div>
           <div 
-            className="bg-blue-50 border border-blue-200 rounded-lg p-3 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-blue-100 hover:border-blue-300"
+            className="bg-blue-50 border border-blue-200 rounded-lg p-4 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-blue-100 hover:border-blue-300"
             onClick={() => onSwotCategorySelect(selectedSwotCategory === 'opportunities' ? null : 'opportunities')}
           >
-            <h4 className="font-medium text-blue-800 mb-2">
+            <h4 className="font-medium text-blue-800 mb-3 text-lg">
               Opportunities
             </h4>
-            <ul className="text-sm text-blue-700 space-y-1">
+            <ul className="text-base text-blue-700 space-y-2">
               {enhancedLocation.swot.opportunities.map((item: string, index: number) => (
                 <li key={index}>
                   • {item}
@@ -175,13 +175,13 @@ export default function Overview({ location, selectedSwotCategory, onSwotCategor
             </ul>
           </div>
           <div 
-            className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-yellow-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-yellow-100 hover:border-yellow-300"
+            className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:shadow-yellow-200/50 hover:-translate-y-1 hover:scale-[1.02] hover:bg-yellow-100 hover:border-yellow-300"
             onClick={() => onSwotCategorySelect(selectedSwotCategory === 'threats' ? null : 'threats')}
           >
-            <h4 className="font-medium text-yellow-800 mb-2">
+            <h4 className="font-medium text-yellow-800 mb-3 text-lg">
               Threats
             </h4>
-            <ul className="text-sm text-yellow-700 space-y-1">
+            <ul className="text-base text-yellow-700 space-y-2">
               {enhancedLocation.swot.threats.map((item: string, index: number) => (
                 <li key={index}>
                   • {item}

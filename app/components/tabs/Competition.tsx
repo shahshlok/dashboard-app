@@ -10,24 +10,24 @@ export default function Competition({ location }: CompetitionProps) {
   const enhancedLocation = location as any
 
   return (
-    <div className="space-y-6 text-xl pb-8">
+    <div className="space-y-8 text-2xl pb-8">
       {/* Detailed Competitor Analysis */}
       {enhancedLocation.competitor_analysis?.direct_competitors ? (
         <div>
-          <h3 className="font-semibold mb-3">Detailed Competitor Analysis</h3>
-          <div className="space-y-4">
+          <h3 className="font-semibold mb-4 text-2xl">Detailed Competitor Analysis</h3>
+          <div className="space-y-6">
             {enhancedLocation.competitor_analysis.direct_competitors.map((competitor: any, index: number) => (
-              <div key={index} className="border rounded-lg p-4 bg-white">
+              <div key={index} className="border rounded-lg p-5 bg-white">
                 <div className="flex items-start justify-between mb-2">
                   <div>
-                    <div className="font-medium text-lg">{competitor.name}</div>
-                    <div className="text-sm text-gray-600">{competitor.location} • {competitor.distance}</div>
+                    <div className="font-medium text-xl">{competitor.name}</div>
+                    <div className="text-base text-gray-600">{competitor.location} • {competitor.distance}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-green-600">{competitor.pricing.split(';')[0]}</div>
+                    <div className="font-semibold text-green-600 text-lg">{competitor.pricing.split(';')[0]}</div>
                   </div>
                 </div>
-                <div className="text-sm text-gray-700 mb-2">
+                <div className="text-base text-gray-700 mb-3">
                   <strong>Focus:</strong> {competitor.focus}
                 </div>
                 <div className="text-sm text-green-700 bg-green-50 p-2 rounded">

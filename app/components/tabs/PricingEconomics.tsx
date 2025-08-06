@@ -12,22 +12,22 @@ export default function PricingEconomics({ location }: PricingEconomicsProps) {
   const [selectedPricingItem, setSelectedPricingItem] = useState<{type: 'membershipTier' | 'unitEconomic', index?: number, key?: string} | null>(null)
 
   return (
-    <div className="space-y-6 text-xl pb-8">
+    <div className="space-y-8 text-2xl pb-8">
       <div>
-        <h3 className="font-semibold mb-3">Pricing & Unit Economics</h3>
+        <h3 className="font-semibold mb-4 text-2xl">Pricing & Unit Economics</h3>
         
         {/* Membership Tiers */}
         {(enhancedLocation as any)?._detailedData?.pricing?.membershipTiers ? (
           <div className="mb-6">
-            <h4 className="font-medium mb-3 text-gray-800">Membership Tiers</h4>
+            <h4 className="font-medium mb-4 text-gray-800 text-lg">Membership Tiers</h4>
             <div className="overflow-hidden rounded-lg border">
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-900">Program</th>
-                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-900">Price</th>
-                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-900">Duration</th>
-                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-900">Rationale</th>
+                    <th className="px-4 py-3 text-left text-base font-medium text-gray-900">Program</th>
+                    <th className="px-4 py-3 text-left text-base font-medium text-gray-900">Price</th>
+                    <th className="px-4 py-3 text-left text-base font-medium text-gray-900">Duration</th>
+                    <th className="px-4 py-3 text-left text-base font-medium text-gray-900">Rationale</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -37,10 +37,10 @@ export default function PricingEconomics({ location }: PricingEconomicsProps) {
                       className="hover:bg-gray-50 cursor-pointer transition-colors"
                       onClick={() => setSelectedPricingItem({type: 'membershipTier', index})}
                     >
-                      <td className="px-4 py-2 text-sm font-medium">{item.program}</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-green-600">{item.price}</td>
-                      <td className="px-4 py-2 text-sm text-gray-600">{item.duration}</td>
-                      <td className="px-4 py-2 text-sm text-gray-700">{item.brief}</td>
+                      <td className="px-4 py-3 text-base font-medium">{item.program}</td>
+                      <td className="px-4 py-3 text-base font-semibold text-green-600">{item.price}</td>
+                      <td className="px-4 py-3 text-base text-gray-600">{item.duration}</td>
+                      <td className="px-4 py-3 text-base text-gray-700">{item.brief}</td>
                     </tr>
                   ))}
                 </tbody>

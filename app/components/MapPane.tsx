@@ -27,9 +27,9 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
     return (
       <div className="h-full flex flex-col bg-white">
         {/* Header */}
-        <div className="flex-shrink-0 p-4 border-b bg-gray-50">
+        <div className="flex-shrink-0 p-6 border-b bg-gray-50">
           <div className="flex items-center justify-between">
-            <h3 className="font-bold text-lg capitalize text-gray-900">
+            <h3 className="font-bold text-xl capitalize text-gray-900">
               {selectedSwotCategory} Analysis
             </h3>
             <button 
@@ -42,23 +42,23 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
               </svg>
             </button>
           </div>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-base text-gray-600 mt-2">
             Detailed insights and explanations
           </p>
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-4">
-          <div className="space-y-4">
+        <div className="flex-1 overflow-y-auto p-6">
+          <div className="space-y-6">
             {(() => {
               const detailedData = enhancedLocation._detailedData;
               const swotCategoryData = detailedData?.swotAnalysis?.[selectedSwotCategory];
               
               if (swotCategoryData && Array.isArray(swotCategoryData)) {
                 return swotCategoryData.map((item: any, index: number) => (
-                  <div key={index} className="p-4 rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+                  <div key={index} className="p-5 rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-start justify-between mb-3">
-                      <h4 className="font-semibold text-sm text-gray-900 flex-1 pr-3">
+                      <h4 className="font-semibold text-base text-gray-900 flex-1 pr-3">
                         {item.title}
                       </h4>
                       <span className={`text-xs px-2 py-1 rounded-full font-medium shrink-0 ${
@@ -70,7 +70,7 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
                         #{index + 1}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
+                    <p className="text-base text-gray-700 leading-relaxed mb-3">
                       {item.description}
                     </p>
                     {item.citation && (() => {
@@ -79,7 +79,7 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
                       if (citationRef) {
                         return (
                           <div className="mt-3 pt-3 border-t border-gray-100">
-                            <div className="text-xs text-gray-500">
+                            <div className="text-sm text-gray-500">
                               <div className="flex items-start gap-2">
                                 <span className="font-medium text-gray-600">Source:</span>
                                 <div className="flex-1">
@@ -89,14 +89,14 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
                                       href={citationRef.url} 
                                       target="_blank" 
                                       rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 underline break-all text-xs"
+                                      className="text-blue-600 hover:text-blue-800 underline break-all text-sm"
                                     >
                                       {citationRef.title}
                                     </a>
                                   ) : citationRef.note ? (
-                                    <span className="italic text-xs">{citationRef.note}</span>
+                                    <span className="italic text-sm">{citationRef.note}</span>
                                   ) : (
-                                    <span className="text-xs">{citationRef.title}</span>
+                                    <span className="text-sm">{citationRef.title}</span>
                                   )}
                                 </div>
                               </div>
@@ -107,7 +107,7 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
                       
                       return (
                         <div className="mt-3 pt-3 border-t border-gray-100">
-                          <div className="text-xs text-gray-500 italic">
+                          <div className="text-sm text-gray-500 italic">
                             <strong>Source:</strong> Citation {item.citation}
                           </div>
                         </div>
@@ -139,9 +139,9 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
     return (
       <div className="h-full flex flex-col bg-white">
         {/* Header */}
-        <div className="flex-shrink-0 p-4 border-b bg-gray-50">
+        <div className="flex-shrink-0 p-6 border-b bg-gray-50">
           <div className="flex items-center justify-between">
-            <h3 className="font-bold text-lg capitalize text-gray-900">
+            <h3 className="font-bold text-xl capitalize text-gray-900">
               {selectedSwotCategory} Analysis
             </h3>
             <button 
@@ -154,14 +154,14 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
               </svg>
             </button>
           </div>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-base text-gray-600 mt-2">
             Strategic insights for this location
           </p>
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-4">
-          <div className="space-y-4">
+        <div className="flex-1 overflow-y-auto p-6">
+          <div className="space-y-6">
             {enhancedLocation.swot[selectedSwotCategory].map((item: string, index: number) => (
               <div key={index} className="p-4 rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-3">
@@ -177,7 +177,7 @@ export default function MapPane({ location, selectedSwotCategory, onSwotCategory
                     #{index + 1}
                   </span>
                 </div>
-                <p className="text-xs text-gray-700 leading-relaxed">
+                <p className="text-base text-gray-700 leading-relaxed">
                   {item}
                 </p>
               </div>

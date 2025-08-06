@@ -10,20 +10,20 @@ export default function ActionPlan({ location }: ActionPlanProps) {
   const enhancedLocation = location as any
 
   return (
-    <div className="space-y-6 text-xl pb-8">
+    <div className="space-y-8 text-2xl pb-8">
       {/* Actionable Recommendations */}
       {enhancedLocation.actionable_recommendations ? (
         <div>
-          <h3 className="font-semibold mb-3">Actionable Recommendations</h3>
-          <div className="space-y-4">
+          <h3 className="font-semibold mb-4 text-2xl">Actionable Recommendations</h3>
+          <div className="space-y-6">
             {enhancedLocation.actionable_recommendations
               .sort((a: any, b: any) => a.priority - b.priority)
               .map((rec: any, index: number) => (
-                <div key={index} className="border rounded-lg p-4 bg-white">
+                <div key={index} className="border rounded-lg p-5 bg-white">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className={`px-2 py-1 rounded text-xs font-medium ${
+                        <span className={`px-3 py-1 rounded text-sm font-medium ${
                           rec.priority === 1 ? 'bg-red-100 text-red-800' :
                           rec.priority === 2 ? 'bg-orange-100 text-orange-800' :
                           rec.priority === 3 ? 'bg-yellow-100 text-yellow-800' :

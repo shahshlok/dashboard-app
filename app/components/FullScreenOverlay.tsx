@@ -74,9 +74,9 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                   </svg>
                 </button>
-                <h1 className="text-xl font-semibold">
+                <h1 className="text-2xl font-semibold">
                   {enhancedLocation.name || enhancedLocation.locationName} - {enhancedLocation.status}
-                  {isLoading && <span className="ml-2 text-sm text-gray-500">(Loading...)</span>}
+                  {isLoading && <span className="ml-2 text-base text-gray-500">(Loading...)</span>}
                 </h1>
               </div>
             </div>
