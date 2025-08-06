@@ -22,6 +22,7 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
   const [activeTab, setActiveTab] = useState("overview")
   const [enhancedLocation, setEnhancedLocation] = useState<Location | null>(location)
   const [isLoading, setIsLoading] = useState(false)
+  const [selectedSwotCategory, setSelectedSwotCategory] = useState<'strengths' | 'weaknesses' | 'opportunities' | 'threats' | null>(null)
 
   // Load detailed data for Ashburn location
   useEffect(() => {
@@ -96,7 +97,11 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             <div className="flex-1 overflow-y-auto">
               <Tabs value={activeTab} onValueChange={setActiveTab}>
                 <TabsContent value="overview" className="p-6">
-                  <Overview location={enhancedLocation} />
+                  <Overview 
+                    location={enhancedLocation} 
+                    selectedSwotCategory={selectedSwotCategory}
+                    onSwotCategorySelect={setSelectedSwotCategory}
+                  />
                 </TabsContent>
                 <TabsContent value="pricingEconomics" className="p-6">
                   <PricingEconomics location={enhancedLocation} />
@@ -111,9 +116,13 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             </div>
           </div>
 
-          {/* Right Panel - Map (Fixed Height) */}
+          {/* Right Panel - Map or SWOT Details (Fixed Height) */}
           <div className="w-[30%] h-screen border-l">
-            <MapPane location={enhancedLocation} />
+            <MapPane 
+              location={enhancedLocation} 
+              selectedSwotCategory={selectedSwotCategory}
+              onSwotCategoryClose={() => setSelectedSwotCategory(null)}
+            />
           </div>
         </div>
       </DialogContent>
