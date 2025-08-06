@@ -1,0 +1,237 @@
+{
+    "market_analysis_ashburn_vs_existing_ddga_sites": {
+        "location_and_demographic_similarity": {
+            "introduction": "Ashburn's profile was quantified and compared to DDGA's three operating locations (Clarksburg MD, Rockville MD, Columbia MD) across six dimensions. Table 1 presents the data and a computed Similarity Score for each site relative to Ashburn (higher = more similar). Weights for each factor (in parentheses) were chosen based on expected impact on gym performance: child population (25%), affluence (20%), lease economics (15%), competition (15%), suburban density (15%), school calendar alignment (10%). A weighted Euclidean distance was calculated then converted to a 0–100 similarity index (methodology footnoted).",
+            "demographics_and_similarity_metrics": {
+                "title": "Table 1. Ashburn vs Existing Sites – Demographics & Similarity Metrics",
+                "sites": [
+                    {
+                        "location_name": "Ashburn, VA",
+                        "status": "New",
+                        "children_2_12_within_7_mile_radius": {
+                            "value": 54088,
+                            "weight": 0.25
+                        },
+                        "median_hh_income_7_mi": {
+                            "value": "$152k",
+                            "weight": 0.2,
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/ashburncdpvirginia/IPE120223"
+                        },
+                        "lease": {
+                            "rent_per_sqft": 23.08,
+                            "size_sqft": 19555,
+                            "weight": 0.15
+                        },
+                        "nearest_gymnastics_competitor_distance": {
+                            "value": "<2 miles (multiple)",
+                            "weight": 0.15
+                        },
+                        "suburban_density_drive_time_profile": {
+                            "value": "High (metro suburb; car-dependent)",
+                            "weight": 0.15
+                        },
+                        "school_calendar_alignment": {
+                            "value": "VA (Aug-Jun)",
+                            "weight": 0.1
+                        },
+                        "weighted_similarity_score": {
+                            "value": 100,
+                            "note": "Ashburn=100"
+                        }
+                    },
+                    {
+                        "location_name": "Clarksburg, MD",
+                        "status": "DDGA 2020",
+                        "children_2_12_within_7_mile_radius": {
+                            "value": 38082,
+                            "comparison_to_ashburn": "70% of Ashburn",
+                            "weight": 0.25
+                        },
+                        "median_hh_income_7_mi": {
+                            "value": "~$130k (est.) - high",
+                            "comparison_to_ashburn": "85%",
+                            "weight": 0.2
+                        },
+                        "lease": {
+                            "rent_per_sqft": 19.03,
+                            "size_sqft": 20706,
+                            "note": "lower rent",
+                            "weight": 0.15
+                        },
+                        "nearest_gymnastics_competitor_distance": {
+                            "value": "~8 miles (few nearby)",
+                            "weight": 0.15
+                        },
+                        "suburban_density_drive_time_profile": {
+                            "value": "Medium (exurban; families drive 15+ min)",
+                            "weight": 0.15
+                        },
+                        "school_calendar_alignment": {
+                            "value": "MD (Montgomery Co., Aug-Jun)",
+                            "weight": 0.1
+                        },
+                        "weighted_similarity_score": {
+                            "value": 76,
+                            "note": "moderate similarity"
+                        }
+                    },
+                    {
+                        "location_name": "Rockville, MD",
+                        "status": "DDGA 2023",
+                        "children_2_12_within_7_mile_radius": {
+                            "value": 99854,
+                            "comparison_to_ashburn": "185% of Ashburn",
+                            "weight": 0.25
+                        },
+                        "median_hh_income_7_mi": {
+                            "value": "~$122k",
+                            "comparison_to_ashburn": "80%",
+                            "note": "moderate",
+                            "weight": 0.2,
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/rockvillecitymaryland/PST045223"
+                        },
+                        "lease": {
+                            "rent_per_sqft": 16.81,
+                            "size_sqft": 21552,
+                            "note": "lower rent",
+                            "weight": 0.15
+                        },
+                        "nearest_gymnastics_competitor_distance": {
+                            "value": "~3 miles (several nearby)",
+                            "weight": 0.15
+                        },
+                        "suburban_density_drive_time_profile": {
+                            "value": "High (urban-suburb mix; heavy traffic)",
+                            "weight": 0.15
+                        },
+                        "school_calendar_alignment": {
+                            "value": "MD (Montgomery Co., Aug-Jun)",
+                            "weight": 0.1
+                        },
+                        "weighted_similarity_score": {
+                            "value": 82,
+                            "note": "high similarity"
+                        }
+                    },
+                    {
+                        "location_name": "Columbia, MD",
+                        "status": "DDGA 2024",
+                        "children_2_12_within_7_mile_radius": {
+                            "value": 63367,
+                            "comparison_to_ashburn": "117% of Ashburn",
+                            "weight": 0.25
+                        },
+                        "median_hh_income_7_mi": {
+                            "value": "~$129k",
+                            "comparison_to_ashburn": "85%",
+                            "note": "moderate",
+                            "weight": 0.2,
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/columbiacdpmaryland/RHI525223"
+                        },
+                        "lease": {
+                            "rent_per_sqft": 17.64,
+                            "size_sqft": 12544,
+                            "note": "lower rent, smaller",
+                            "weight": 0.15
+                        },
+                        "nearest_gymnastics_competitor_distance": {
+                            "value": "~3 miles (Columbia Gymnastics)",
+                            "weight": 0.15
+                        },
+                        "suburban_density_drive_time_profile": {
+                            "value": "Medium-High (planned suburb; moderate traffic)",
+                            "weight": 0.15
+                        },
+                        "school_calendar_alignment": {
+                            "value": "MD (Howard Co., Sep-Jun)",
+                            "weight": 0.1
+                        },
+                        "weighted_similarity_score": {
+                            "value": 79,
+                            "note": "moderate-high"
+                        }
+                    }
+                ]
+            },
+            "methodology_notes": {
+                "sources": {
+                    "child_populations": "DDGA summary",
+                    "income": [
+                        {
+                            "location": "Ashburn (Loudoun Co.)",
+                            "source": "ACS",
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/ashburncdpvirginia/IPE120223"
+                        },
+                        {
+                            "location": "others",
+                            "source": "ACS (Montgomery & Howard counties) and demographicsbyradius reports"
+                        }
+                    ],
+                    "lease_terms": "DDGA summary",
+                    "competitor_distances": "estimated via Google Maps",
+                    "school_schedules": "county calendars"
+                },
+                "similarity_calculation": "Each metric was normalized 0–1 by Ashburn's value, weighted, and difference scores were inverted to a 100-pt similarity index (details in Assumption A-03)."
+            },
+            "analysis": "Rockville is most similar to Ashburn (score 82) – both have large affluent populations and are near competitors (Rockville even more populous but with slightly lower incomes). Clarksburg, though affluent, has a much smaller population radius and virtually no nearby gymnastics alternatives, making it a different market dynamic (score 76). Columbia has comparable demographics to Ashburn but its Maryland location has a later school start and some lower-income adjacent areas, plus a smaller facility size, yielding a similarity of 79. Overall, Ashburn sits between Rockville and Columbia in market profile: a high-income suburban family area with strong demand (lots of kids) but also plenty of alternatives in close proximity. This informed our ramp assumptions and competitive pricing strategy – we expect Ashburn to acquire members more like Rockville (fast uptake, but also needing differentiation due to competition) rather than Clarksburg (which enjoyed a captive market)."
+        },
+        "trade_area_and_demand_potential": {
+            "trade_area": "Ashburn's 7-mile radius (~15–20 minute drive)",
+            "total_addressable_market_tam": {
+                "estimate": "8,000–10,000 children for gymnastics or similar classes",
+                "assumption": {
+                    "description": "This assumes ~15–20% of the 54k kids will participate in tumbling, gymnastics, martial arts or dance",
+                    "rationale": "consistent with industry penetration rates for youth activities",
+                    "source_url": "https://chalkbucket.com/threads/how-much-for-start-up-costs.50842/"
+                }
+            },
+            "market_share_goals": {
+                "strategy": "DDGA aims to capture a significant share of this TAM by leveraging Dominique's brand and a broad program mix (recreational gymnastics, Ninja classes, preschool “Junior” gymnastics, etc.).",
+                "context": {
+                    "site": "Clarksburg",
+                    "stabilized_enrollment": "~1,000 enrolled “student-count” units (including multi-class)",
+                    "market_penetration": "~2–3% of its smaller TAM"
+                },
+                "ashburn_potential": {
+                    "maturity_potential": "1,500 student-count units (perhaps ~400–500 unique members)",
+                    "assumption": "assuming effective competition with incumbents"
+                },
+                "base_case_model_peak": {
+                    "members": "~400 members by month 8 (Section 6.1)",
+                    "market_penetration": "conservative at ~5% market penetration of the local TAM",
+                    "note": "leaving room for growth beyond the first 8 months"
+                }
+            }
+        },
+        "waitlist_and_demand_signals": {
+            "existing_site_waitlists": [
+                {
+                    "location": "Rockville",
+                    "context": "a populous, high-demand area",
+                    "status": "an active waitlist of 281 students as of May 2025",
+                    "implication": "demand outstripping capacity"
+                },
+                {
+                    "location": "Clarksburg",
+                    "status": "carries a small waitlist (39)",
+                    "note": "despite being the first location"
+                }
+            ],
+            "ashburn_anticipation": {
+                "expected_demand": "a healthy initial surge due to pent-up demand",
+                "reasons": [
+                    "strong population growth in Loudoun County",
+                    "limited existing gymnastics capacity (Section 4)"
+                ],
+                "action_plan": "We will monitor pre-opening registrations; if waitlists form, it may justify faster hiring or pricing adjustments."
+            }
+        },
+        "socioeconomic_factors": {
+            "income_and_pricing": "Ashburn's high median income suggests families can afford premium pricing, but value expectations will be high.",
+            "price_sensitivity_insights": "The DDGA Summary notes that at Columbia (an area with pockets of lower income relative to Howard County's average), staff received some inquiries about discounts. This implies price sensitivity can vary neighborhood by neighborhood.",
+            "ashburn_strategy": "In Ashburn, we expect most clients to comfortably afford our base rates, but we will still implement sibling discounts and occasionally offer promotional rates (e.g. founding member special or trial class discounts) to ensure inclusivity (see Pricing Strategy, Section 7).",
+            "demographic_considerations": "We also note that Ashburn's demographic includes many dual-income professional families who value convenience and quality – thus consistent scheduling, safety, and instructor quality are as important as price.",
+            "conclusion": "The Ashburn location has strong fundamentals: a large and wealthy customer base akin to DDGA's most successful market (Rockville), but will face more direct competition than Clarksburg did. This necessitates a competitive yet value-driven pricing approach and an accelerated marketing effort to establish DDGA's differentiators early. These findings will be reflected in the pricing architecture (e.g. no long-term contracts, premium facilities justified by Olympic branding) and in the ramp-up assumptions for enrollment."
+        }
+    }
+}

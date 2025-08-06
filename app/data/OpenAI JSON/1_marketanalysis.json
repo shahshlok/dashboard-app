@@ -1,0 +1,253 @@
+{
+    "market_analysis_ashburn_vs_existing_ddga_sites": {
+        "location_and_demographic_similarity": {
+            "summary": "Ashburn’s profile was quantified and compared to DDGA’s three operating locations (Clarksburg MD, Rockville MD, Columbia MD) across six weighted factors, then a weighted Euclidean distance was converted into a 0–100 Similarity Score for each site.",
+            "table_1": {
+                "weights": {
+                    "children_2_12_within_7_mile_radius": 25,
+                    "median_household_income_7_mi": 20,
+                    "lease_rent_sqft_and_size": 15,
+                    "nearest_gymnastics_competitor_distance": 15,
+                    "suburban_density_drive_time_profile": 15,
+                    "school_calendar_alignment": 10
+                },
+                "metrics": [
+                    {
+                        "metric": "children_2_12_within_7_mile_radius",
+                        "weight_percent": 25,
+                        "values": {
+                            "ashburn": {
+                                "value": 54088,
+                                "unit": "count",
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "clarksburg": {
+                                "value": 38082,
+                                "relative_percentage_of_ashburn": 70,
+                                "unit": "percent",
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "rockville": {
+                                "value": 99854,
+                                "relative_percentage_of_ashburn": 185,
+                                "unit": "percent",
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "columbia": {
+                                "value": 63367,
+                                "relative_percentage_of_ashburn": 117,
+                                "unit": "percent",
+                                "source_url": "internal_ddga_summary"
+                            }
+                        }
+                    },
+                    {
+                        "metric": "median_household_income_7_mi",
+                        "weight_percent": 20,
+                        "values": {
+                            "ashburn": {
+                                "value": 152000,
+                                "unit": "USD",
+                                "source_url": "https://www.census.gov/quickfacts/fact/table/ashburncdpvirginia/IPE120223"
+                            },
+                            "clarksburg": {
+                                "value": 130000,
+                                "unit": "USD",
+                                "relative_percentage_of_ashburn": 85,
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "rockville": {
+                                "value": 122000,
+                                "unit": "USD",
+                                "relative_percentage_of_ashburn": 80,
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "columbia": {
+                                "value": 129000,
+                                "unit": "USD",
+                                "relative_percentage_of_ashburn": 85,
+                                "source_url": "internal_ddga_summary"
+                            }
+                        }
+                    },
+                    {
+                        "metric": "lease_rent_sqft_and_size",
+                        "weight_percent": 15,
+                        "values": {
+                            "ashburn": {
+                                "rent_per_sqft": 23.08,
+                                "size_sqft": 19555,
+                                "unit": "USD_per_sqft; sqft",
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "clarksburg": {
+                                "rent_per_sqft": 19.03,
+                                "size_sqft": 20706,
+                                "unit": "USD_per_sqft; sqft",
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "rockville": {
+                                "rent_per_sqft": 16.81,
+                                "size_sqft": 21552,
+                                "unit": "USD_per_sqft; sqft",
+                                "source_url": "internal_ddga_summary"
+                            },
+                            "columbia": {
+                                "rent_per_sqft": 17.64,
+                                "size_sqft": 12544,
+                                "unit": "USD_per_sqft; sqft",
+                                "source_url": "internal_ddga_summary"
+                            }
+                        }
+                    },
+                    {
+                        "metric": "nearest_gymnastics_competitor_distance",
+                        "weight_percent": 15,
+                        "values": {
+                            "ashburn": {
+                                "description": "<2 miles (multiple)",
+                                "unit": "distance",
+                                "source_url": "Google_Maps"
+                            },
+                            "clarksburg": {
+                                "description": "~8 miles (few nearby)",
+                                "unit": "distance",
+                                "source_url": "Google_Maps"
+                            },
+                            "rockville": {
+                                "description": "~3 miles (several nearby)",
+                                "unit": "distance",
+                                "source_url": "Google_Maps"
+                            },
+                            "columbia": {
+                                "description": "~3 miles (Columbia Gymnastics)",
+                                "unit": "distance",
+                                "source_url": "Google_Maps"
+                            }
+                        }
+                    },
+                    {
+                        "metric": "suburban_density_drive_time_profile",
+                        "weight_percent": 15,
+                        "values": {
+                            "ashburn": {
+                                "description": "High (metro suburb; car-dependent)",
+                                "source_url": "internal_demographic_analysis"
+                            },
+                            "clarksburg": {
+                                "description": "Medium (exurban; families drive 15+ min)",
+                                "source_url": "internal_demographic_analysis"
+                            },
+                            "rockville": {
+                                "description": "High (urban-suburb mix; heavy traffic)",
+                                "source_url": "internal_demographic_analysis"
+                            },
+                            "columbia": {
+                                "description": "Medium-High (planned suburb; moderate traffic)",
+                                "source_url": "internal_demographic_analysis"
+                            }
+                        }
+                    },
+                    {
+                        "metric": "school_calendar_alignment",
+                        "weight_percent": 10,
+                        "values": {
+                            "ashburn": {
+                                "description": "VA (Aug–Jun)",
+                                "source_url": "County_Calendar_VA"
+                            },
+                            "clarksburg": {
+                                "description": "MD (Montgomery Co., Aug–Jun)",
+                                "source_url": "County_Calendar_Montgomery"
+                            },
+                            "rockville": {
+                                "description": "MD (Montgomery Co., Aug–Jun)",
+                                "source_url": "County_Calendar_Montgomery"
+                            },
+                            "columbia": {
+                                "description": "MD (Howard Co., Sep–Jun)",
+                                "source_url": "County_Calendar_Howard"
+                            }
+                        }
+                    }
+                ]
+            },
+            "similarity_scores": {
+                "ashburn": 100,
+                "clarksburg": {
+                    "value": 76,
+                    "description": "moderate similarity"
+                },
+                "rockville": {
+                    "value": 82,
+                    "description": "high similarity"
+                },
+                "columbia": {
+                    "value": 79,
+                    "description": "moderate-high similarity"
+                }
+            },
+            "analysis": "Rockville is most similar to Ashburn (score 82) due to large affluent population and nearby competitors. Clarksburg, though affluent, has a smaller population radius and fewer gymnastics alternatives, making it a different market dynamic (score 76). Columbia has comparable demographics but later school start, lower-income adjacent areas, and smaller facility size, yielding a score of 79. Overall, Ashburn sits between Rockville and Columbia in market profile, informing ramp assumptions and competitive pricing strategy."
+        },
+        "trade_area_and_demand_potential": {
+            "tam_estimate_children": {
+                "min": 8000,
+                "max": 10000,
+                "unit": "children",
+                "source_url": "internal_ddga_summary"
+            },
+            "industry_participation_rate_percent": {
+                "min": 15,
+                "max": 20,
+                "unit": "percent",
+                "source_url": "https://chalkbucket.com/threads/how-much-for-start-up-costs.50842/"
+            },
+            "total_children_2_12_in_7_mile_radius": {
+                "value": 54088,
+                "unit": "count",
+                "source_url": "internal_ddga_summary"
+            },
+            "clarksburg_stabilized_enrollment": {
+                "student_count_units": 1000,
+                "market_penetration_percent": {
+                    "min": 2,
+                    "max": 3,
+                    "unit": "percent"
+                },
+                "source_url": "internal_ddga_summary"
+            },
+            "ashburn_potential_unique_members": {
+                "min": 400,
+                "max": 500,
+                "unit": "members"
+            },
+            "base_case_model_peak": {
+                "members": 400,
+                "as_of_month": 8
+            }
+        },
+        "waitlist_and_demand_signals": {
+            "existing_sites_waitlists": [
+                {
+                    "site": "Rockville",
+                    "waitlist_count": 281,
+                    "as_of": "May 2025",
+                    "source_url": "DDGA_internal_stats_sheet"
+                },
+                {
+                    "site": "Clarksburg",
+                    "waitlist_count": 39,
+                    "as_of": "May 2025",
+                    "source_url": "DDGA_internal_stats_sheet"
+                }
+            ],
+            "ashburn_anticipation": "A healthy initial surge due to pent-up demand driven by population growth in Loudoun County and limited existing gymnastics capacity. Pre-opening registrations will be monitored to justify hiring or pricing adjustments if waitlists form."
+        },
+        "socioeconomic_factors": {
+            "income_implication": "High median income (~$152k) suggests families can afford premium pricing but have high value expectations.",
+            "income_diversity": "Ashburn’s trade area includes pockets of lower incomes, indicating variable price sensitivity; strategy will include tiered options and scholarships.",
+            "value_expectations": "Dual-income professional families value convenience, safety, scheduling consistency, and instructor quality as much as price."
+        },
+        "conclusion": "Ashburn has strong fundamentals: a large, wealthy customer base similar to Rockville, but with more direct competition than Clarksburg. This necessitates competitive yet value-driven pricing and accelerated marketing to establish DDGA differentiators early."
+    }
+}

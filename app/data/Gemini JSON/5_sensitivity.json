@@ -1,0 +1,111 @@
+{
+    "sensitivity_analysis": {
+        "introduction": "To further test the model's robustness, we conducted two key sensitivity analyses as requested: (i) Enrollment vs. Price and (ii) Retention vs. Instructor Cost impacts on profitability. These address how swings in membership count or pricing power, and changes in retention (churn) or wage rates, affect the bottom line. The results are presented as heatmaps in Tables 5 and 6.",
+        "enrollment_vs_price_sensitivity": {
+            "analysis_summary": "This analyzes annual profit under varying enrollment levels and average pricing. We use a simplified steady-state assumption (once the gym is at capacity, ignoring ramp time). For instance, base case steady-state was ~400 students @ $148/mo yielding a tiny profit ~0. At 400 students, if we could increase average price to $163 (10% hike) without losing members, the profit margin jumps significantly. Conversely, if enrollment is only 300 and price is $140, we incur losses. Table 5 shows the annual EBITDA outcome at different combinations (for context, 400@$148 is roughly breakeven, matching our model's Year 1 outcome).",
+            "annual_ebitda_sensitivity_table": {
+                "title": "Table 5. Sensitivity of Annual EBITDA (in $000) to Enrollment and Pricing",
+                "unit": "thousands_of_usd",
+                "row_header": "Enrollment \\ Price per Month",
+                "price_points_per_month_usd": [130, 140, 150, 160, 170],
+                "enrollment_scenarios": [
+                    {
+                        "students": 300,
+                        "annual_ebitda_by_price": [-120, -70, -20, 30, 80]
+                    },
+                    {
+                        "students": 350,
+                        "annual_ebitda_by_price": [-60, -10, 40, 90, 140]
+                    },
+                    {
+                        "students": 400,
+                        "annual_ebitda_by_price": [0, 50, 100, 150, 200]
+                    },
+                    {
+                        "students": 450,
+                        "annual_ebitda_by_price": [60, 110, 160, 210, 260]
+                    }
+                ],
+                "notes": "Approximate annual EBITDA (in thousands) once stabilized, assuming fixed costs ~$500k/year and 15% variable cost. Shaded: base case ~400@$148 yields ~$0k (breakeven). At 400 students, each +$10 in price adds ~$40–50k EBITDA. Each +50 students adds ~$100k if prices constant. For example, 400@$170 would yield ~$200k EBITDA/year (healthy ~20% margin). Negative values indicate losses. This table assumes linear behavior (reasonable near operating leverage point)."
+            },
+            "interpretation": {
+                "contribution_margin": "The business has a high contribution margin (85%), so small changes in enrollment or price have large effects on profit. Roughly, +50 students or +$10 in price each contribute on the order of +$100k annual EBITDA (once base fixed costs are covered).",
+                "full_capacity_potential": "At full capacity (we might consider ~500 as capacity for one location without expansion), if pricing also could be pushed upward, margins become very strong (e.g. 450@$160 ~ $210k profit, ~25% margin).",
+                "downside_risk": "However, the table also highlights downside: at 300 students, unless we have near-$160 pricing, we'd be losing money annually. So maintaining volume is crucial.",
+                "strategic_implication": "This sensitivity underscores our pricing strategy focus: we will carefully weigh enrollment versus price trade-offs. Initially, filling classes (enrollment) is more critical than maximizing price, since being under capacity is very costly.",
+                "future_pricing_leverage": "Once we approach capacity (signaled by waitlists forming), we gain leverage to implement small price increases or steer customers to higher-priced offerings (like specialty clinics or longer classes). We plan to revisit pricing after 6–12 months based on demand – e.g. possibly introducing a slight tuition raise or an enrollment fee if we consistently hit waitlists (as Rockville could have done given 281 waitlist).",
+                "kpi_monitoring": "The high sensitivity also means the board should track enrollment KPIs closely; an average of just 20 fewer students than plan in the first year would reduce profit by ~$50k annually, all else equal."
+            }
+        },
+        "retention_vs_instructor_cost_sensitivity": {
+            "analysis_summary": "This addresses how member retention (churn) and staff wage rates impact profitability. Retention affects how much marketing and sales effort (and cost) we need to maintain and grow enrollment – poor retention means constantly “refilling a leaky bucket.” Instructor cost is a key variable expense; labor market tightness or need for higher pay to attract quality coaches could raise this. We looked at a representative steady-state scenario (say ~400 students, ~$50k monthly revenue) and calculated the monthly EBITDA under combinations of retention (85%, 90%, 95%) and avg coach wage ($18, $22, $26 hourly, roughly corresponding to $20k, $25k, $30k annual for part-time coaches). Table 6 shows monthly EBITDA (in $1,000s) under these conditions, assuming fixed costs as in base case and revenue fixed (~$50k/mo).",
+            "monthly_ebitda_sensitivity_table": {
+                "title": "Table 6. Monthly EBITDA ($k) Sensitivity to Retention and Instructor Wage",
+                "unit": "thousands_of_usd",
+                "row_header": "Retention / Coach Pay",
+                "coach_pay_scenarios_per_hour_usd": [
+                    {
+                        "rate": 18,
+                        "level": "low"
+                    },
+                    {
+                        "rate": 22,
+                        "level": "base"
+                    },
+                    {
+                        "rate": 26,
+                        "level": "high"
+                    }
+                ],
+                "retention_scenarios": [
+                    {
+                        "retention_rate_percent": 95,
+                        "churn_rate_percent": 5,
+                        "monthly_ebitda_by_pay_rate": [8, 7, 5]
+                    },
+                    {
+                        "retention_rate_percent": 90,
+                        "churn_rate_percent": 10,
+                        "monthly_ebitda_by_pay_rate": [6, 5, 4]
+                    },
+                    {
+                        "retention_rate_percent": 85,
+                        "churn_rate_percent": 15,
+                        "monthly_ebitda_by_pay_rate": [4, 3, 1]
+                    }
+                ],
+                "notes": "Estimates of monthly EBITDA once near steady-state ~400 students, revenue ~$50k. Higher retention (down-churn) improves profitability by reducing needed marketing spend: each 5% retention gain saves ~$2k/month marketing (assuming ~$100 CAC, 20 fewer replacements needed). Higher coach pay (every ~$4/hr ~ +$1.5k/month in wages) reduces EBITDA. E.g. going from 90% to 85% retention drops profit by ~$2k (due to extra ~20 student acquisitions needed * $100 CAC), while going from $22 to $26/hr pay drops profit ~$1.5k. Combined worst case (85% & $26) yields only ~$1k profit; best (95% & $18) yields ~$8k. Base case (90% & $22) is ~$5k, consistent with breakeven-ish at 400 students.)"
+            },
+            "interpretation": {
+                "retention_impact": {
+                    "summary": "Retention has a significant impact: improving from 90% to 95% (i.e. halving monthly churn from 10% to 5%) can roughly double the monthly profit in steady state ($5k → $7k in our 400-student scenario).",
+                    "reasoning": "This is because higher retention means we spend less on marketing to replace churned members and can focus resources on growth instead of replacement. Specifically, at 400 students, 90% retention means 40 churn/month; 95% means only 20 churn – saving ~20 * CAC($100) = $2k in marketing, which flows to profit. Conversely, dropping to 85% retention (60 churn) would cost an extra ~$2k in marketing, eroding profit.",
+                    "implication": "We must invest in customer experience and satisfaction to keep churn low. Strategies include strong onboarding, progress tracking to show parents value, and perhaps loyalty incentives (like after 1 year membership, some perks) – all aimed to push retention toward the 95% mark seen at mature sites (Clarksburg and Rockville report ~92% monthly retention in recent months).",
+                    "brand_strength": "Given DDGA's mission of happy kids over competition, we expect retention to be a strength (as indicated by relatively long average member duration ~7–8 months now). We will also monitor any churn patterns (e.g. if price is a factor for drop-outs, or scheduling conflicts)."
+                },
+                "instructor_cost_impact": {
+                    "summary": "The table shows that a $4/hr increase in avg wage (about 18% increase) would reduce monthly profit by ~$1.5k (or 3% of revenue). This is not huge in absolute dollars – meaning we should not hesitate to pay for quality coaches if needed.",
+                    "justification": "The success of the program (and thus retention) is tied to coaching quality.",
+                    "budgeted_wage": {
+                        "value_usd_per_hr": 22,
+                        "comparison": "~20% above state avg",
+                        "goal": "attract good staff",
+                        "source_url": "https://www.indeed.com/cmp/Loudoun-County-Public-Schools/salaries/Gymnastics+Coach/Virginia"
+                    },
+                    "contingency": "If labor market pressures force us to $26, margins get tighter but not disastrous; ideally, we'd offset that by a small class size increase or slight tuition bump (which customers might accept if they see great coaching value).",
+                    "synergy_with_retention": "In fact, ensuring low student-to-coach ratios and experienced staff may boost retention, which more than pays for itself as seen.",
+                    "strategy": "So, our strategy is to invest in coaching quality (pay above-market, provide training and a positive work environment) to reap retention benefits and customer loyalty. DDGA's nurturing culture is a selling point; maintaining that might mean slightly higher labor cost, which this analysis shows is manageable."
+                }
+            }
+        },
+        "summary": {
+            "priorities": [
+                "drive retention up (even at some cost)",
+                "focus on enrollment growth before price increases (fill the gym, then the pricing power naturally follows)"
+            ],
+            "risk_assessment": "It also shows the venture can withstand moderate cost increases or minor shortfalls, but the margin for error is narrower if both adverse conditions hit (low retention + high wages could wipe out profit). Thankfully, those two factors might not occur together (if wages up, likely economy/inflation up, which might allow higher prices; if retention down, we refocus marketing, etc.).",
+            "contingency_plans": "We have contingency plans, e.g. if churn spikes, implement a “win-back” program or exit surveys to fix issues; if wages spike, consider slightly raising new member rates while grandfathering existing ones.",
+            "monitoring_plan": "These analyses will be revisited each quarter and the model updated with actuals to ensure we stay on target for profitability."
+        }
+    }
+}

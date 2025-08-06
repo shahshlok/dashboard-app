@@ -1,0 +1,174 @@
+{
+    "assumptions_and_omissions_log": {
+        "introduction": "This section itemizes every key assumption made in the analysis, along with data sources or rationale, an assessment of materiality (impact on EBITDA if varied), and any omissions (with justification). Each assumption is labeled A-01, A-02, etc., and referenced throughout the report. This log ensures auditability – the board can challenge or change an assumption and see how it flows to results.",
+        "log_entries": [
+            {
+                "id": "A-01",
+                "assumption": "One-time $65 family registration fee; waived for early sign-ups.",
+                "source_rationale": {
+                    "value": "DDGA Member Policy[2]. Common practice to charge startup fee; used as promo lever (waive to incentivize).",
+                    "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                },
+                "materiality_ebitda_impact": "Low - <1% of revenue.",
+                "impact": "+ if charged to all (adds ~$6k); - if waived broadly.",
+                "omission_comments": "We included it implicitly in avg. revenue. No separate line item shown for simplicity."
+            },
+            {
+                "id": "A-02",
+                "assumption": "Tuition pricing: $148/mo base (ages 6+), $125/mo junior (ages 3-5).",
+                "source_rationale": {
+                    "value": "DDGA policy example: $148 standard[1], $111 was old junior rate - increased to $125 for Ashburn (affluent market, inflation). Competitors in range[42].",
+                    "source_urls": [
+                        "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf",
+                        "https://ashburnballet.com/wp-content/uploads/2022/08/2022-2023-Rate-Sheet.pdf"
+                    ]
+                },
+                "materiality_ebitda_impact": {
+                    "value": "High - drives revenue. A $10 change in avg price ≈ $50k annual EBITDA[51].",
+                    "source_url": "https://www.againfaster.com/blogs/tutorial/how-much-does-it-cost-to-build-a-commercial-gym?srsltid=AfmBOooThQ-S7uuHmf_4BgefwXP7PaCJJKD0PEZLRRAum99vmfhhGK72"
+                },
+                "impact": "+/- direct proportional.",
+                "omission_comments": "Will adjust if market feedback dictates (monitored via inquiries and enrollment pace)."
+            },
+            {
+                "id": "A-03",
+                "assumption": "Similarity index weights: Pop(25%), Income(20%), Lease(15%), Competition(15 %), Density(15%), School(10%).",
+                "source_rationale": {
+                    "value": "Analytical choice based on revenue drivers (pop, income) vs cost (lease) vs demand factors (competition, etc.). See Section 3.1."
+                },
+                "materiality_ebitda_impact": "N/A (analytical tool).",
+                "impact": "N/A",
+                "omission_comments": "Weighting scheme does not affect model outputs, just used to compare sites. Chosen for rationale in text."
+            },
+            {
+                "id": "A-04",
+                "assumption": "10% sibling & multi-class discount; 5% military discount.",
+                "source_rationale": {
+                    "value": "DDGA policy[1][3]; competitive standard (siblings). Military 5% by discretion (common in area).",
+                    "source_urls": [
+                        "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf",
+                        "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                    ]
+                },
+                "materiality_ebitda_impact": "Low-Med - we baked ~3% revenue reduction from discounts into $148 avg. If fewer siblings, rev could be slightly higher.",
+                "impact": "– if more large families join than expected.",
+                "omission_comments": "Monitored via enrollment mix. If material deviation, can recalc revenue per student."
+            },
+            {
+                "id": "A-05",
+                "assumption": "Direct instructor wage = 15% of revenue (approx).",
+                "source_rationale": {
+                    "value": "Clarksburg/Rockville gross margin ~85% historically. $22/hr avg pay[7], 8:1 student-coach ratio => ~10% of tuition, plus extra staff (admin coaches, etc.) gives ~15%.",
+                    "source_url": "https://www.indeed.com/career/gymnastics-coach/salaries/Washington--DC"
+                },
+                "materiality_ebitda_impact": "High – significant part of cost. If actual needed coaches 20% of rev, EBITDA drops ~5pp (~$30k/yr).",
+                "impact": "– higher wages or lower class ratio hurt profit; + if efficient scheduling.",
+                "omission_comments": "Will track payroll vs revenue monthly. This also covers event staffing (open gyms, etc.). If classes run < full capacity, this % could rise; we'll adjust staffing accordingly."
+            },
+            {
+                "id": "A-06",
+                "assumption": "Utilities: $3,200/mo (electric 30,000 kWh @ $0.10, water $200).",
+                "source_rationale": {
+                    "value": "Dominion Energy rates ~$0.10/kWh. Similar facility owners' anecdotal ($2-$3/sqft/yr for utilities)."
+                },
+                "materiality_ebitda_impact": "Low - ~5% of costs. If 20% error ($600), minimal EBITDA effect.",
+                "impact": "+/- small.",
+                "omission_comments": "Included in fixed costs. Seasonality: higher in summer, lower in winter – our horizon is fall-spring, assumed average. Not separately seasonally adjusted (immaterial monthly shift)."
+            },
+            {
+                "id": "A-07",
+                "assumption": "Insurance: $10,000/year ($833/mo).",
+                "source_rationale": {
+                    "value": "Industry range for large gym: GL $3-6k + property ~$3k + other $1k[9]. Chose upper-middle of range given size.",
+                    "source_url": "https://www.tonkinsurance.com/gymnastics-insurance/"
+                },
+                "materiality_ebitda_impact": "Low - <2% of costs.",
+                "impact": "– slight underestimation if additional riders needed.",
+                "omission_comments": "We did not break out workman's comp; implicitly assumed in either insurance or wage loading. If extra, would be small (~$2-3k/yr) and can absorb in misc."
+            },
+            {
+                "id": "A-08",
+                "assumption": "Admin salaries: ~$6,000/mo total.",
+                "source_rationale": {
+                    "value": "Assume 1 full-time front desk ~$3k/mo net, plus part-time cleaning/GM overhead equivalent $3k. Based on local wages ($15–20/hr for admin, GM cost shared with other sites)."
+                },
+                "materiality_ebitda_impact": "Med - ~10% of costs. If we understaff, service suffers; if we overstaff, each extra $1k is $12k/yr.",
+                "impact": "– over-hire could cut EBITDA by ~$12k per headcount.",
+                "omission_comments": "Initially, team might include existing DDGA managers helping launch (expensed to corporate, not site). We assumed steady-state staffing from start for simplicity (conservative)."
+            },
+            {
+                "id": "A-09",
+                "assumption": "CapEx for build-out & equipment: $500,000 upfront.",
+                "source_rationale": {
+                    "value": "Chalkbucket forum: ~$400k for 15k sqft fully equipped[8]; Ashburn 19.5k sqft new build, estimated $25/sqft. Includes apparatus (~$200k), mats, office setup, and tenant improvements (paint, bathrooms, etc.).",
+                    "source_url": "https://chalkbucket.com/threads/how-much-for-start-up-costs.50842/"
+                },
+                "materiality_ebitda_impact": "N/A on EBITDA (affects cash flow & depreciation if considered).",
+                "impact": "N/A",
+                "omission_comments": "We assumed this is owner-funded (no loan). Depreciation (~$50k/yr) not explicitly in EBITDA, which is typical for start-up analysis focusing on cash breakeven. This is a one-time outlay."
+            },
+            {
+                "id": "A-10",
+                "assumption": "No additional corporate overhead allocation in site P&L.",
+                "source_rationale": {
+                    "value": "DDGA likely has central admin costs (accounting, regional managers). We assumed these are covered by existing overhead or insignificant for incremental site."
+                },
+                "materiality_ebitda_impact": "If significant overhead were allocated, it would reduce site EBITDA. (E.g. $50k/yr regional manager would show as cost.)",
+                "impact": "– if we include it.",
+                "omission_comments": "We omitted it to focus on direct site economics. Board can choose to allocate overhead later; site still covers local costs by month 8."
+            },
+            {
+                "id": "A-11",
+                "assumption": "No major economic downturn or COVID-like disruption.",
+                "source_rationale": {
+                    "value": "Assumed normal operating environment (schools open, economy stable)."
+                },
+                "materiality_ebitda_impact": "High – unpredictable events could drastically impact enrollment/revenue.",
+                "impact": "– severe negative if occurred.",
+                "omission_comments": "We note this constraint as per instructions (no macro-shock forecasting). In scenario planning, a recession might slow new signups (we have conservative case partly to cover slower growth). Pandemic would be an extraordinary risk (could shut down operations) - not modeled."
+            },
+            {
+                "id": "A-12",
+                "assumption": "Marketing spend: $10k in pre-opening month and first month, then $5k, $3k, and steady $2k/mo from Feb onward. Total ~$34k over 8 months.",
+                "source_rationale": {
+                    "value": "Based on Columbia launch spend (~$33k) and Rockville's lower spend. Allocated more upfront for Ashburn due to competition density. CAC ~ $80 (target). Includes digital ads, local events, grand opening."
+                },
+                "materiality_ebitda_impact": "Med-High – insufficient spend could slow growth; overspend hurts cash but could boost long-term members.",
+                "impact": "+ more spend might add members (if effective); – but diminishing returns likely beyond a point.",
+                "omission_comments": "We will flex this budget in practice depending on results. Conservative scenario extends $5k level for longer. Our base assumes after Feb, word-of-mouth sustains growth with minimal ad spend. If enrollment lags, we have cushion to invest more (board should be prepared for up to $50k in worst case)."
+            },
+            {
+                "id": "A-13",
+                "assumption": "Seasonality: December = ~50% revenue month (half month of classes), Spring (Apr-May) ~90% of normal (slight dip), no summer months in horizon.",
+                "source_rationale": {
+                    "value": "Observed DDGA pattern: Dec revenue halved due to closures; spring slight softness; big Sept jump outside our range. Applied judgment for Apr/May dips given end-of-school events might conflict."
+                },
+                "materiality_ebitda_impact": "Low-Med - lowers revenue ~$5k total. Negligible on long-term, but visible short-term.",
+                "impact": "– If we didn't account, we'd overestimate profit in those months.",
+                "omission_comments": "If demand is high, we might run workshops in Dec or more spring camps to offset; but we took conservative route. We omitted summer since beyond 8 months. Summer would actually boost revenue (camps) but also bring costs; not needed for our break-even window."
+            },
+            {
+                "id": "A-14",
+                "assumption": "Retention rate: 90% monthly in base case (i.e. 10% churn). Conservative: 85%, Aggressive: 95%.",
+                "source_rationale": {
+                    "value": "Current DDGA avg membership ~7 months implies ~85% retention. Rockville/Clarksburg recent retention ~90% after improvements. Aim for ~95% with great service."
+                },
+                "materiality_ebitda_impact": "High - affects how many new sales needed to grow/maintain. See Table 6: 5% retention change ≈ $2k/mo EBITDA.",
+                "impact": "+ higher retention greatly boosts profitability; – low retention will require higher marketing spend and could stall growth.",
+                "omission_comments": "We will actively manage retention via quality and customer engagement. If retention falls, we treat it as fixable (not a permanent state). Model ties marketing needs to churn implicitly (in steady-state calcs)."
+            },
+            {
+                "id": "A-15",
+                "assumption": "Capacity limit: ~500 students at this facility without significant overcrowding.",
+                "source_rationale": {
+                    "value": "19,500 sqft can handle roughly 500 kids in weekly classes (if each class avg 8 kids, needing ~60 classes per week which 2-3 gyms can accommodate)."
+                },
+                "materiality_ebitda_impact": "N/A (not reached in 8 months).",
+                "impact": "If demand >500, waitlists form - a good problem (consider price increase or opening additional time slots).",
+                "omission_comments": "We assume no physical expansion needed in first 8 months. If hitting capacity after that, options: expand hours (add Sunday, etc.), start waitlisting (which improves retention as people value spot), or plan a second location in VA. Not an omission per se, but a future consideration."
+            }
+        ],
+        "omissions_summary": "We intentionally omitted any macroeconomic downturn scenarios (as per guidance to avoid speculating on recessions/pandemics) – however, the sensitivity and conservative case give some insight into how a mild demand shortfall would play out. We also did not explicitly model debt financing costs, assuming equity funding; if a loan is used for CapEx, add interest ~$25–30k/year which would slightly reduce net profit or delay cash break-even by a couple months. Competitive reactions (like a price war) are also not explicitly modeled, but given the fragmented landscape it's unlikely (e.g. Hope or G-Force slashing prices would hurt them more than us given capacity). If it did occur, we could deploy targeted promotions rather than reduce base price.",
+        "audit_trail_summary": "Every figure and decision in this report can be traced to one or more entries above. For instance, if the board questions “Why $148/month?”, we point to A-02 (sources: DDGA policy, competitor rates) and see that a $10 change would have ~$50k impact on EBITDA – thus any change should be weighed against likely volume effects. This log thus serves as an audit trail and a checklist for future updates (if conditions change, assumptions can be updated and the model recalculated accordingly)."
+    }
+}

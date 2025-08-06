@@ -1,0 +1,301 @@
+{
+    "data_sources_and_methodology": {
+        "ddga_internal_data": {
+            "source_description": "We analyzed the provided “Doc Request for DX.xlsx” workbook (read-only).",
+            "summary_sheet_contents": [
+                "site metadata",
+                "lease terms",
+                "square footage",
+                "local demographics for existing and upcoming DDGA locations"
+            ],
+            "stats_sheet_contents": {
+                "metrics": [
+                    "monthly enrollment (“Student Count”)",
+                    "revenue",
+                    "marketing spend",
+                    "other metrics"
+                ],
+                "period": "January 2023 to May 2025",
+                "sites": ["Clarksburg", "Rockville", "Columbia"]
+            },
+            "usage_note": "We preserved these raw data and built derived tables for trends, seasonality, and back-testing the model (Section 6.5). All references to DDGA's historical performance cite this workbook."
+        },
+        "ddga_website_scrape": {
+            "description": "We scraped DDGA's public website for program offerings, age brackets, class descriptions, scheduling, and any pricing or policy information.",
+            "key_finding": "Notably, DDGA does not publish class tuition on the public site, but the Policies (Member Agreement) document provides vital details on fees and discounts.",
+            "extracted_data": [
+                {
+                    "data_type": "monthly_tuition",
+                    "details": "The monthly tuition for one class is $148 for older kids' programs, and $111 for certain junior programs.",
+                    "older_kids_programs_price": 148,
+                    "junior_programs_price": 111,
+                    "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                },
+                {
+                    "data_type": "membership_fee",
+                    "details": "There is a one-time family membership fee of $65 to enroll.",
+                    "price": 65,
+                    "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                },
+                {
+                    "data_type": "discounts",
+                    "details": "Sibling and multi-class discounts of 10% are offered on the lesser tuition(s).",
+                    "discount_value": "10%",
+                    "source_urls": [
+                        "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf",
+                        "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                    ]
+                },
+                {
+                    "data_type": "special_programs",
+                    "details": "We also captured details on special programs (camps, parties, open gym) including pricing.",
+                    "examples": [
+                        {
+                            "program": "open gym sessions",
+                            "pricing": "$25 per child for a drop-in",
+                            "price_per_child": 25,
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/open-gym/"
+                        },
+                        {
+                            "program": "birthday party packages",
+                            "pricing": "range from $325 for 12 kids to $480 for 20 kids for 90 minutes",
+                            "packages": [
+                                {
+                                    "price": 325,
+                                    "attendees": 12
+                                },
+                                {
+                                    "price": 480,
+                                    "attendees": 20
+                                }
+                            ],
+                            "duration_minutes": 90,
+                            "source_urls": [
+                                "https://www.dominiquedawesgymnasticsacademy.com/birthday-parties/",
+                                "https://www.dominiquedawesgymnasticsacademy.com/birthday-parties/"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "verification_note": "All such data are footnoted with the exact URL and date for verification."
+        },
+        "external_market_data": {
+            "purpose": "To validate and triangulate assumptions, we gathered external data in six categories as required:",
+            "categories": [
+                {
+                    "category_name": "labor_costs",
+                    "sources": [
+                        {
+                            "name": "ZipRecruiter and BLS data",
+                            "finding": "gymnastics coaches in Virginia/DC earn about $18–$22 per hour on average",
+                            "source_url": "https://www.indeed.com/career/gymnastics-coach/salaries/Washington--DC"
+                        }
+                    ],
+                    "cross_reference": {
+                        "source": "local job postings (e.g. Loudoun County coach roles)",
+                        "finding": "confirmed loaded rates (including payroll taxes) around $20–$25/hour for instructors",
+                        "assumption_id": "A-05"
+                    },
+                    "use_case": "This informed our direct staffing cost model."
+                },
+                {
+                    "category_name": "fit_out_and_equipment",
+                    "sources": [
+                        {
+                            "name": "Industry forums and gym owners",
+                            "finding": "a fully-equipped 15,000 sq ft gymnastics facility with pits costs roughly $400,000 in startup equipment and build-out",
+                            "source_url": "https://chalkbucket.com/threads/how-much-for-start-up-costs.50842/"
+                        }
+                    ],
+                    "ashburn_assumption": {
+                        "derivation": "Pro rata, for Ashburn's 19,555 sq ft facility (no in-ground pits planned)",
+                        "value": {
+                            "initial_capex": 500000,
+                            "capex_per_sqft": 25,
+                            "assumption_id": "A-09"
+                        },
+                        "improvements_include": [
+                            "spring floors",
+                            "apparatus",
+                            "mats"
+                        ]
+                    },
+                    "use_case": "This upfront investment is factored into cash flow and payback calculations."
+                },
+                {
+                    "category_name": "utilities_and_insurance",
+                    "components": [
+                        {
+                            "type": "electricity",
+                            "source": "Dominion Energy's commercial tariffs in Northern VA",
+                            "average_rate_per_kwh": 0.1,
+                            "estimated_monthly_usage_kwh": 30000,
+                            "context": "large, climate-controlled space (lighting, HVAC in 19.5k sqft)",
+                            "budgeted_monthly_cost": 3000,
+                            "assumption_id": "A-06"
+                        },
+                        {
+                            "type": "water",
+                            "usage": "minimal (drinking water, restrooms)",
+                            "budgeted_monthly_cost": 200
+                        },
+                        {
+                            "type": "insurance",
+                            "source": "industry insurance benchmarks",
+                            "benchmarks": [
+                                {
+                                    "type": "general liability",
+                                    "cost_per_year": "3,000–$6,000",
+                                    "condition": "large gymnastics gym (>150 participants)",
+                                    "source_url": "https://www.tonkinsurance.com/gymnastics-insurance/"
+                                },
+                                {
+                                    "type": "property coverage",
+                                    "cost_per_year": "2,000–$3,500",
+                                    "source_url": "https://www.tonkinsurance.com/gymnastics-insurance/"
+                                }
+                            ],
+                            "assumed_total_insurance": {
+                                "yearly_cost": 10000,
+                                "monthly_cost": 833,
+                                "coverage_types": [
+                                    "liability",
+                                    "property",
+                                    "umbrella"
+                                ],
+                                "assumption_id": "A-07"
+                            }
+                        }
+                    ],
+                    "use_case": "These are included as fixed operating costs."
+                },
+                {
+                    "category_name": "marketing_cac_and_spend",
+                    "analysis_source": "We examined DDGA's marketing spend around new launches.",
+                    "case_studies": [
+                        {
+                            "location": "Columbia",
+                            "opening": "Sept 2024",
+                            "marketing_spend": 33000,
+                            "spend_period": "two months bracketing launch",
+                            "result_students": 333,
+                            "implied_cac_per_student": 100
+                        },
+                        {
+                            "location": "Rockville",
+                            "launch_spend": 15000,
+                            "leverage_factors": [
+                                "Dominique's brand",
+                                "Clarksburg's membership base"
+                            ],
+                            "yielded_cac": "under $30"
+                        }
+                    ],
+                    "ashburn_assumption": {
+                        "initial_marketing_need": "strong",
+                        "budget_plan": "budgeted at $20,000/month in the 2 months pre- and post-opening, then tapering to ~$3,000 by month 4 and ~$2,000 thereafter (A-12)",
+                        "blended_cac": {
+                            "base_scenario": 80,
+                            "steady_state": 50,
+                            "steady_state_drivers": [
+                                "word-of-mouth",
+                                "referrals"
+                            ]
+                        }
+                    },
+                    "channel_mix": [
+                        "local Facebook/Instagram ads",
+                        "Google search ads",
+                        "community events (e.g. school flyers)"
+                    ],
+                    "in_kind_marketing_value": "Dominique Dawes' local celebrity provides in-kind marketing value through press coverage (e.g. Washington Post interviews), which we note qualitatively but do not monetize."
+                },
+                {
+                    "category_name": "seasonality",
+                    "analysis_source": "We analyzed enrollment patterns at existing sites to model seasonality.",
+                    "key_finding": "Table 1 below shows the total student-count across DDGA sites peaks each September and dips in summer, aligning with school calendars.",
+                    "examples": [
+                        {
+                            "type": "enrollment",
+                            "detail": "total enrollment across sites jumped from 1,526 in July 2024 to 2,518 in Sept 2024 as school resumed."
+                        },
+                        {
+                            "type": "revenue",
+                            "detail": "Conversely, revenue in December is roughly half a normal month due to holiday closures (e.g. Nov 2024 total revenue $488k vs. Dec $243k)."
+                        }
+                    ],
+                    "modeling_factors": {
+                        "context": "Loudoun County's school year starts late August and ends early June",
+                        "rules": [
+                            "no regular classes during the last week of December (0.5x revenue factor for Dec)",
+                            "slight dips in April/May (spring break and end-of-school distractions)"
+                        ],
+                        "upside": "We also overlay summer camp revenue starting June (beyond our 8-mo horizon) as an upside."
+                    },
+                    "assumption_ids": ["A-13", "A-14"]
+                },
+                {
+                    "category_name": "tam_and_demographics",
+                    "sources": ["U.S. Census ACS data", "Esri reports"],
+                    "target_market": {
+                        "radius_miles": 7,
+                        "population_ages_2_to_12": 54100,
+                        "description": "Ashburn is densely populated"
+                    },
+                    "market_pool_comparison": [
+                        {
+                            "location": "Clarksburg",
+                            "comparison": "a 40% larger pool than Clarksburg's radius (~38k)"
+                        },
+                        {
+                            "location": "Rockville",
+                            "comparison": "slightly less than Rockville's (~99k, which benefits from urban density)"
+                        }
+                    ],
+                    "median_household_income": [
+                        {
+                            "location": "Ashburn",
+                            "value": 152000,
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/ashburncdpvirginia/IPE120223",
+                            "note": "one of the highest in the nation (Loudoun County)"
+                        },
+                        {
+                            "location": "Rockville",
+                            "value": "~$122k",
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/rockvillecitymaryland/PST045223"
+                        },
+                        {
+                            "location": "Columbia",
+                            "value": "~$129k",
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/columbiacdpmaryland/RHI525223"
+                        },
+                        {
+                            "location": "Clarksburg",
+                            "value": "~$178k",
+                            "source_url": "https://www.census.gov/quickfacts/fact/table/clarksburgcdpmaryland/PST045224",
+                            "note": "Clarksburg's immediate area is smaller but affluent"
+                        }
+                    ],
+                    "implications": "High income correlates with willingness to spend on children's activities; however, we must also acknowledge parts of eastern Loudoun (Sterling) with lower incomes – Ashburn's 7-mile trade area is socioeconomically diverse in pockets. We incorporate this into pricing sensitivity (e.g. offer tiered options and scholarships, see Section 7)."
+                }
+            ]
+        },
+        "competitor_research_summary": {
+            "methodology": "We benchmarked every major children's activity provider within ~10 miles of Ashburn (covering gymnastics, ninja/parkour, dance, martial arts, swim, and indoor play). The list started with DDGA's eight identified competitors and was expanded via local searches and Yelp (see Table 2). We collected program offerings, published pricing, differentiators, and reviews for each. When direct pricing was unavailable publicly, we either mystery-shopped or inferred from similar markets (cited accordingly).",
+            "application": "The competitor landscape (Section 4) feeds into our pricing strategy (Section 7) and the similarity index (Section 5.1 criterion #4). Each competitor data point is footnoted with its source URL."
+        },
+        "assumptions_and_workflow": {
+            "assumptions_log": "Finally, all assumptions that fill gaps in data (cost inflation, growth rates, etc.) are logged in Section 8 with rationale and impact.",
+            "workflow_sequence": [
+                "data collection and validation",
+                "constructed the model skeleton",
+                "populated base-case numbers",
+                "layered scenarios",
+                "developed pricing strategy",
+                "performed back-testing (Section 6.5)",
+                "quality-checked all formulas and references"
+            ]
+        }
+    }
+}

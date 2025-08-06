@@ -1,0 +1,407 @@
+{
+    "competitor_landscape_10_mile_radius": {
+        "introduction": "Ashburn and the surrounding Loudoun/Fairfax area host a variety of children's activity providers. We benchmarked key competitors across gymnastics, ninja/parkour, dance, martial arts, swim, and indoor play. Table 2 summarizes the landscape with program offerings, pricing, and differentiators. Competitor locations relative to DDGA Ashburn are shown in Figure 1 (map) in Appendix A.",
+        "competitor_analysis_table": {
+            "title": "Table 2. Local Competitors (within ~10 miles of Ashburn)",
+            "competitors": [
+                {
+                    "competitor_info": {
+                        "name": "Hope Gymnastics Academy (Ashburn)",
+                        "type": "Gymnastics Club",
+                        "source_urls": [
+                            "https://www.openpr.com/news/1868607/hope-gymnastics-academy-has-established-monday-sunday-open",
+                            "https://www.yelp.com/biz/hope-gymnastics-academy-ashburn"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Rec gymnastics (all levels)",
+                            "competitive team (USAG levels 2-10)",
+                            "preschool classes"
+                        ],
+                        "facility_details": "~12,000 sqft gym with full equipment."
+                    },
+                    "pricing": {
+                        "class_tuition": "not public; known to be similar to DDGA (est. $150/mo for 1x/week).",
+                        "open_gym": {
+                            "price": "$8 weekdays, $10 Sundays",
+                            "source_url": "https://www.openpr.com/news/1868607/hope-gymnastics-academy-has-established-monday-sunday-open"
+                        },
+                        "camps": {
+                            "availability": "available",
+                            "pricing": "unknown"
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Long-established local gym (former USAG athletes on staff). Emphasis on serious training and Olympic apparatus. Value: Strong coaching pedigree; slightly older facility but good community reputation. Runs daily Open Gyms at ultra-low cost ($8) to engage new families.",
+                    "source_url": "https://www.openpr.com/news/1868607/hope-gymnastics-academy-has-established-monday-sunday-open",
+                    "estimated_market_share": "~300-400 students (large team + rec)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "G-Force Gymnastics (Ashburn)",
+                        "type": "Gymnastics & Parkour",
+                        "source_urls": [
+                            "https://www.yelp.com/biz/g-force-gymnastics-training-center-ashburn-3"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Recreational gymnastics classes (crawling to 17)",
+                            "competitive teams",
+                            "Ninja/Parkour classes",
+                            "adaptive programs"
+                        ],
+                        "facility_details": "~10,000 sqft."
+                    },
+                    "pricing": {
+                        "monthly_tuition": {
+                            "status": "inferred",
+                            "details": "approx $150/mo for weekly classes (similar model to DDGA)."
+                        },
+                        "drop_in_open_gym": {
+                            "price": "$10 for members, $35 non-members",
+                            "source_url": "https://www.gforcegyms.com/events/"
+                        },
+                        "open_gym_junior": {
+                            "price": "$5",
+                            "source_url": "https://leesburg.macaronikid.com/events/5b8eb8acd265033408f36b2a/open-gym-junior--g-force-gymnastics-ashburn"
+                        },
+                        "parties": {
+                            "price": "from $325 (per franchise site info)."
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Part of a franchise network (\"GForce\"). Value: Unique parkour focus and franchise-standard lesson plans. Offers adult open gym and \"Kids' Night Out\" ($42 for 4 hours). Flexible membership tiers (class packs, unlimited class option) appeal to active families.",
+                    "source_urls": [
+                        "https://www.gforcegyms.com/events/",
+                        "https://www.gforcegyms.com/events/"
+                    ],
+                    "estimated_market_share": "~250-300 students (est.)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "Always In Motion (AiM) (Dulles)",
+                        "type": "Ninja & Parkour Gym",
+                        "source_urls": [
+                            "https://www.alwaysinmotion.ninja/memberships",
+                            "https://www.alwaysinmotion.ninja/memberships"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Ninja warrior obstacle training",
+                            "parkour classes",
+                            "tumbling",
+                            "competition teams"
+                        ],
+                        "facility_details": "Large facility (~8,000 sqft) with obstacle rigs."
+                    },
+                    "pricing": {
+                        "membership_tiers": [
+                            {
+                                "description": "1 class/wk",
+                                "price_per_month": 96
+                            },
+                            {
+                                "description": "2 classes/wk",
+                                "price_per_month": 175
+                            },
+                            {
+                                "description": "Unlimited classes",
+                                "price_per_month": 140,
+                                "source_urls": [
+                                    "https://www.alwaysinmotion.ninja/memberships",
+                                    "https://www.alwaysinmotion.ninja/memberships"
+                                ]
+                            }
+                        ],
+                        "sibling_discounts": {
+                            "availability": "available",
+                            "source_url": "https://www.alwaysinmotion.ninja/memberships"
+                        },
+                        "adult_day_pass": {
+                            "price": "$30/day (unlimited open gym)",
+                            "source_url": "https://www.alwaysinmotion.ninja/"
+                        },
+                        "camps": {
+                            "price": "$300/week (full-day)."
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Specialised in Ninja/Parkour – draws kids (esp. boys) looking for alternative to traditional gymnastics. Value: High-energy, constantly changing courses; no long-term contracts (month-to-month similar to DDGA). Their \"Pro Unlimited\" for $140 is a strong value offering for frequent attendees.",
+                    "source_url": "https://www.alwaysinmotion.ninja/memberships",
+                    "estimated_market_share": "~200 students (niche but growing)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "FitWize 4 Kids (Ashburn)",
+                        "type": "Children's Fitness & Gymnastics",
+                        "source_urls": [
+                            "https://www.activekids.com/ashburn-va/tumbling/camps/open-gym-12-7-2025"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "\"Mini Gym\" classes for toddlers (6mo–4yr)",
+                            "developmental gymnastics for ages 5+",
+                            "cheer tumbling classes"
+                        ],
+                        "facility_details": "Small gym (~5,000 sqft)."
+                    },
+                    "pricing": {
+                        "classes": {
+                            "status": "estimated, not publicly listed",
+                            "price_per_month": "~$100–120/mo"
+                        },
+                        "open_gym": {
+                            "price": "$25 if pre-registered (or $30 same-day) for a 2-hour session",
+                            "source_url": "https://fitwize4kids.com/ashburn/tumble/open-gym/"
+                        },
+                        "sibling_discount": {
+                            "details": "10% off open gym",
+                            "source_url": "https://www.activekids.com/ashburn-va/parenting-and-family/classes/mini-gym-open-gym-7-12-2025"
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Focus on younger kids and cheer prep. Value: Intimate setting, very beginner-friendly. Offers free trial class promotions. Known for flexible schedules (schedule \"constantly changing\" per reviews) - could be a pain point.",
+                    "source_url": "https://m.yelp.com/search?find_desc=little+gym&find_loc=Ashburn%2C+VA+20147",
+                    "estimated_market_share": "~150 students (mostly under 8)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "Hyper Kidz (Ashburn)",
+                        "type": "Indoor Playground",
+                        "source_urls": [
+                            "https://ashburn.hyperkidzplay.com/admissions"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Large indoor soft-play playground for ages 0-13",
+                            "No structured classes; free play only"
+                        ],
+                        "facility_details": "Capacity ~200 kids at a time, ~30,000 sqft of play space."
+                    },
+                    "pricing": {
+                        "admission": {
+                            "type": "all-day play",
+                            "weekdays": {
+                                "price": "$13.99 (ages 3–13)",
+                                "source_url": "https://ashburn.hyperkidzplay.com/admissions"
+                            },
+                            "weekends": {
+                                "price": "$18.99",
+                                "source_url": "https://ashburn.hyperkidzplay.com/admissions"
+                            }
+                        },
+                        "monthly_membership": {
+                            "price": "~$59/mo for unlimited play",
+                            "promo": "advertised as \"Wonderful Wednesdays $9.99 all day\" promo",
+                            "source_url": "https://ashburn.hyperkidzplay.com/admissions"
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Pure entertainment, not instruction. Value: High for playdates and parties; climate-controlled fun. Differentiator: Unlimited playtime (no 2-hr limit). Draws a different use-case (drop-in play), but competes for the same family time/budget especially for younger kids.",
+                    "source_url": "https://www.mapquest.com/us/virginia/hyper-kidz-ashburn-431812296",
+                    "estimated_market_share": "N/A (playcenter, est. 100+ visits/day on weekends)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "ZavaZone (Sterling)",
+                        "type": "Adventure Park",
+                        "source_urls": [
+                            "https://www.zavazone.com/sterling-location-and-pricing/"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Multi-attraction indoor park: trampolines, ropes course, climbing, zip lines"
+                        ],
+                        "facility_details": "Geared for ages 5-adult. ~30,000 sqft."
+                    },
+                    "pricing": {
+                        "entry_tickets": [
+                            {
+                                "duration": "1 hour",
+                                "price": 25.5
+                            },
+                            {
+                                "duration": "2 hours",
+                                "price": 40
+                            },
+                            {
+                                "duration": "All-day",
+                                "price": 55,
+                                "note": "incl. socks"
+                            }
+                        ],
+                        "source_url": "https://www.zavazone.com/sterling-location-and-pricing/",
+                        "monthly_membership": "not offered (pay-per-visit model).",
+                        "group_discounts": {
+                            "details": "10% for 10+ kids",
+                            "source_url": "https://indoorplaygroundforkids.com/playground/zavazone-sterling-va"
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Offers experiences (thrill-based) rather than instruction. Value: High excitement for parties or occasional visits. Farther from Ashburn (Sterling). Not a direct substitute for weekly classes, but a weekend alternative that can siphon leisure spending.",
+                    "estimated_market_share": "N/A (entertainment venue)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "Master Lee's Martial Arts (Broadlands/Ashburn)",
+                        "type": "Taekwondo",
+                        "source_urls": [
+                            "https://gomasterlee.com/trial-program/"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Traditional Taekwondo classes for kids and teens",
+                            "After-school program and summer camps offered"
+                        ],
+                        "emphasis": "discipline, focus, confidence."
+                    },
+                    "pricing": {
+                        "trial_program": {
+                            "price": "$19.95 for 2 weeks + uniform",
+                            "source_url": "https://gomasterlee.com/trial-program/"
+                        },
+                        "regular_pricing": "typically ~$150/month per student for unlimited weekly classes (industry standard).",
+                        "family_plans": "Often runs \"family plans\" (one price for 2+ members)."
+                    },
+                    "differentiators_and_value_proposition": "Long-standing martial arts studio with strong community presence in Ashburn. Value: Character development and fitness. Schedule is flexible (multiple class times). Family plan pricing - e.g. one family pays as for 2 students even if 3+ members join - making it cost-effective for larger families.",
+                    "source_url": "https://www.facebook.com/SuperKicksKarateMartialArts/posts/this-mom-and-aunt-decided-to-join-their-karate-kid-last-night-and-it-was-awesome/1014247447387755/",
+                    "estimated_market_share": "~200 students (many in after-school transport programs)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "Super Kicks Karate (Ashburn)",
+                        "type": "Martial Arts (Karate)",
+                        "source_urls": [
+                            "https://www.facebook.com/SuperKicksKarateMartialArts/"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Karate classes for ages 4 through adult",
+                            "Leadership program and competition team options",
+                            "kickboxing for teens/adults"
+                        ]
+                    },
+                    "pricing": {
+                        "monthly_membership": {
+                            "price": "~$159 for first student",
+                            "family_membership_cap": "all additional family members train free after 2 paying",
+                            "source_url": "https://www.facebook.com/SuperKicksKarateMartialArts/posts/this-mom-and-aunt-decided-to-join-their-karate-kid-last-night-and-it-was-awesome/1014247447387755/"
+                        },
+                        "contract": "No long-term contract; includes unlimited class attendance per week."
+                    },
+                    "differentiators_and_value_proposition": "Aggressive family-friendly pricing (flat rate for whole family) is a major draw. Value: Emphasizes life skills. \"Little Leaders\" program for <5. Differentiator: evening classes that accommodate working parents' schedules (classes often run 6-8pm).",
+                    "source_urls": [
+                        "https://www.facebook.com/SuperKicksKarateMartialArts/posts/this-mom-and-aunt-decided-to-join-their-karate-kid-last-night-and-it-was-awesome/1014247447387755/",
+                        "https://superkickskarate.com/ashburn/little-leaders/"
+                    ],
+                    "estimated_market_share": "~250 students (across kids & adults)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "Ashburn Academy of Dance (Ashburn)",
+                        "type": "Dance Studio",
+                        "source_urls": [
+                            "https://www.yelp.com/biz/ashburn-academy-of-dance-ashburn",
+                            "https://ashburnballet.com/wp-content/uploads/2022/08/2022-2023-Rate-Sheet.pdf"
+                        ]
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "ballet",
+                            "jazz",
+                            "lyrical",
+                            "hip-hop",
+                            "tap",
+                            "acro",
+                            "musical theater"
+                        ],
+                        "ages": "3 up to high-school",
+                        "teams": "recreational and competitive dance teams",
+                        "facility_details": "~8,000 sqft across 4 studios."
+                    },
+                    "pricing": {
+                        "tuition": {
+                            "base": "~$100/month for a weekly 1-hr class",
+                            "source_url": "https://ashburnballet.com/wp-content/uploads/2022/08/2022-2023-Rate-Sheet.pdf"
+                        },
+                        "multi_class_discounts": {
+                            "2nd_class": "~$85/mo",
+                            "3rd_class": "~$80/mo",
+                            "unlimited_dance": "$335/mo",
+                            "source_url": "https://ashburnballet.com/wp-content/uploads/2022/08/2022-2023-Rate-Sheet.pdf"
+                        },
+                        "annual_registration_fee": {
+                            "price": "$75 (family max $150)",
+                            "source_url": "https://ashburnballet.com/wp-content/uploads/2022/08/2022-2023-Rate-Sheet.pdf"
+                        }
+                    },
+                    "differentiators_and_value_proposition": "Premier dance training in the area (award-winning teams). Value: Professional instructors (some from NYC/LA), structured progression. They are part of the \"More Than Just Great Dancing\" network, highlighting quality and youth development focus. Not direct competition for gymnastics, but overlaps.",
+                    "source_url": "https://www.yelp.com/biz/ashburn-academy-of-dance-ashburn",
+                    "estimated_market_share": "~400 students (very large enrollment)"
+                },
+                {
+                    "competitor_info": {
+                        "name": "The Little Gym - Dulles Landing",
+                        "location": "10 mi south",
+                        "type": "Gymnastics & Dance for Kids"
+                    },
+                    "programs_and_capacity": {
+                        "offerings": [
+                            "Motor-skill development classes for infants to 12-year-olds: basic gymnastics, dance, and karate"
+                        ],
+                        "format": "non-competitive format",
+                        "facility_details": "Small gym franchise."
+                    },
+                    "pricing": {
+                        "monthly": [
+                            {
+                                "plan": "12-month plan",
+                                "price": "~$102 for 1 class/week"
+                            },
+                            {
+                                "plan": "month-to-month",
+                                "price": "~$142"
+                            }
+                        ],
+                        "source_url": "https://www.thelittlegym.com/north-carolina-fayetteville/",
+                        "discounts": "Offers sibling discounts and multi-class discounts.",
+                        "enrollment": "year-round."
+                    },
+                    "differentiators_and_value_proposition": "Competitor in the toddler/pre-K segment mainly. Value: High staff ratio, nurturing environment. Franchise curriculum. Many families \"graduate\" from Little Gym to more advanced gyms like DDGA. The location is slightly farther but worth noting as an alternative for <6 age group for kids choosing between dance vs. gymnastics.",
+                    "estimated_market_share": "~100 students (est., mostly ages 1–6)"
+                }
+            ],
+            "sources_summary": "Pricing and program details from official websites and social media: Hope Gymnastics (openpr press release), G-Force (franchise site), Always In Motion (membership page), FitWize (Active Kids listing), Hyper Kidz (official site), ZavaZone (Sterling pricing), Master Lee's (trial on website), Super Kicks (Facebook post), Ashburn Academy of Dance (2022 rate sheet), The Little Gym (Yelp snippet of prices). Enrollment estimates based on facility size, class schedule density, and review mentions. “Market share” is approximate within relevant segment."
+        },
+        "findings": {
+            "summary": "The competitor matrix reveals several direct gymnastics alternatives (Hope Gymnastics and G-Force) and a number of substitute activities vying for kids' after-school hours. A few key takeaways:",
+            "key_takeaways": [
+                {
+                    "title": "Pricing Positioning",
+                    "analysis": "Most structured programs cluster around $100–$160 per month for a weekly class (e.g. dance, martial arts, Little Gym). Hope and G-Force likely charge ~$150 for gymnastics classes, similar to DDGA's base rate (confirmed by DDGA's internal examples: $148/mo). Martial arts studios differentiate by family pricing (effectively lowering per-person cost for multi-kid families). Always In Motion undercuts slightly with $96 for one class/week, but notably offers an unlimited class plan at $140 - an aggressive value that could attract avid families.",
+                    "conclusion": "DDGA Ashburn can comfortably set its base membership around $148/month (matching Rockville/Clarksburg rates) as this aligns with the top end of the market and reflects DDGA's premium brand. However, we must clearly communicate the value – Olympic inspiration, state-of-art gym, high coach ratio – to justify being at the high end. We will also incorporate strategic discounts (sibling, etc.) to remain competitive (Section 7).",
+                    "source_urls": [
+                        "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf",
+                        "https://www.alwaysinmotion.ninja/memberships"
+                    ]
+                },
+                {
+                    "title": "Program Mix",
+                    "analysis": "DDGA's broad mix (recreational gymnastics, and Ninja classes, and preschool, etc.) is a competitive advantage. Among competitors, no single gym offers the same breadth: G-Force comes closest (gymnastics + ninja), but others are specialized (dance-only, karate-only, etc.). This means DDGA can position as a one-stop solution for families with diverse interests. For instance, a family could have one child in gymnastics, another in Ninja, and even do birthday parties and camps all at DDGA – capturing cross-segment revenue. Our pricing strategy will emphasize multi-program participation (the 10% multi-class discount encourages this).",
+                    "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                },
+                {
+                    "title": "Quality & Differentiators",
+                    "analysis": "Several competitors highlight quality aspects: e.g. Ashburn Academy of Dance's professional training, Super Kicks' life-skills curriculum, Hope's competitive team legacy. DDGA's unique differentiator is its Olympian founder and mission of “confidence & character” in a non-pressured environment (recreational focus). This values-based branding already resonates with parents who might be wary of the intensity of traditional competitive gyms. DDGA should continue leveraging Dominique's story in marketing to set itself apart from purely local names. The high waitlists at DDGA's current sites suggest this message is effective. We also note that customer experience (e.g. ease of makeup classes, facility cleanliness, customer service) will matter when pricing at a premium. Competitors like Little Gym and Super Kicks pride themselves on friendly, kid-centric atmospheres – DDGA must deliver a similarly welcoming experience."
+                },
+                {
+                    "title": "Market Saturation",
+                    "analysis": "Within a 5-mile radius of the Ashburn site, parents have at least 3 gymnastics options (DDGA, Hope, G-Force) plus multiple martial arts and dance studios. However, Ashburn is one of the fastest-growing family areas in Virginia, and many classes in the area have waitlists (anecdotally, Little Gym sessions fill quickly, Hope's team tryouts are at capacity, etc.). The presence of competition means DDGA cannot rely on monopoly, but the overall growth in demand suggests there is room for a new entrant, especially one offering something novel (e.g. Ninja classes in a high-end setting – currently AiM is 6 miles away, and G-Force's ninja program is smaller-scale). The competitor data informed our enrollment ramp assumptions: we expect to attract some customers away from others (particularly those dissatisfied or aging out of certain programs) and to bring new families into the market via our marketing outreach."
+                }
+            ]
+        },
+        "conclusion": "The Ashburn location has strong fundamentals: a large and wealthy customer base akin to DDGA's most successful market (Rockville), but will face more direct competition than Clarksburg did. This necessitates a competitive yet value-driven pricing approach and an accelerated marketing effort to establish DDGA's differentiators early. These findings will be reflected in the pricing architecture (e.g. no long-term contracts, premium facilities justified by Olympic branding) and in the ramp-up assumptions for enrollment."
+    }
+}

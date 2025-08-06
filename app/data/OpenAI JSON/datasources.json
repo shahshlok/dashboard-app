@@ -1,0 +1,256 @@
+{
+    "data_sources_and_methodology": {
+        "ddga_internal_data": {
+            "description": "Analysis of the provided “Doc Request for DX.xlsx” workbook (read-only)",
+            "details": [
+                "Summary sheet: site metadata, lease terms, square footage, local demographics for existing and upcoming DDGA locations",
+                "Stats sheet: monthly enrollment (\"Student Count\"), revenue, marketing spend, and other metrics from January 2023 to May 2025 for three active sites (Clarksburg, Rockville, Columbia)",
+                "Preserved raw data and built derived tables for trends, seasonality, and back-testing the model (Section 6.5)",
+                "All historical performance references cite this workbook"
+            ],
+            "source": "Doc Request for DX.xlsx"
+        },
+        "ddga_website_scrape": {
+            "description": "Scraped DDGA’s public website for program offerings, age brackets, class descriptions, scheduling, pricing and policy information",
+            "findings": {
+                "program_offerings": "Program offerings, age brackets, class descriptions, scheduling scraped from public site",
+                "pricing_and_policies": {
+                    "tuition": [
+                        {
+                            "description": "Monthly tuition for one class for older kids’ programs",
+                            "amount": 148,
+                            "unit": "USD",
+                            "applicable_to": "older kids programs",
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                        },
+                        {
+                            "description": "Monthly tuition for certain junior programs",
+                            "amount": 111,
+                            "unit": "USD",
+                            "applicable_to": "junior programs",
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                        }
+                    ],
+                    "membership_fee": {
+                        "description": "One-time family membership fee to enroll",
+                        "amount": 65,
+                        "unit": "USD",
+                        "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                    },
+                    "discounts": [
+                        {
+                            "description": "Sibling discount on the lesser tuition",
+                            "percent": 10,
+                            "condition": "applies to the lesser tuition",
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                        },
+                        {
+                            "description": "Multi-class discount on the lesser tuition",
+                            "percent": 10,
+                            "condition": "applies to the lesser tuition",
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/wp-content/uploads/2025/05/Member-Policies.pdf"
+                        }
+                    ]
+                },
+                "special_programs": {
+                    "open_gym": {
+                        "price_per_child": 25,
+                        "unit": "USD",
+                        "source_url": "https://www.dominiquedawesgymnasticsacademy.com/open-gym/"
+                    },
+                    "birthday_parties": [
+                        {
+                            "description": "Birthday party package for 12 kids (90 minutes)",
+                            "price": 325,
+                            "unit": "USD",
+                            "children_count": 12,
+                            "duration_minutes": 90,
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/birthday-parties/"
+                        },
+                        {
+                            "description": "Birthday party package for 20 kids (90 minutes)",
+                            "price": 480,
+                            "unit": "USD",
+                            "children_count": 20,
+                            "duration_minutes": 90,
+                            "source_url": "https://www.dominiquedawesgymnasticsacademy.com/birthday-parties/"
+                        }
+                    ]
+                }
+            }
+        },
+        "external_market_data": {
+            "description": "External data gathered in six categories to validate and triangulate assumptions",
+            "labor_costs": {
+                "hourly_rate_range": {
+                    "min": 18,
+                    "max": 22,
+                    "unit": "USD"
+                },
+                "loaded_rate_range": {
+                    "min": 20,
+                    "max": 25,
+                    "unit": "USD"
+                },
+                "sources": [
+                    {
+                        "description": "ZipRecruiter and BLS data on gymnastics coach salaries",
+                        "source_url": "https://www.indeed.com/career/gymnastics-coach/salaries/Washington--DC"
+                    },
+                    {
+                        "description": "Local Loudoun County coach job postings",
+                        "source_url": "https://www.indeed.com/career/gymnastics-coach/salaries/Washington--DC"
+                    }
+                ],
+                "usage": "Informed direct staffing cost model (assumption A-05 in Section 8)"
+            },
+            "fit_out_and_equipment": {
+                "benchmark_cost_15000_sqft": {
+                    "amount": 400000,
+                    "unit": "USD",
+                    "source_url": "https://chalkbucket.com/threads/how-much-for-start-up-costs.50842/"
+                },
+                "ashburn_facility_size_sqft": 19555,
+                "assumed_initial_capex": {
+                    "amount": 500000,
+                    "unit": "USD",
+                    "per_sqft": 25,
+                    "assumption_id": "A-09"
+                }
+            },
+            "utilities_and_insurance": {
+                "electricity": {
+                    "rate_per_kwh": 0.1,
+                    "unit": "USD",
+                    "average_monthly_usage_kwh": 30000,
+                    "estimated_monthly_cost": 3000,
+                    "note": "Based on Dominion Energy commercial tariffs in Northern VA"
+                },
+                "water": {
+                    "estimated_monthly_cost": 200,
+                    "unit": "USD",
+                    "note": "Estimated for drinking water and restrooms"
+                },
+                "insurance": {
+                    "annual_cost": 10000,
+                    "unit": "USD",
+                    "monthly_cost": 833,
+                    "coverage": ["general liability", "property", "umbrella"],
+                    "source_url": "https://www.tonkinsurance.com/gymnastics-insurance/"
+                }
+            },
+            "marketing_cac_and_spend": {
+                "columbia_opening": {
+                    "marketing_spend_two_months": 33000,
+                    "unit": "USD",
+                    "initial_students": 333,
+                    "cac": 100,
+                    "unit_cac": "USD"
+                },
+                "rockville_opening": {
+                    "marketing_spend_two_months": 15000,
+                    "unit": "USD",
+                    "cac": 30,
+                    "unit_cac": "USD",
+                    "notes": "Leveraged Dominique’s brand and Clarksburg’s membership base"
+                },
+                "ashburn_budget": {
+                    "pre_and_post_opening_monthly": 20000,
+                    "unit": "USD",
+                    "taper_to_month_4_monthly": 3000,
+                    "unit_taper": "USD",
+                    "steady_state_after_month_4_monthly": 2000,
+                    "unit_steady_state": "USD",
+                    "assumption_id": "A-12"
+                },
+                "blended_cac": {
+                    "base_scenario": 80,
+                    "unit": "USD",
+                    "steady_state": 50,
+                    "unit_steady_state": "USD"
+                },
+                "channels": [
+                    "Facebook/Instagram ads",
+                    "Google search ads",
+                    "Community events (school flyers)"
+                ],
+                "in_kind_marketing": {
+                    "description": "Dominique Dawes’ local celebrity press coverage",
+                    "monetized": false
+                }
+            },
+            "seasonality": {
+                "peak_month": "September",
+                "peak_student_count": {
+                    "month": "September 2024",
+                    "count": 2518
+                },
+                "dip_month": "July",
+                "dip_student_count": {
+                    "month": "July 2024",
+                    "count": 1526
+                },
+                "revenue_comparison": {
+                    "november_2024": 488000,
+                    "december_2024": 243000,
+                    "unit": "USD"
+                },
+                "assumptions": {
+                    "december_revenue_factor": 0.5,
+                    "spring_months_revenue_factor": 0.9,
+                    "assumption_ids": ["A-13", "A-14"]
+                },
+                "note": "Loudoun County school year runs late August to early June"
+            },
+            "tam_and_demographics": {
+                "trade_area_radius_miles": 7,
+                "children_ages_2_to_12": 54100,
+                "unit": "count",
+                "comparisons": [
+                    {
+                        "location": "Clarksburg",
+                        "children_2_to_12": 38082,
+                        "percent_of_ashburn": "70%",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/clarksburgcdpmaryland/PST045224"
+                    },
+                    {
+                        "location": "Rockville",
+                        "children_2_to_12": 99854,
+                        "percent_of_ashburn": "185%",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/rockvillecitymaryland/PST045223"
+                    },
+                    {
+                        "location": "Columbia",
+                        "children_2_to_12": 63367,
+                        "percent_of_ashburn": "117%",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/columbiacdpmaryland/RHI525223"
+                    }
+                ],
+                "median_household_income": {
+                    "ashburn": {
+                        "amount": 152000,
+                        "unit": "USD",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/ashburncdpvirginia/IPE120223"
+                    },
+                    "rockville": {
+                        "amount": 122000,
+                        "unit": "USD",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/rockvillecitymaryland/PST045223"
+                    },
+                    "columbia": {
+                        "amount": 129000,
+                        "unit": "USD",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/columbiacdpmaryland/RHI525223"
+                    },
+                    "clarksburg": {
+                        "amount": 178000,
+                        "unit": "USD",
+                        "source_url": "https://www.census.gov/quickfacts/fact/table/clarksburgcdpmaryland/PST045224"
+                    }
+                },
+                "insights": "High income correlates with willingness to spend on children’s activities; trade area contains socioeconomically diverse pockets including lower-income areas like Sterling",
+                "usage": "Incorporated into pricing sensitivity via tiered options and scholarships (Section 7)"
+            }
+        }
+    }
+}

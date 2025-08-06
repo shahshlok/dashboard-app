@@ -1,0 +1,56 @@
+{
+    "similarity_index_site_selection_rationale": {
+        "summary": "We quantified the similarity between Ashburn and existing DDGA sites using a weighted index of six factors to inform site selection rationale and enrollment ramp assumptions.",
+        "index_construction": {
+            "factors": [
+                {
+                    "factor": "Children 2–12 in Trade Area",
+                    "weight_percent": 25,
+                    "description": "This drives the potential customer base; higher child population directly correlates with enrollment potential."
+                },
+                {
+                    "factor": "Median Household Income",
+                    "weight_percent": 20,
+                    "description": "Affluence affects pricing power and churn; higher incomes support premium pricing."
+                },
+                {
+                    "factor": "Lease Rate $/sqft & Facility Size",
+                    "weight_percent": 15,
+                    "description": "Captures cost structure and capacity; larger, more expensive facilities need higher revenue."
+                },
+                {
+                    "factor": "Distance to Nearest Gymnastics Competitor",
+                    "weight_percent": 15,
+                    "description": "Proxy for competition intensity; closer competitors require more marketing effort."
+                },
+                {
+                    "factor": "Suburban Density / Drive Profile",
+                    "weight_percent": 15,
+                    "description": "Reflects population concentration and travel behavior; denser suburbs have more nearby options."
+                },
+                {
+                    "factor": "School Calendar Alignment",
+                    "weight_percent": 10,
+                    "description": "Minor differences in school schedules impact seasonal revenue patterns."
+                }
+            ]
+        },
+        "key_takeaways": [
+            {
+                "topic": "Rockville as Best-Case Analogue",
+                "finding": "Rockville scored 82, reflecting high similarity in population, affluence, and competition density.",
+                "conclusion": "Ashburn could mirror Rockville’s rapid ramp-up but must differentiate through branding and competitive positioning."
+            },
+            {
+                "topic": "Columbia as Base-Case Analogue",
+                "finding": "Columbia scored 79, due to its smaller facility and slightly more price-sensitive segments leading to a slower initial ramp.",
+                "conclusion": "Plan for a modest fall ramp followed by a post–New Year surge, targeting higher growth given Ashburn’s larger market."
+            },
+            {
+                "topic": "Clarksburg as Conservative Analogue",
+                "finding": "Clarksburg scored 76, driven by its smaller child population radius and limited competition creating captive demand.",
+                "conclusion": "Ashburn must invest in marketing to attract families from competitors and prepare for potentially higher churn compared to a captive market."
+            }
+        ]
+    }
+}

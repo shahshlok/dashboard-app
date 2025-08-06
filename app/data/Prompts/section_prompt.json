@@ -1,0 +1,232 @@
+{
+  "prompt_template": {
+    "title": "Universal Prompt for Targeted Section Extraction to Structured JSON",
+    "description": "This prompt is designed to instruct an AI agent to focus on a single, specified section of a business report and convert it into a detailed, well-structured, and semantically rich JSON object. It should be applied section-by-section for best results.",
+    "prompt_text": "You are an expert data analyst and JSON architect. Your mission is to transform a specific section of a business report, provided as OCR text, into a single, highly structured, semantically rich, and parseable JSON object.\n\nFirst, identify the section to process from the `section_to_focus_on` field below. Then, process ONLY the text corresponding to that section from the `ocr_text_for_section` block, using the `full_document_text_for_url_lookup` to resolve citations. Adhere strictly to the following principles:\n\n1.  **Deep Hierarchy:** Do not create a flat structure. Use nested JSON objects and arrays to logically group related information. The hierarchy should reflect the relationships and topics within the text. For example, a competitor's details should be an object within a 'competitors' array.\n\n2.  **Semantic Keynames:** Use descriptive, human-readable, camelCase or snake_case keynames. Avoid generic keys like `item1` or `text`. The key should clearly describe its value (e.g., `projected_opening_date`, `median_household_income`, `competitor_analysis`).\n\n3.  **Complete Data Capture:** Extract ALL relevant information from the targeted section. This includes not just the final numbers or facts, but also the surrounding context, methodology, rationale, assumptions, comparisons, and qualitative statements. The goal is for the JSON to be a complete substitute for the original text section.\n\n4.  **Integrated Source URLs:** The text contains citations like `[#]`, `[##]`, etc. You will be provided with the full text, including the reference list, to map these numbers to URLs. You must replace the citation numbers in your output with a key-value pair, such as `\"source_url\": \"https://...\"` or `\"reference_url\": \"https://...\"`, placed logically next to the data point it supports. Do not simply include the `[#]` in the string.\n\n5.  **Correct Data Typing:** Use appropriate JSON data types. Use numbers for numerical values (e.g., `148`, `54100`), strings for text, booleans for true/false concepts, and arrays for lists (e.g., a list of objectives, a list of competitors).\n\n6.  **No Extraneous Content:** The final output must ONLY be the valid JSON object. Do not include any introductory text, explanations, apologies, or comments inside or outside the JSON block. The output must start with `{` and end with `}`.\n\n**Instructions for Processing:**\n\n*   **Section to Focus On:** `{{SECTION_NAME_TO_PROCESS}}`\n\n*   **OCR Text for Section:**\n{{OCR_TEXT_OF_SECTION}}\n\n*   **Full Document Text (for URL lookup):**\n{{FULL_DOCUMENT_OCR_TEXT_INCLUDING_REFERENCES}}",
+    "scenario": "Data Sources and Methodology"
+  },
+  "usage_guide_and_example": {
+    "instructions": "To use this prompt, replace the `{{PLACEHOLDER}}` variables with the relevant content. Process the document one logical section at a time by specifying the section name in `{{SECTION_NAME_TO_PROCESS}}` and providing the relevant text blocks. This ensures accuracy and focus.",
+    "example_application": {
+      "scenario": "Let's apply this to the 'Competitor Landscape' section (Table 2 and its following 'Findings' paragraph) from the document.",
+      "filled_prompt": "You are an expert data analyst and JSON architect... (The rest of the principles from the template above)\n\n**Instructions for Processing:**\n\n*   **Section to Focus On:** `Competitor Landscape`\n\n*   **OCR Text for Section:**\n(Pages 6-13 of the OCR text containing Table 2 and the subsequent 'Findings' section)\n\n*   **Full Document Text (for URL lookup):**\n(The entire 41-page OCR text, including the reference list on pages 39-41)"
+    },
+    "expected_output_for_example": {
+      "competitor_analysis": {
+        "summary": "Ashburn and the surrounding Loudoun/Fairfax area host a variety of children's activity providers. We benchmarked key competitors across gymnastics, ninja/parkour, dance, martial arts, swim, and indoor play.",
+        "competitors": [
+          {
+            "name": "Hope Gymnastics Academy",
+            "location": "Ashburn",
+            "type": "Gymnastics Club",
+            "programs_and_capacity": {
+              "offerings": ["Rec gymnastics (all levels)", "competitive team (USAG levels 2-10)", "preschool classes"],
+              "facility_size_sqft": 12000,
+              "equipment": "full equipment"
+            },
+            "pricing": {
+              "monthly_tuition": {"published": false, "estimate": "similar to DDGA (est. $150/mo for 1x/week)"},
+              "open_gym": {"price": "$8 weekdays, $10 Sundays", "reference_url": "https://www.openpr.com/news/1868607/hope-gymnastics-academy-has-established-monday-sunday-open"},
+              "camps": {"available": true, "pricing": "unknown"}
+            },
+            "differentiators_and_value_prop": "Long-established local gym (former USAG athletes on staff). Emphasis on serious training and Olympic apparatus. Value: Strong coaching pedigree; slightly older facility but good community reputation.",
+            "estimated_market_share_enrollment": "~300-400 students (large team + rec)"
+          },
+          {
+            "name": "G-Force Gymnastics",
+            "location": "Ashburn",
+            "type": "Gymnastics & Parkour",
+            "programs_and_capacity": {
+              "offerings": ["Recreational gymnastics (crawling to 17)", "competitive teams", "Ninja/Parkour classes", "adaptive programs"],
+              "facility_size_sqft": 10000
+            },
+            "pricing": {
+              "monthly_tuition": {"published": false, "estimate": "approx $150/mo for weekly classes"},
+              "open_gym": {"members_price": "$10", "non_members_price": "$35", "toddler_session_price": "$5", "reference_urls": ["https://www.gforcegyms.com/events/", "https://leesburg.macaronikid.com/events/5b8eb8acd265033408f36b2a/open-gym-junior--g-force-gymnastics-ashburn"]},
+              "parties": {"starting_price": "$325"},
+              "kids_night_out": {"price": "$42", "duration_hours": 4}
+            },
+            "differentiators_and_value_prop": "Part of a franchise network ('GForce'). Value: Unique parkour focus and franchise-standard lesson plans. Offers adult open gym and flexible membership tiers (class packs, unlimited class option) appeal to active families.",
+            "estimated_market_share_enrollment": "~250-300 students (est.)"
+          },
+          {
+            "name": "Always In Motion (AiM)",
+            "location": "Dulles",
+            "type": "Ninja & Parkour Gym",
+            "programs_and_capacity": {
+              "offerings": ["Ninja warrior obstacle training", "parkour classes", "tumbling", "competition teams"],
+              "facility_size_sqft": 8000,
+              "equipment": "obstacle rigs"
+            },
+            "pricing": {
+              "membership_tiers": [
+                {"classes_per_week": 1, "price_per_month": 96},
+                {"classes_per_week": 2, "price_per_month": 175},
+                {"classes_per_week": "Unlimited", "price_per_month": 140, "reference_url": "https://www.alwaysinmotion.ninja/memberships"}
+              ],
+              "sibling_discounts_available": true,
+              "day_pass_adults": {"price": 30, "details": "unlimited open gym", "reference_url": "https://www.alwaysinmotion.ninja/"},
+              "camps": {"price_per_week": 300, "type": "full-day"}
+            },
+            "differentiators_and_value_prop": "Specialised in Ninja/Parkour. Alternative to traditional gymnastics. High-energy, constantly changing courses; no long-term contracts. Their 'Pro Unlimited' for $140 is a strong value offering for frequent attendees.",
+            "estimated_market_share_enrollment": "~200 students (niche but growing)"
+          },
+          {
+            "name": "FitWize 4 Kids",
+            "location": "Ashburn",
+            "type": "Children's Fitness & Gymnastics",
+            "programs_and_capacity": {
+              "offerings": ["'Mini Gym' for toddlers (6mo–4yr)", "developmental gymnastics for ages 5+", "cheer tumbling classes"],
+              "facility_size_sqft": 5000
+            },
+            "pricing": {
+              "monthly_tuition": {"published": false, "estimate": "~$100–120/mo"},
+              "open_gym": {"price_pre_registered": 25, "price_same_day": 30, "duration_hours": 2, "reference_url": "https://fitwize4kids.com/ashburn/tumble/open-gym/"},
+              "sibling_discount": {"percentage": 10, "applies_to": "open gym", "reference_url": "https://www.activekids.com/ashburn-va/parenting-and-family/classes/mini-gym-open-gym-7-12-2025"}
+            },
+            "differentiators_and_value_prop": "Focus on younger kids and cheer prep. Value: Intimate setting, very beginner-friendly. Offers free trial class promotions. Known for flexible schedules which can be a pain point per reviews.",
+            "estimated_market_share_enrollment": "~150 students (mostly under 8)"
+          },
+          {
+            "name": "Hyper Kidz",
+            "location": "Ashburn",
+            "type": "Indoor Playground",
+            "programs_and_capacity": {
+              "offerings": ["Large indoor soft-play playground for ages 0-13", "No structured classes; free play only"],
+              "facility_size_sqft": 30000,
+              "capacity_kids": 200
+            },
+            "pricing": {
+              "admission_all_day": [
+                {"days": "Weekdays", "price": 13.99, "ages": "3-13"},
+                {"days": "Weekends", "price": 18.99, "ages": "3-13"}
+              ],
+              "monthly_membership": {"price_per_month": 59, "details": "unlimited play"},
+              "promotions": {"details": "Wonderful Wednesdays $9.99 all day", "reference_url": "https://ashburn.hyperkidzplay.com/admissions"}
+            },
+            "differentiators_and_value_prop": "Pure entertainment, not instruction. Value: High for playdates and parties. Differentiator: Unlimited playtime (no 2-hr limit). Competes for the same family time/budget.",
+            "estimated_market_share_enrollment": "N/A (playcenter, est. 100+ visits/day on weekends)"
+          },
+          {
+            "name": "ZavaZone",
+            "location": "Sterling",
+            "type": "Adventure Park",
+            "programs_and_capacity": {
+              "offerings": ["trampolines", "ropes course", "climbing", "zip lines"],
+              "target_ages": "5-adult",
+              "facility_size_sqft": 30000
+            },
+            "pricing": {
+              "entry_tickets": [
+                {"duration_hours": 1, "price": 25.50},
+                {"duration_hours": 2, "price": 40.00},
+                {"duration_hours": "All-day", "price": 55.00, "details": "incl. socks"}
+              ],
+              "membership_model": "pay-per-visit",
+              "group_discounts": {"percentage": 10, "group_size": "10+ kids"},
+              "reference_url": "https://www.zavazone.com/sterling-location-and-pricing/"
+            },
+            "differentiators_and_value_prop": "Offers experiences (thrill-based) rather than instruction. Value: High excitement for parties or occasional visits. Not a direct substitute for weekly classes, but a weekend alternative.",
+            "estimated_market_share_enrollment": "N/A (entertainment venue)"
+          },
+          {
+            "name": "Master Lee's Martial Arts",
+            "location": "Broadlands/Ashburn",
+            "type": "Taekwondo",
+            "programs_and_capacity": {
+              "offerings": ["Traditional Taekwondo for kids and teens", "After-school program", "summer camps"],
+              "emphasis": ["discipline", "focus", "confidence"]
+            },
+            "pricing": {
+              "trial_program": {"price": 19.95, "duration_weeks": 2, "includes": "uniform", "reference_url": "https://gomasterlee.com/trial-program/"},
+              "regular_pricing": {"estimate_per_month": 150, "details": "unlimited weekly classes"},
+              "family_plans": "Often runs 'family plans' (one price for 2+ members)."
+            },
+            "differentiators_and_value_prop": "Long-standing martial arts studio with strong community presence. Value: Character development and fitness. Flexible schedule. Family plan pricing is cost-effective for larger families.",
+            "estimated_market_share_enrollment": "~200 students (many in after-school transport programs)"
+          },
+          {
+            "name": "Super Kicks Karate",
+            "location": "Ashburn",
+            "type": "Martial Arts (Karate)",
+            "programs_and_capacity": {
+              "offerings": ["Karate classes for ages 4 through adult", "Leadership program", "competition team options", "kickboxing"]
+            },
+            "pricing": {
+              "monthly_membership": {"first_student_price": 159},
+              "family_membership_cap": {"details": "all additional family members train free after 2 paying", "reference_url": "https://www.facebook.com/SuperKicksKarateMartialArts/posts/this-mom-and-aunt-decided-to-join-their-karate-kid-last-night-and-it-was-awesome/1014247447387755/"}
+            },
+            "differentiators_and_value_prop": "Aggressive family-friendly pricing is a major draw. Value: Emphasizes life skills. 'Little Leaders' program for <5s. Differentiator: evening classes that accommodate working parents' schedules.",
+            "estimated_market_share_enrollment": "~250 students (across kids & adults)"
+          },
+          {
+            "name": "Ashburn Academy of Dance",
+            "location": "Ashburn",
+            "type": "Dance Studio",
+            "programs_and_capacity": {
+              "offerings": ["ballet", "jazz", "lyrical", "hip-hop", "tap", "acro", "musical theater"],
+              "target_ages": "3 to high-school",
+              "teams": ["recreational", "competitive"],
+              "facility_size_sqft": 8000,
+              "studios": 4
+            },
+            "pricing": {
+              "tuition": {"price_per_month": 100, "details": "for a weekly 1-hr class"},
+              "multi_class_discounts": [
+                {"class_number": 2, "price_per_month": 85},
+                {"class_number": 3, "price_per_month": 80}
+              ],
+              "unlimited_dance": {"price_per_month": 335},
+              "annual_registration_fee": {"price": 75, "family_max": 150},
+              "reference_url": "https://ashburnballet.com/wp-content/uploads/2022/08/2022-2023-Rate-Sheet.pdf"
+            },
+            "differentiators_and_value_prop": "Premier dance training in the area (award-winning teams). Value: Professional instructors (some from NYC/LA), structured progression. Part of the 'More Than Just Great Dancing' network. Not direct competition for gymnastics, but overlaps.",
+            "estimated_market_share_enrollment": "~400 students (very large enrollment)"
+          },
+          {
+            "name": "The Little Gym",
+            "location": "Dulles Landing (10 mi south)",
+            "type": "Gymnastics & Dance for Kids",
+            "programs_and_capacity": {
+              "offerings": ["Motor-skill development classes for infants to 12-year-olds", "basic gymnastics, dance, and karate"],
+              "format": "non-competitive format, small gym franchise"
+            },
+            "pricing": {
+              "monthly": [
+                {"plan": "12-month", "price_per_month": 102},
+                {"plan": "month-to-month", "price_per_month": 142}
+              ],
+              "discounts": ["sibling", "multi-class"],
+              "enrollment": "year-round",
+              "reference_url": "https://www.thelittlegym.com/north-carolina-fayetteville/"
+            },
+            "differentiators_and_value_prop": "Competitor in the toddler/pre-K segment mainly. Value: High staff ratio, nurturing environment. Franchise curriculum. Many families 'graduate' to more advanced gyms like DDGA. An alternative for <6 age group.",
+            "estimated_market_share_enrollment": "~100 students (est., mostly ages 1-6)"
+          }
+        ],
+        "key_takeaways": [
+          {
+            "topic": "Pricing Positioning",
+            "finding": "Most structured programs cluster around $100–$160 per month. Hope and G-Force likely charge ~$150, similar to DDGA's base rate of $148. Always In Motion undercuts with $96/week but also offers an aggressive unlimited plan at $140.",
+            "conclusion": "DDGA Ashburn can comfortably set its base membership around $148/month. We must clearly communicate the value (Olympic inspiration, state-of-art gym, high coach ratio) to justify the high end and incorporate strategic discounts (sibling, etc.) to remain competitive."
+          },
+          {
+            "topic": "Program Mix",
+            "finding": "DDGA's broad mix (recreational gymnastics, Ninja, preschool) is a competitive advantage as no single competitor offers the same breadth. G-Force is closest.",
+            "conclusion": "DDGA can position as a one-stop solution for families, capturing cross-segment revenue. The 10% multi-class discount will be emphasized to encourage this."
+          },
+          {
+            "topic": "Quality & Differentiators",
+            "finding": "Competitors highlight quality aspects like professional training or life-skills. DDGA's unique differentiator is its Olympian founder and mission of 'confidence & character' in a non-pressured environment.",
+            "conclusion": "DDGA should leverage Dominique's story in marketing. High waitlists at current sites suggest this message is effective. Customer experience (cleanliness, service) will matter at a premium price point."
+          },
+          {
+            "topic": "Market Saturation",
+            "finding": "Within a 5-mile radius, there are at least 3 gymnastics options (DDGA, Hope, G-Force) plus other studios. However, Ashburn is a fast-growing area and many classes have waitlists.",
+            "conclusion": "The presence of competition means DDGA cannot rely on monopoly, but the overall growth in demand suggests there is room for a new entrant."
+          }
+        ]
+      }
+    }
+  }
+}
