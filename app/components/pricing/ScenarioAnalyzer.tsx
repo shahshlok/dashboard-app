@@ -70,8 +70,8 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
     <div className="h-full flex flex-col bg-white">
       {/* Header */}
       <div className="flex-shrink-0 p-6 border-b bg-gray-50">
-        <h3 className="font-bold text-xl text-gray-900">Financial Scenario Analysis</h3>
-        <p className="text-sm text-gray-600 mt-1">
+        <h3 className="font-bold text-2xl text-gray-900">Financial Scenario Analysis</h3>
+        <p className="text-base text-gray-600 mt-1">
           Compare projections and adjust key variables
         </p>
       </div>
@@ -81,7 +81,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
         <div className="space-y-6">
           {/* Scenario Selector */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-700 mb-3">Select Scenario</h4>
+            <h4 className="text-base font-semibold text-gray-700 mb-3">Select Scenario</h4>
             <div className="space-y-2">
               {(['conservative', 'base', 'aggressive'] as const).map((scenario) => (
                 <button
@@ -96,7 +96,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
                   <div className="flex items-center justify-between">
                     <div className="text-left">
                       <div className="font-semibold capitalize">{scenario}</div>
-                      <div className="text-xs mt-1 opacity-80">
+                      <div className="text-sm mt-1 opacity-80">
                         {getScenarioDescription(scenario)}
                       </div>
                     </div>
@@ -116,7 +116,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
           {/* Key Metrics */}
           {scenarioData && (
             <div>
-              <h4 className="text-sm font-semibold text-gray-700 mb-3">
+              <h4 className="text-base font-semibold text-gray-700 mb-3">
                 Month 8 Projections {adjustedMetrics && '(Adjusted)'}
               </h4>
               <div className="grid grid-cols-2 gap-3">
@@ -154,11 +154,11 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
 
           {/* Sensitivity Analysis */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-700 mb-3">Sensitivity Analysis</h4>
+            <h4 className="text-base font-semibold text-gray-700 mb-3">Sensitivity Analysis</h4>
             <div className="space-y-4">
               {/* Price Adjustment */}
               <div>
-                <label className="text-xs font-medium text-gray-600">
+                <label className="text-sm font-medium text-gray-600">
                   Price Adjustment: {priceAdjustment > 0 ? '+' : ''}{priceAdjustment}%
                 </label>
                 <input
@@ -169,7 +169,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
                   onChange={(e) => setPriceAdjustment(Number(e.target.value))}
                   className="w-full mt-2"
                 />
-                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                <div className="flex justify-between text-sm text-gray-500 mt-1">
                   <span>-20%</span>
                   <span>0%</span>
                   <span>+20%</span>
@@ -178,7 +178,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
 
               {/* Retention Adjustment */}
               <div>
-                <label className="text-xs font-medium text-gray-600">
+                <label className="text-sm font-medium text-gray-600">
                   Retention Adjustment: {retentionAdjustment > 0 ? '+' : ''}{retentionAdjustment}%
                 </label>
                 <input
@@ -189,7 +189,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
                   onChange={(e) => setRetentionAdjustment(Number(e.target.value))}
                   className="w-full mt-2"
                 />
-                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                <div className="flex justify-between text-sm text-gray-500 mt-1">
                   <span>-10%</span>
                   <span>0%</span>
                   <span>+10%</span>
@@ -203,7 +203,7 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
                     setPriceAdjustment(0)
                     setRetentionAdjustment(0)
                   }}
-                  className="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium rounded-lg transition-colors"
+                  className="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 text-base font-medium rounded-lg transition-colors"
                 >
                   Reset to Baseline
                 </button>
@@ -213,9 +213,9 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
 
           {/* Scenario Comparison Table */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-700 mb-3">All Scenarios Comparison</h4>
+            <h4 className="text-base font-semibold text-gray-700 mb-3">All Scenarios Comparison</h4>
             <div className="overflow-hidden rounded-lg border border-gray-200">
-              <table className="w-full text-xs">
+              <table className="w-full text-sm">
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-3 py-2 text-left font-medium text-gray-700">Metric</th>
@@ -251,9 +251,9 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
                   </tr>
                   <tr>
                     <td className="px-3 py-2 text-gray-600">Break-even</td>
-                    <td className="px-3 py-2 text-right text-xs">{metrics.breakeven.conservative}</td>
-                    <td className="px-3 py-2 text-right text-xs font-medium">{metrics.breakeven.base}</td>
-                    <td className="px-3 py-2 text-right text-xs">{metrics.breakeven.aggressive}</td>
+                    <td className="px-3 py-2 text-right text-sm">{metrics.breakeven.conservative}</td>
+                    <td className="px-3 py-2 text-right text-sm font-medium">{metrics.breakeven.base}</td>
+                    <td className="px-3 py-2 text-right text-sm">{metrics.breakeven.aggressive}</td>
                   </tr>
                 </tbody>
               </table>
@@ -262,8 +262,8 @@ export default function ScenarioAnalyzer({ onScenarioChange }: ScenarioAnalyzerP
 
           {/* Key Assumptions */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-700 mb-3">Key Assumptions</h4>
-            <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-xs">
+            <h4 className="text-base font-semibold text-gray-700 mb-3">Key Assumptions</h4>
+            <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-600">Initial CapEx:</span>
                 <span className="font-medium">$500,000</span>

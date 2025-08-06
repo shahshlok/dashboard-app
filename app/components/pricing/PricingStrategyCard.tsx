@@ -61,13 +61,13 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-lg font-semibold text-gray-900">{tier.program}</h3>
-              <span className={`px-2 py-1 text-xs font-medium rounded-full border ${getTypeColor(tier.type)}`}>
+              <h3 className="text-xl font-semibold text-gray-900">{tier.program}</h3>
+              <span className={`px-2 py-1 text-sm font-medium rounded-full border ${getTypeColor(tier.type)}`}>
                 {getTypeLabel(tier.type)}
               </span>
             </div>
             
-            <div className="grid grid-cols-3 gap-4 text-sm">
+            <div className="grid grid-cols-3 gap-4 text-base">
               <div>
                 <span className="text-gray-500">Price:</span>
                 <span className="ml-2 font-semibold text-green-600">{tier.price}</span>
@@ -85,7 +85,7 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
             </div>
             
             {tier.frequency && (
-              <div className="mt-2 text-sm text-gray-600">
+              <div className="mt-2 text-base text-gray-600">
                 <span className="text-gray-500">Frequency:</span>
                 <span className="ml-2">{tier.frequency}</span>
               </div>
@@ -107,24 +107,24 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
           <div className="space-y-4">
             {tier.details.description && (
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Description</h4>
-                <p className="text-sm text-gray-600">{tier.details.description}</p>
+                <h4 className="text-base font-semibold text-gray-700 mb-2">Description</h4>
+                <p className="text-base text-gray-600">{tier.details.description}</p>
               </div>
             )}
             
             {tier.details.marketPosition && (
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Market Position</h4>
-                <p className="text-sm text-gray-600">{tier.details.marketPosition}</p>
+                <h4 className="text-base font-semibold text-gray-700 mb-2">Market Position</h4>
+                <p className="text-base text-gray-600">{tier.details.marketPosition}</p>
               </div>
             )}
             
             {tier.details.competitors && tier.details.competitors.length > 0 && (
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Competitor Comparison</h4>
+                <h4 className="text-base font-semibold text-gray-700 mb-2">Competitor Comparison</h4>
                 <div className="space-y-1">
                   {tier.details.competitors.map((comp, idx) => (
-                    <div key={idx} className="flex justify-between text-sm">
+                    <div key={idx} className="flex justify-between text-base">
                       <span className="text-gray-600">{comp.name}</span>
                       <span className="font-medium text-gray-900">{comp.price}</span>
                     </div>
@@ -135,10 +135,10 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
             
             {tier.details.assumptions && tier.details.assumptions.length > 0 && (
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Assumptions</h4>
+                <h4 className="text-base font-semibold text-gray-700 mb-2">Key Assumptions</h4>
                 <ul className="space-y-1">
                   {tier.details.assumptions.map((assumption, idx) => (
-                    <li key={idx} className="text-sm text-gray-600 flex items-start">
+                    <li key={idx} className="text-base text-gray-600 flex items-start">
                       <span className="text-blue-500 mr-2">•</span>
                       <span>{assumption}</span>
                     </li>
@@ -149,10 +149,10 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
             
             {tier.details.notes && tier.details.notes.length > 0 && (
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Additional Notes</h4>
+                <h4 className="text-base font-semibold text-gray-700 mb-2">Additional Notes</h4>
                 <ul className="space-y-1">
                   {tier.details.notes.map((note, idx) => (
-                    <li key={idx} className="text-sm text-gray-600 flex items-start">
+                    <li key={idx} className="text-base text-gray-600 flex items-start">
                       <span className="text-gray-400 mr-2">•</span>
                       <span>{note}</span>
                     </li>
@@ -180,7 +180,7 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
     <div className="space-y-6">
       {groupedTiers.core.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Core Memberships</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Core Memberships</h3>
           <div className="space-y-3">
             {groupedTiers.core.map((tier, index) => (
               <PricingStrategyCard
@@ -196,7 +196,7 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       
       {groupedTiers.premium.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Premium Options</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Premium Options</h3>
           <div className="space-y-3">
             {groupedTiers.premium.map((tier, index) => {
               const globalIndex = groupedTiers.core.length + index
@@ -215,7 +215,7 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       
       {groupedTiers.events.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Events & Special Programs</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Events & Special Programs</h3>
           <div className="space-y-3">
             {groupedTiers.events.map((tier, index) => {
               const globalIndex = groupedTiers.core.length + groupedTiers.premium.length + index
