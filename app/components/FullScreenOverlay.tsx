@@ -6,9 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import type { Location } from "../data/locations"
 import { loadAshburnDetailedData, mergeAshburnData } from "../utils/locationData"
 import MapPane from "./MapPane"
-import MarketOverview from "./tabs/MarketOverview"
-import RealEstate from "./tabs/RealEstate"
-import SwotAnalysis from "./tabs/SwotAnalysis"
+import Overview from "./tabs/Overview"
 import PricingEconomics from "./tabs/PricingEconomics"
 import Competition from "./tabs/Competition"
 import ActionPlan from "./tabs/ActionPlan"
@@ -21,9 +19,11 @@ interface FullScreenOverlayProps {
 }
 
 export default function FullScreenOverlay({ location, isOpen, onOpenChange }: FullScreenOverlayProps) {
-  const [activeTab, setActiveTab] = useState("marketOverview")
+  const [activeTab, setActiveTab] = useState("overview")
   const [enhancedLocation, setEnhancedLocation] = useState<Location | null>(location)
   const [isLoading, setIsLoading] = useState(false)
+  const [selectedSwotCategory, setSelectedSwotCategory] = useState<'strengths' | 'weaknesses' | 'opportunities' | 'threats' | null>(null)
+  const [selectedScenario, setSelectedScenario] = useState<'conservative' | 'base' | 'aggressive'>('base')
 
   // Load detailed data for Ashburn location
   useEffect(() => {
@@ -75,9 +75,9 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                   </svg>
                 </button>
-                <h1 className="text-xl font-semibold">
+                <h1 className="text-2xl font-semibold">
                   {enhancedLocation.name || enhancedLocation.locationName} - {enhancedLocation.status}
-                  {isLoading && <span className="ml-2 text-sm text-gray-500">(Loading...)</span>}
+                  {isLoading && <span className="ml-2 text-base text-gray-500">(Loading...)</span>}
                 </h1>
               </div>
             </div>
@@ -85,11 +85,9 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             {/* Tab List */}
             <div className="flex-shrink-0 px-6 py-3 border-b bg-white">
               <Tabs value={activeTab} onValueChange={setActiveTab}>
-                <TabsList className="grid w-full grid-cols-6">
-                  <TabsTrigger value="marketOverview">Market Overview</TabsTrigger>
-                  <TabsTrigger value="realEstate">Real Estate</TabsTrigger>
-                  <TabsTrigger value="swotAnalysis">SWOT Analysis</TabsTrigger>
-                  <TabsTrigger value="pricingEconomics">Pricing & Economics</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-4">
+                  <TabsTrigger value="overview">Overview</TabsTrigger>
+                  <TabsTrigger value="pricingEconomics">Pricing</TabsTrigger>
                   <TabsTrigger value="competition">Competition</TabsTrigger>
                   <TabsTrigger value="actionPlan">Action Plan</TabsTrigger>
                 </TabsList>
@@ -99,17 +97,15 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             {/* Scrollable Content Area */}
             <div className="flex-1 overflow-y-auto">
               <Tabs value={activeTab} onValueChange={setActiveTab}>
-                <TabsContent value="marketOverview" className="p-6">
-                  <MarketOverview location={enhancedLocation} />
-                </TabsContent>
-                <TabsContent value="realEstate" className="p-6">
-                  <RealEstate location={enhancedLocation} />
-                </TabsContent>
-                <TabsContent value="swotAnalysis" className="p-6">
-                  <SwotAnalysis location={enhancedLocation} />
+                <TabsContent value="overview" className="p-6">
+                  <Overview 
+                    location={enhancedLocation} 
+                    selectedSwotCategory={selectedSwotCategory}
+                    onSwotCategorySelect={setSelectedSwotCategory}
+                  />
                 </TabsContent>
                 <TabsContent value="pricingEconomics" className="p-6">
-                  <PricingEconomics location={enhancedLocation} />
+                  <PricingEconomics location={enhancedLocation} selectedScenario={selectedScenario} />
                 </TabsContent>
                 <TabsContent value="competition" className="p-6">
                   <Competition location={enhancedLocation} />
@@ -121,9 +117,15 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
             </div>
           </div>
 
-          {/* Right Panel - Map (Fixed Height) */}
+          {/* Right Panel - Map or SWOT Details (Fixed Height) */}
           <div className="w-[30%] h-screen border-l">
-            <MapPane location={enhancedLocation} />
+            <MapPane 
+              location={enhancedLocation} 
+              selectedSwotCategory={selectedSwotCategory}
+              onSwotCategoryClose={() => setSelectedSwotCategory(null)}
+              activeTab={activeTab}
+              onScenarioChange={setSelectedScenario}
+            />
           </div>
         </div>
       </DialogContent>
