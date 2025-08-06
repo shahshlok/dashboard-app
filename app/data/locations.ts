@@ -838,10 +838,11 @@ export const locations: Location[] = [
       { program: "Unlimited", price: 200, duration: "1 month" },
     ],
     competitors: [
-      { name: "Fitwize 4 Kids", distance: 5, price: 99, coordinates: [39.015776, -77.477199] },
-      { name: "Always In Motion Ninja & Parkour", distance: 4, price: 135, coordinates: [39.034497, -77.423056] },
+      { name: "American Top Team Ashburn", distance: 2.3, price: 165, coordinates: [39.0583, -77.4466] },
+      { name: "InCourage Martial Arts - Winkle Dr", distance: 3.1, price: 139, coordinates: [39.0555, -77.5169] },
+      { name: "InCourage Martial Arts - Southern Walk", distance: 4.2, price: 139, coordinates: [39.0084, -77.5034] },
+      { name: "Premier Martial Arts Ashburn", distance: 2.8, price: 152, coordinates: [39.007, -77.486] },
       { name: "Master Lee's Martial Arts", distance: 0.1, price: 155, coordinates: [39.0614426, -77.4705951] },
-      { name: "Super Kicks Karate", distance: 2, price: 162, coordinates: [39.01855, -77.45337] },
     ],
     actionPlan: [
       { task: "Execute Pre-Launch Marketing Blitz", owner: "Marketing Dept.", weeks: 10 },

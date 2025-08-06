@@ -44,7 +44,7 @@ export default function GoogleMap({ location }: GoogleMapProps) {
         
         // Import the Maps library
         const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary
-        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary
+        const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary
 
         // Create the map
         const map = new Map(mapRef.current, {
@@ -78,34 +78,18 @@ export default function GoogleMap({ location }: GoogleMapProps) {
         // Add competitor markers for Ashburn location
         if (location.name === "Ashburn VA" && location.competitors) {
           location.competitors.forEach((competitor) => {
-            // Create custom red marker with white center
-            const markerElement = document.createElement('div')
-            markerElement.innerHTML = `
-              <div style="
-                width: 24px; 
-                height: 24px; 
-                background-color: #dc2626; 
-                border: 2px solid white; 
-                border-radius: 50%; 
-                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-                <div style="
-                  width: 8px;
-                  height: 8px;
-                  background-color: white;
-                  border-radius: 50%;
-                "></div>
-              </div>
-            `
+            // Create official Google Maps pin with white center/glyph
+            const competitorPin = new PinElement({
+              background: '#EA4335',  // Google red background
+              glyphColor: 'white',    // White center/glyph
+              borderColor: '#EA4335'  // Red border
+            })
             
             const competitorMarker = new AdvancedMarkerElement({
               map: map,
               position: { lat: competitor.coordinates[0], lng: competitor.coordinates[1] },
               title: `${competitor.name} - $${competitor.price}/mo`,
-              content: markerElement
+              content: competitorPin.element
             })
 
             // Add click listener to show info about competitor
