@@ -21,14 +21,11 @@ interface PricingTier {
 
 interface PricingStrategyCardProps {
   tier: PricingTier
-  isExpanded?: boolean
-  onToggle?: () => void
 }
 
-export default function PricingStrategyCard({ tier, isExpanded = false, onToggle }: PricingStrategyCardProps) {
-  const [localExpanded, setLocalExpanded] = useState(isExpanded)
-  const expanded = onToggle ? isExpanded : localExpanded
-  const handleToggle = onToggle || (() => setLocalExpanded(!localExpanded))
+export default function PricingStrategyCard({ tier }: PricingStrategyCardProps) {
+  const [expanded, setExpanded] = useState(false)
+  const handleToggle = () => setExpanded(!expanded)
 
   const getTypeColor = (type: string) => {
     switch (type) {
@@ -53,7 +50,7 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
   }
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-200" data-testid="pricing-card">
+    <div className="bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-200 overflow-hidden" data-testid="pricing-card">
       <div 
         className="p-4 cursor-pointer"
         onClick={handleToggle}
@@ -101,74 +98,78 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
         </div>
       </div>
       
-      {expanded && tier.details && (
-        <div className="border-t border-gray-100 px-4 py-3 bg-gray-50" data-testid="expanded-details">
-          <div className="space-y-3">
-            {tier.details.description && (
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-1">Description</h4>
-                <p className="text-sm text-gray-600">{tier.details.description}</p>
-              </div>
-            )}
-            
-            {tier.details.marketPosition && (
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-1">Market Position</h4>
-                <p className="text-sm text-gray-600">{tier.details.marketPosition}</p>
-              </div>
-            )}
-            
-            {tier.details.competitors && tier.details.competitors.length > 0 && (
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-1">Competitor Comparison</h4>
-                <div className="space-y-1">
-                  {tier.details.competitors.map((comp, idx) => (
-                    <div key={idx} className="flex justify-between text-sm">
-                      <span className="text-gray-600">{comp.name}</span>
-                      <span className="font-medium text-gray-900">{comp.price}</span>
-                    </div>
-                  ))}
+      <div 
+        className={`transition-all duration-300 ease-in-out ${
+          expanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        {tier.details && (
+          <div className="border-t border-gray-100 px-4 py-3 bg-gray-50" data-testid="expanded-details">
+            <div className="space-y-3">
+              {tier.details.description && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-1">Description</h4>
+                  <p className="text-sm text-gray-600">{tier.details.description}</p>
                 </div>
-              </div>
-            )}
-            
-            {tier.details.assumptions && tier.details.assumptions.length > 0 && (
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-1">Key Assumptions</h4>
-                <ul className="space-y-0.5">
-                  {tier.details.assumptions.map((assumption, idx) => (
-                    <li key={idx} className="text-sm text-gray-600 flex items-start">
-                      <span className="text-blue-500 mr-1.5 text-xs">•</span>
-                      <span>{assumption}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            
-            {tier.details.notes && tier.details.notes.length > 0 && (
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-1">Additional Notes</h4>
-                <ul className="space-y-0.5">
-                  {tier.details.notes.map((note, idx) => (
-                    <li key={idx} className="text-sm text-gray-600 flex items-start">
-                      <span className="text-gray-400 mr-1.5 text-xs">•</span>
-                      <span>{note}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+              )}
+              
+              {tier.details.marketPosition && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-1">Market Position</h4>
+                  <p className="text-sm text-gray-600">{tier.details.marketPosition}</p>
+                </div>
+              )}
+              
+              {tier.details.competitors && tier.details.competitors.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-1">Competitor Comparison</h4>
+                  <div className="space-y-1">
+                    {tier.details.competitors.map((comp, idx) => (
+                      <div key={idx} className="flex justify-between text-sm">
+                        <span className="text-gray-600">{comp.name}</span>
+                        <span className="font-medium text-gray-900">{comp.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {tier.details.assumptions && tier.details.assumptions.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-1">Key Assumptions</h4>
+                  <ul className="space-y-0.5">
+                    {tier.details.assumptions.map((assumption, idx) => (
+                      <li key={idx} className="text-sm text-gray-600 flex items-start">
+                        <span className="text-blue-500 mr-1.5 text-xs">•</span>
+                        <span>{assumption}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {tier.details.notes && tier.details.notes.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-1">Additional Notes</h4>
+                  <ul className="space-y-0.5">
+                    {tier.details.notes.map((note, idx) => (
+                      <li key={idx} className="text-sm text-gray-600 flex items-start">
+                        <span className="text-gray-400 mr-1.5 text-xs">•</span>
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
 
 export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
-  
   const groupedTiers = {
     core: tiers.filter(t => t.type === 'core'),
     premium: tiers.filter(t => t.type === 'premium'),
@@ -180,13 +181,11 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       {groupedTiers.core.length > 0 && (
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-4">Core Memberships</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
             {groupedTiers.core.map((tier, index) => (
               <PricingStrategyCard
                 key={`core-${index}`}
                 tier={tier}
-                isExpanded={expandedIndex === index}
-                onToggle={() => setExpandedIndex(expandedIndex === index ? null : index)}
               />
             ))}
           </div>
@@ -196,18 +195,13 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       {groupedTiers.premium.length > 0 && (
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-4">Premium Options</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {groupedTiers.premium.map((tier, index) => {
-              const globalIndex = groupedTiers.core.length + index
-              return (
-                <PricingStrategyCard
-                  key={`premium-${index}`}
-                  tier={tier}
-                  isExpanded={expandedIndex === globalIndex}
-                  onToggle={() => setExpandedIndex(expandedIndex === globalIndex ? null : globalIndex)}
-                />
-              )
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
+            {groupedTiers.premium.map((tier, index) => (
+              <PricingStrategyCard
+                key={`premium-${index}`}
+                tier={tier}
+              />
+            ))}
           </div>
         </div>
       )}
@@ -215,18 +209,13 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       {groupedTiers.events.length > 0 && (
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-4">Events & Special Programs</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {groupedTiers.events.map((tier, index) => {
-              const globalIndex = groupedTiers.core.length + groupedTiers.premium.length + index
-              return (
-                <PricingStrategyCard
-                  key={`event-${index}`}
-                  tier={tier}
-                  isExpanded={expandedIndex === globalIndex}
-                  onToggle={() => setExpandedIndex(expandedIndex === globalIndex ? null : globalIndex)}
-                />
-              )
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
+            {groupedTiers.events.map((tier, index) => (
+              <PricingStrategyCard
+                key={`event-${index}`}
+                tier={tier}
+              />
+            ))}
           </div>
         </div>
       )}
