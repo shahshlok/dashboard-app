@@ -53,78 +53,77 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
   }
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-200">
+    <div className="bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-200" data-testid="pricing-card">
       <div 
-        className="p-5 cursor-pointer"
+        className="p-4 cursor-pointer"
         onClick={handleToggle}
       >
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-xl font-semibold text-gray-900">{tier.program}</h3>
-              <span className={`px-2 py-1 text-sm font-medium rounded-full border ${getTypeColor(tier.type)}`}>
+            <div className="flex items-center gap-2 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 leading-tight">{tier.program}</h3>
+              <span className={`px-2 py-0.5 text-xs font-medium rounded-full border ${getTypeColor(tier.type)}`} data-testid="pricing-tag">
                 {getTypeLabel(tier.type)}
               </span>
             </div>
             
-            <div className="grid grid-cols-3 gap-4 text-base">
-              <div>
-                <span className="text-gray-500">Price:</span>
-                <span className="ml-2 font-semibold text-green-600">{tier.price}</span>
+            <div className="flex flex-wrap items-center gap-3 text-sm mb-2">
+              <div className="flex items-center">
+                <span className="text-gray-500 mr-1">Price:</span>
+                <span className="font-semibold text-green-600" data-testid="price">{tier.price}</span>
               </div>
-              <div>
-                <span className="text-gray-500">Duration:</span>
-                <span className="ml-2 font-medium text-gray-900">{tier.duration}</span>
+              <div className="flex items-center">
+                <span className="text-gray-500 mr-1">Duration:</span>
+                <span className="font-medium text-gray-900" data-testid="duration">{tier.duration}</span>
               </div>
               {tier.ages && (
-                <div>
-                  <span className="text-gray-500">Ages:</span>
-                  <span className="ml-2 font-medium text-gray-900">{tier.ages}</span>
+                <div className="flex items-center">
+                  <span className="text-gray-500 mr-1">Ages:</span>
+                  <span className="font-medium text-gray-900">{tier.ages}</span>
+                </div>
+              )}
+              {tier.frequency && (
+                <div className="flex items-center">
+                  <span className="text-gray-500 mr-1">Frequency:</span>
+                  <span className="font-medium text-gray-700">{tier.frequency}</span>
                 </div>
               )}
             </div>
-            
-            {tier.frequency && (
-              <div className="mt-2 text-base text-gray-600">
-                <span className="text-gray-500">Frequency:</span>
-                <span className="ml-2">{tier.frequency}</span>
-              </div>
-            )}
           </div>
           
-          <div className="ml-4 p-2">
+          <div className="ml-3 p-1">
             {expanded ? (
-              <ChevronUp className="h-5 w-5 text-gray-400" />
+              <ChevronUp className="h-4 w-4 text-gray-400" data-testid="chevron-up" />
             ) : (
-              <ChevronDown className="h-5 w-5 text-gray-400" />
+              <ChevronDown className="h-4 w-4 text-gray-400" data-testid="chevron-down" />
             )}
           </div>
         </div>
       </div>
       
       {expanded && tier.details && (
-        <div className="border-t border-gray-100 px-5 py-4 bg-gray-50">
-          <div className="space-y-4">
+        <div className="border-t border-gray-100 px-4 py-3 bg-gray-50" data-testid="expanded-details">
+          <div className="space-y-3">
             {tier.details.description && (
               <div>
-                <h4 className="text-base font-semibold text-gray-700 mb-2">Description</h4>
-                <p className="text-base text-gray-600">{tier.details.description}</p>
+                <h4 className="text-sm font-semibold text-gray-700 mb-1">Description</h4>
+                <p className="text-sm text-gray-600">{tier.details.description}</p>
               </div>
             )}
             
             {tier.details.marketPosition && (
               <div>
-                <h4 className="text-base font-semibold text-gray-700 mb-2">Market Position</h4>
-                <p className="text-base text-gray-600">{tier.details.marketPosition}</p>
+                <h4 className="text-sm font-semibold text-gray-700 mb-1">Market Position</h4>
+                <p className="text-sm text-gray-600">{tier.details.marketPosition}</p>
               </div>
             )}
             
             {tier.details.competitors && tier.details.competitors.length > 0 && (
               <div>
-                <h4 className="text-base font-semibold text-gray-700 mb-2">Competitor Comparison</h4>
+                <h4 className="text-sm font-semibold text-gray-700 mb-1">Competitor Comparison</h4>
                 <div className="space-y-1">
                   {tier.details.competitors.map((comp, idx) => (
-                    <div key={idx} className="flex justify-between text-base">
+                    <div key={idx} className="flex justify-between text-sm">
                       <span className="text-gray-600">{comp.name}</span>
                       <span className="font-medium text-gray-900">{comp.price}</span>
                     </div>
@@ -135,11 +134,11 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
             
             {tier.details.assumptions && tier.details.assumptions.length > 0 && (
               <div>
-                <h4 className="text-base font-semibold text-gray-700 mb-2">Key Assumptions</h4>
-                <ul className="space-y-1">
+                <h4 className="text-sm font-semibold text-gray-700 mb-1">Key Assumptions</h4>
+                <ul className="space-y-0.5">
                   {tier.details.assumptions.map((assumption, idx) => (
-                    <li key={idx} className="text-base text-gray-600 flex items-start">
-                      <span className="text-blue-500 mr-2">•</span>
+                    <li key={idx} className="text-sm text-gray-600 flex items-start">
+                      <span className="text-blue-500 mr-1.5 text-xs">•</span>
                       <span>{assumption}</span>
                     </li>
                   ))}
@@ -149,11 +148,11 @@ export default function PricingStrategyCard({ tier, isExpanded = false, onToggle
             
             {tier.details.notes && tier.details.notes.length > 0 && (
               <div>
-                <h4 className="text-base font-semibold text-gray-700 mb-2">Additional Notes</h4>
-                <ul className="space-y-1">
+                <h4 className="text-sm font-semibold text-gray-700 mb-1">Additional Notes</h4>
+                <ul className="space-y-0.5">
                   {tier.details.notes.map((note, idx) => (
-                    <li key={idx} className="text-base text-gray-600 flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
+                    <li key={idx} className="text-sm text-gray-600 flex items-start">
+                      <span className="text-gray-400 mr-1.5 text-xs">•</span>
                       <span>{note}</span>
                     </li>
                   ))}
@@ -177,11 +176,11 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" data-testid="pricing-tiers-list">
       {groupedTiers.core.length > 0 && (
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Core Memberships</h3>
-          <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Core Memberships</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {groupedTiers.core.map((tier, index) => (
               <PricingStrategyCard
                 key={`core-${index}`}
@@ -196,8 +195,8 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       
       {groupedTiers.premium.length > 0 && (
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Premium Options</h3>
-          <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Premium Options</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {groupedTiers.premium.map((tier, index) => {
               const globalIndex = groupedTiers.core.length + index
               return (
@@ -215,8 +214,8 @@ export function PricingTiersList({ tiers }: { tiers: PricingTier[] }) {
       
       {groupedTiers.events.length > 0 && (
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Events & Special Programs</h3>
-          <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Events & Special Programs</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {groupedTiers.events.map((tier, index) => {
               const globalIndex = groupedTiers.core.length + groupedTiers.premium.length + index
               return (
