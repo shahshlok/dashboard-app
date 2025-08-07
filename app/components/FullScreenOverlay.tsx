@@ -2,6 +2,7 @@
 
 import { Fragment, useState, useEffect } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { VisuallyHidden } from "@/components/ui/visually-hidden"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import type { Location } from "../data/locations"
 import { loadAshburnDetailedData, mergeAshburnData } from "../utils/locationData"
@@ -53,6 +54,11 @@ export default function FullScreenOverlay({ location, isOpen, onOpenChange }: Fu
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-none h-screen w-screen p-0 gap-0" hideClose>
+        <VisuallyHidden>
+          <DialogTitle>
+            {enhancedLocation.name || enhancedLocation.locationName} - {enhancedLocation.status}
+          </DialogTitle>
+        </VisuallyHidden>
         <div className="flex h-screen w-screen">
           {/* Left Panel - Tabbed Content */}
           <div className="w-[70%] h-screen flex flex-col bg-white">
