@@ -48,7 +48,7 @@ export const getDetailedAssumptions = (): AssumptionDetail[] => {
         if (assumption.projections) {
           Object.entries(assumption.projections).forEach(([key, value]) => {
             assumptions.push({
-              id: `enrollment-${key}`,
+              id: `enrollment-${index}-${key}`,
               topic: assumption.topic,
               title: formatTitle(key),
               value: extractValue(value),
@@ -63,7 +63,7 @@ export const getDetailedAssumptions = (): AssumptionDetail[] => {
           Object.entries(assumption.retention).forEach(([key, value]) => {
             if (key !== 'sensitivity') {
               assumptions.push({
-                id: `retention-${key}`,
+                id: `retention-${index}-${key}`,
                 topic: 'Retention',
                 title: formatTitle(key),
                 value: extractValue(value),
@@ -113,7 +113,7 @@ export const getDetailedAssumptions = (): AssumptionDetail[] => {
         if (assumption.adjustments) {
           assumption.adjustments.forEach((adj, adjIndex) => {
             assumptions.push({
-              id: `seasonality-${adjIndex}`,
+              id: `seasonality-${index}-${adjIndex}`,
               topic: assumption.topic,
               title: `${adj.period} Adjustment`,
               value: adj.multiplier || adj.reason,
@@ -173,7 +173,7 @@ export const getDetailedAssumptions = (): AssumptionDetail[] => {
         if (assumption.components) {
           assumption.components.forEach((component, compIndex) => {
             assumptions.push({
-              id: `fixed-cost-${compIndex}`,
+              id: `fixed-cost-${index}-${compIndex}`,
               topic: assumption.topic,
               title: component.item,
               value: extractValue(component.details),
@@ -190,7 +190,7 @@ export const getDetailedAssumptions = (): AssumptionDetail[] => {
         if (assumption.components) {
           assumption.components.forEach((component, compIndex) => {
             assumptions.push({
-              id: `opex-${compIndex}`,
+              id: `opex-${index}-${compIndex}`,
               topic: assumption.topic,
               title: component.item,
               value: extractValue(component.details),
