@@ -59,9 +59,11 @@ export default function PricingStrategyCard({ tier }: PricingStrategyCardProps) 
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-3">
               <h3 className="text-lg font-semibold text-gray-900 leading-tight">{tier.program}</h3>
-              <span className={`px-2 py-0.5 text-xs font-medium rounded-full border ${getTypeColor(tier.type)}`} data-testid="pricing-tag">
-                {getTypeLabel(tier.type)}
-              </span>
+              {tier.type !== 'core' && tier.type !== 'premium' && (
+                <span className={`px-2 py-0.5 text-xs font-medium rounded-full border ${getTypeColor(tier.type)}`} data-testid="pricing-tag">
+                  {getTypeLabel(tier.type)}
+                </span>
+              )}
             </div>
             
             <div className="flex flex-wrap items-center gap-3 text-sm mb-2">
