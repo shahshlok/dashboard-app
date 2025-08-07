@@ -4,9 +4,12 @@ import { useState, useEffect } from "react"
 import type { Location } from "../../data/locations"
 import { formatPricingTiers, getDiscountFramework, getCompetitorComparison } from "../../utils/pricingData"
 import { formatChartData, getKeyAssumptions } from "../../utils/financialData"
+import { getMonthlyAssumptions } from "../../utils/financialAssumptions"
 import { calculateCompetitorValues } from "../../utils/competitorValueCalculation"
 import { PricingTiersList } from "../pricing/PricingStrategyCard"
 import CompetitivePositioningCard from "../pricing/CompetitivePositioningCard"
+import FinancialAssumptions from "../financial/FinancialAssumptions"
+import MonthlyAssumptionsModal from "../financial/MonthlyAssumptionsModal"
 import {
   RevenueProjectionChart,
   EnrollmentGrowthChart,
@@ -29,6 +32,9 @@ export default function PricingEconomics({ location, selectedScenario = 'base' }
   const [chartData, setChartData] = useState<any>(null)
   const [discounts, setDiscounts] = useState<any[]>([])
   const [competitors, setCompetitors] = useState<any[]>([])
+  const [monthlyAssumptions, setMonthlyAssumptions] = useState<any[]>([])
+  const [selectedMonth, setSelectedMonth] = useState<any>(null)
+  const [showAssumptionsModal, setShowAssumptionsModal] = useState(false)
 
   useEffect(() => {
     if ((enhancedLocation?.name || enhancedLocation?.locationName) === "Ashburn VA") {
@@ -51,6 +57,10 @@ export default function PricingEconomics({ location, selectedScenario = 'base' }
       const data = formatChartData(selectedScenario)
       setChartData(data)
 
+      // Load monthly assumptions for detailed tooltips and modals
+      const assumptions = getMonthlyAssumptions(selectedScenario)
+      setMonthlyAssumptions(assumptions)
+
       // Load discounts
       const discountData = getDiscountFramework()
       setDiscounts(discountData)
@@ -65,6 +75,13 @@ export default function PricingEconomics({ location, selectedScenario = 'base' }
       setCompetitors(competitorData)
     }
   }, [enhancedLocation, selectedScenario])
+
+  const handleMonthClick = (data: any, index: number) => {
+    if (monthlyAssumptions[index]) {
+      setSelectedMonth(monthlyAssumptions[index])
+      setShowAssumptionsModal(true)
+    }
+  }
 
   const isAshburn = (enhancedLocation?.name || enhancedLocation?.locationName) === "Ashburn VA"
 
@@ -216,8 +233,17 @@ export default function PricingEconomics({ location, selectedScenario = 'base' }
               </div>
 
               <div className="bg-white p-6 rounded-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Cash Flow Analysis</h3>
-                <CashFlowChart data={chartData.cashFlowChart} />
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900">Cash Flow Analysis</h3>
+                  <div className="text-sm text-gray-500">
+                    Click on any month for detailed assumptions
+                  </div>
+                </div>
+                <CashFlowChart 
+                  data={chartData.cashFlowChart} 
+                  onMonthClick={handleMonthClick}
+                  monthlyAssumptions={monthlyAssumptions}
+                />
               </div>
             </div>
 
@@ -288,6 +314,20 @@ export default function PricingEconomics({ location, selectedScenario = 'base' }
           </div>
         </div>
       </div>
+
+      {/* Comprehensive Financial Assumptions Section */}
+      <div>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">Financial Model Assumptions</h2>
+        <FinancialAssumptions scenario={selectedScenario} />
+      </div>
+
+      {/* Monthly Assumptions Modal */}
+      <MonthlyAssumptionsModal
+        isOpen={showAssumptionsModal}
+        onClose={() => setShowAssumptionsModal(false)}
+        monthData={selectedMonth}
+        scenario={selectedScenario}
+      />
     </div>
   )
 }
