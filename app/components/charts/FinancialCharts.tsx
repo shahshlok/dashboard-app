@@ -112,7 +112,17 @@ export const EnrollmentGrowthChart = ({ data, height = 300 }: ChartProps) => {
   )
 }
 
-export const CashFlowChart = ({ data, height = 300 }: ChartProps) => {
+interface EnhancedCashFlowChartProps extends ChartProps {
+  onMonthClick?: (monthData: any) => void
+  monthlyAssumptions?: any[]
+}
+
+export const CashFlowChart = ({ 
+  data, 
+  height = 300, 
+  onMonthClick,
+  monthlyAssumptions = []
+}: EnhancedCashFlowChartProps) => {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <ComposedChart data={data}>
@@ -136,8 +146,55 @@ export const CashFlowChart = ({ data, height = 300 }: ChartProps) => {
           tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
         />
         <Tooltip 
-          formatter={(value: any) => `$${value.toLocaleString()}`}
-          contentStyle={{ backgroundColor: '#fff', border: '1px solid #e0e0e0', borderRadius: '8px' }}
+          content={({ active, payload, label }) => {
+            if (!active || !payload || !payload.length) return null
+            
+            // Find matching monthly assumption data
+            const monthAssumptions = monthlyAssumptions.find(ma => 
+              ma.month.includes(label)
+            )
+            
+            return (
+              <div className="bg-white p-4 border border-gray-200 rounded-lg shadow-lg max-w-sm">
+                <div className="font-semibold text-gray-900 mb-2">{label} 2025/2026</div>
+                
+                {/* Financial Metrics */}
+                <div className="space-y-2 mb-3">
+                  {payload.map((entry, index) => (
+                    <div key={index} className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">{entry.name}:</span>
+                      <span className="font-semibold" style={{ color: entry.color }}>
+                        ${entry.value?.toLocaleString()}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Key Assumptions Preview */}
+                {monthAssumptions && (
+                  <div className="border-t border-gray-200 pt-3">
+                    <div className="text-xs font-medium text-gray-700 mb-2">Key Assumptions:</div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-600">
+                        • Enrollment: {monthAssumptions.enrollment?.value} students
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        • Revenue: ${monthAssumptions.revenue?.value.toLocaleString()}
+                      </div>
+                      {monthAssumptions.enrollment?.seasonalFactors && (
+                        <div className="text-xs text-orange-600">
+                          • {monthAssumptions.enrollment.seasonalFactors}
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-xs text-blue-600 mt-2 cursor-pointer">
+                      Click for detailed assumptions →
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          }}
         />
         <Legend />
         <Bar 
@@ -146,6 +203,8 @@ export const CashFlowChart = ({ data, height = 300 }: ChartProps) => {
           fill="#3b82f6"
           opacity={0.7}
           name="Monthly EBITDA"
+          onClick={onMonthClick}
+          style={{ cursor: onMonthClick ? 'pointer' : 'default' }}
         />
         <Line 
           yAxisId="right"
@@ -154,7 +213,11 @@ export const CashFlowChart = ({ data, height = 300 }: ChartProps) => {
           stroke="#ef4444" 
           strokeWidth={3}
           name="Cumulative Cash"
-          dot={{ fill: '#ef4444', r: 4 }}
+          dot={{ 
+            fill: '#ef4444', 
+            r: 4,
+            style: { cursor: onMonthClick ? 'pointer' : 'default' }
+          }}
         />
       </ComposedChart>
     </ResponsiveContainer>

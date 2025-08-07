@@ -73,6 +73,7 @@ export default function TileCard({ location, onClick }: TileCardProps) {
       className={`bg-white rounded-xl shadow-sm border cursor-pointer transition-all duration-300 overflow-hidden ${
         isHovered ? "shadow-xl -translate-y-1 border-gray-300" : "hover:shadow-md"
       }`}
+      data-testid="location-card"
     >
       {/* Header ribbon with gradient */}
       <div className={`h-3 rounded-t-xl bg-gradient-to-r ${
@@ -95,9 +96,9 @@ export default function TileCard({ location, onClick }: TileCardProps) {
         {/* Location name and status */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <h3 className="font-bold text-gray-900 text-lg">{location.name}</h3>
+            <h3 className="font-bold text-gray-900 text-lg">{location.locationName}</h3>
             {/* Columbia status badge */}
-            {location.name === "Columbia MD" && (
+            {location.locationName === "Columbia MD" && (
               <div className="px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800">
                 Building Phase
               </div>
@@ -322,7 +323,7 @@ export default function TileCard({ location, onClick }: TileCardProps) {
         ) : (
           /* Active Location Layout - Enhanced with Columbia data */
           <>
-            {location.name === "Columbia MD" ? (
+            {location.locationName === "Columbia MD" ? (
               /* Columbia-specific layout with Recharts */
               <>
                 {/* Enrollment Chart - Takes up main space */}
@@ -501,7 +502,7 @@ export default function TileCard({ location, onClick }: TileCardProps) {
 
               </div>
             </>
-          ) : location.name === "Columbia MD" ? (
+          ) : location.locationName === "Columbia MD" ? (
             /* Columbia Location - Operational Metrics (matching Ashburn design philosophy) */
             <>
               {/* Four Key Operational Panels */}
